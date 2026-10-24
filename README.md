@@ -17,10 +17,10 @@
 
 | Resource | Link |
 |---|---|
-| GitHub Repository | Not connected or provided in the current project; add the repository URL when available. |
-| Live Demo | Replit preview is available from the project. Add the stable published URL from Replit Deployments before submission. |
+| GitHub Repository | https://github.com/AbdulMuhaimin949/Aiversecity-Future-Skills |
+| Live Demo | https://CtrlCV-AI-Skill.replit.app/ |
 | RunPod Endpoint | Not applicable — the current system does not use RunPod. |
-| Slide Deck | Not provided in the current project. |
+| Slide Deck | I will upload the slide deck to the GitHub repository. |
 | Demo Video | Not provided in the current project. |
 
 ## Overview
