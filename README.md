@@ -21,7 +21,8 @@
 | Live Demo | https://CtrlCV-AI-Skill.replit.app/ |
 | RunPod Endpoint | Not applicable — the current system does not use RunPod. |
 | Slide Deck | I will upload the slide deck to the GitHub repository. |
-| Demo Video | Not provided in the current project. |
+| Demo Video | https://www.youtube.com/watch?v=DtsbfbobK18 |
+| Presentation Video | https://youtu.be/9EheDTVm41I |
 
 ## Overview
 
