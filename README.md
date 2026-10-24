@@ -1,4 +1,4 @@
-# Aiversecity – Future Skills
+# Ctrl CV Skill AI
 
 > An AI-powered career exploration platform that helps Malaysian students discover suitable career paths, understand emerging job-market trends, and identify the skills needed to prepare for the future of work.
 
