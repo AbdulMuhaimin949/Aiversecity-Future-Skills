@@ -1,0 +1,281 @@
+skill_sdg_id,skill_id,sdg_goal_number,sdg_goal_title,sdg_target_code,evidence_rationale,source_id
+SSDG_0001,SKL_0001,9,"Industry, Innovation and Infrastructure",9.5,Python Programming: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0002,SKL_0002,9,"Industry, Innovation and Infrastructure",9.5,SQL & Relational Databases: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0003,SKL_0003,9,"Industry, Innovation and Infrastructure",9.5,Machine Learning Engineering: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0004,SKL_0004,9,"Industry, Innovation and Infrastructure",9.5,Deep Learning & Neural Networks: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0005,SKL_0005,9,"Industry, Innovation and Infrastructure",9.5,Natural Language Processing: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0006,SKL_0006,9,"Industry, Innovation and Infrastructure",9.5,Retrieval-Augmented Generation: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0007,SKL_0007,9,"Industry, Innovation and Infrastructure",9.5,Computer Vision: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0008,SKL_0008,9,"Industry, Innovation and Infrastructure",9.5,Data Engineering & ETL Pipelines: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0009,SKL_0009,9,"Industry, Innovation and Infrastructure",9.5,Big Data Distributed Computing: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0010,SKL_0010,9,"Industry, Innovation and Infrastructure",9.5,Data Warehousing & Lakehouse: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0011,SKL_0011,9,"Industry, Innovation and Infrastructure",9.5,Business Intelligence & Dashboards: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0012,SKL_0012,9,"Industry, Innovation and Infrastructure",9.5,Statistical Analysis & Hypothesis Testing: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0013,SKL_0013,9,"Industry, Innovation and Infrastructure",9.5,Time-Series Forecasting: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0014,SKL_0014,9,"Industry, Innovation and Infrastructure",9.5,MLOps & Model Deployment: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0015,SKL_0015,9,"Industry, Innovation and Infrastructure",9.5,"AI Ethics, Governance & Bias Auditing: Builds scientific and data analytics capabilities for industrial innovation.",SRC_UN_SDG
+SSDG_0016,SKL_0016,9,"Industry, Innovation and Infrastructure",9.5,Data Governance & PDPA Compliance: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0017,SKL_0017,9,"Industry, Innovation and Infrastructure",9.5,Graph Analytics & Knowledge Graphs: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0018,SKL_0018,9,"Industry, Innovation and Infrastructure",9.5,Quantitative Risk Modeling: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0019,SKL_0019,9,"Industry, Innovation and Infrastructure",9.5,Geospatial Data Analysis: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0020,SKL_0020,9,"Industry, Innovation and Infrastructure",9.5,Bioinformatics & Genomic Data: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0021,SKL_0021,9,"Industry, Innovation and Infrastructure",9.5,JavaScript & TypeScript Development: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0022,SKL_0022,9,"Industry, Innovation and Infrastructure",9.5,React & Modern Web Frameworks: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0023,SKL_0023,9,"Industry, Innovation and Infrastructure",9.5,Backend API Development: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0024,SKL_0024,9,"Industry, Innovation and Infrastructure",9.5,Cloud Computing Architecture: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0025,SKL_0025,9,"Industry, Innovation and Infrastructure",9.5,Containerization & Kubernetes: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0026,SKL_0026,9,"Industry, Innovation and Infrastructure",9.5,CI/CD & DevOps Automation: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0027,SKL_0027,9,"Industry, Innovation and Infrastructure",9.5,Cybersecurity Operations & SOC: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0028,SKL_0028,9,"Industry, Innovation and Infrastructure",9.5,Penetration Testing & Vulnerability Assessment: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0029,SKL_0029,9,"Industry, Innovation and Infrastructure",9.5,Cloud & Network Security: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0030,SKL_0030,9,"Industry, Innovation and Infrastructure",9.5,Mobile Application Development: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0031,SKL_0031,9,"Industry, Innovation and Infrastructure",9.5,Microservices & Event-Driven Systems: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0032,SKL_0032,9,"Industry, Innovation and Infrastructure",9.5,Software Quality Assurance & Test Automation: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0033,SKL_0033,9,"Industry, Innovation and Infrastructure",9.5,Embedded C/C++ Firmware Development: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0034,SKL_0034,9,"Industry, Innovation and Infrastructure",9.5,Blockchain & Smart Contracts: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0035,SKL_0035,9,"Industry, Innovation and Infrastructure",9.5,Database Administration & Tuning: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0036,SKL_0036,9,"Industry, Innovation and Infrastructure",9.5,Linux System Administration: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0037,SKL_0037,9,"Industry, Innovation and Infrastructure",9.5,Enterprise ERP Configuration: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0038,SKL_0038,9,"Industry, Innovation and Infrastructure",9.5,Mainframe & Legacy Modernization: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0039,SKL_0039,9,"Industry, Innovation and Infrastructure",9.5,Site Reliability Engineering: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0040,SKL_0040,9,"Industry, Innovation and Infrastructure",9.5,API Gateway & Systems Integration: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0041,SKL_0041,13,Climate Action,13.3,"Carbon Accounting & GHG Inventory: Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0042,SKL_0042,13,Climate Action,13.3,"ESG Reporting & Bursa Malaysia Sustainability: Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0043,SKL_0043,13,Climate Action,13.3,"Solar Photovoltaic System Design: Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0044,SKL_0044,13,Climate Action,13.3,"Energy Efficiency & Building Audits: Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0045,SKL_0045,13,Climate Action,13.3,"Circular Economy & Waste Valorization: Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0046,SKL_0046,13,Climate Action,13.3,"Life Cycle Assessment (LCA): Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0047,SKL_0047,13,Climate Action,13.3,"Environmental Impact Assessment (EIA): Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0048,SKL_0048,13,Climate Action,13.3,"Sustainable Supply Chain Traceability: Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0049,SKL_0049,13,Climate Action,13.3,"Electric Vehicle & Battery Management Systems: Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0050,SKL_0050,13,Climate Action,13.3,"Hydrogen & Alternative Fuels Engineering: Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0051,SKL_0051,13,Climate Action,13.3,"Climate Risk & Scenario Modeling: Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0052,SKL_0052,13,Climate Action,13.3,"Smart Grid & Energy Storage Integration: Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0053,SKL_0053,13,Climate Action,13.3,"Biodiversity & Conservation Management: Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0054,SKL_0054,13,Climate Action,13.3,"Precision Agriculture & Smart Farming: Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0055,SKL_0055,13,Climate Action,13.3,"Water Resource & Flood Mitigation Engineering: Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0056,SKL_0056,8,Decent Work and Economic Growth,8.2,"Semiconductor IC Design & VLSI: Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0057,SKL_0057,8,Decent Work and Economic Growth,8.2,"Semiconductor Wafer Fabrication & Packaging: Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0058,SKL_0058,8,Decent Work and Economic Growth,8.2,"Automated Test Equipment (ATE) Engineering: Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0059,SKL_0059,8,Decent Work and Economic Growth,8.2,"PLC & SCADA Industrial Automation: Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0060,SKL_0060,8,Decent Work and Economic Growth,8.2,"Industrial Robotics & Cobots: Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0061,SKL_0061,8,Decent Work and Economic Growth,8.2,"Lean Six Sigma & Continuous Improvement: Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0062,SKL_0062,8,Decent Work and Economic Growth,8.2,"CAD/CAM & 3D Mechanical Modeling: Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0063,SKL_0063,8,Decent Work and Economic Growth,8.2,"Additive Manufacturing & 3D Printing: Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0064,SKL_0064,8,Decent Work and Economic Growth,8.2,"Chemical Process Simulation & Safety: Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0065,SKL_0065,8,Decent Work and Economic Growth,8.2,"Quality Management Systems (ISO 9001/IATF): Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0066,SKL_0066,8,Decent Work and Economic Growth,8.2,"Aerospace Avionics & MRO Operations: Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0067,SKL_0067,8,Decent Work and Economic Growth,8.2,"Supply Chain & Logistics Optimization: Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0068,SKL_0068,8,Decent Work and Economic Growth,8.2,"Predictive Maintenance & IIoT Sensors: Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0069,SKL_0069,8,Decent Work and Economic Growth,8.2,"Printed Circuit Board (PCB) Layout: Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0070,SKL_0070,8,Decent Work and Economic Growth,8.2,"Civil Structural BIM Modeling: Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0071,SKL_0071,8,Decent Work and Economic Growth,8.2,"Financial Modeling & Valuation: Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0072,SKL_0072,8,Decent Work and Economic Growth,8.2,"Islamic Finance & Shariah Compliance: Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0073,SKL_0073,8,Decent Work and Economic Growth,8.2,"Management Accounting & Cost Control: Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0074,SKL_0074,8,Decent Work and Economic Growth,8.2,"External & Internal Auditing: Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0075,SKL_0075,8,Decent Work and Economic Growth,8.2,"FinTech Digital Payments & E-Wallets: Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0076,SKL_0076,8,Decent Work and Economic Growth,8.2,"Anti-Money Laundering (AML) & KYC: Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0077,SKL_0077,8,Decent Work and Economic Growth,8.2,"Digital Marketing & Performance Analytics: Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0078,SKL_0078,8,Decent Work and Economic Growth,8.2,"E-Commerce Marketplace Management: Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0079,SKL_0079,8,Decent Work and Economic Growth,8.2,"Agile Product Management: Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0080,SKL_0080,8,Decent Work and Economic Growth,8.2,"Human Resource Analytics & Talent Acquisition: Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0081,SKL_0081,8,Decent Work and Economic Growth,8.2,"Learning & Development Instructional Design: Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0082,SKL_0082,8,Decent Work and Economic Growth,8.2,"Business Development & B2B Enterprise Sales: Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0083,SKL_0083,8,Decent Work and Economic Growth,8.2,"Procurement & Vendor Contract Management: Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0084,SKL_0084,8,Decent Work and Economic Growth,8.2,"Risk Management & Corporate Governance: Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0085,SKL_0085,8,Decent Work and Economic Growth,8.2,"Actuarial Pricing & Reserving: Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0086,SKL_0086,4,Quality Education,4.4,UI/UX Design & Wireframing: Enhances accessible human-computer interaction and digital literacy experiences.,SRC_UN_SDG
+SSDG_0087,SKL_0087,4,Quality Education,4.4,User Research & Usability Testing: Enhances accessible human-computer interaction and digital literacy experiences.,SRC_UN_SDG
+SSDG_0088,SKL_0088,4,Quality Education,4.4,3D Animation & Game Asset Creation: Enhances accessible human-computer interaction and digital literacy experiences.,SRC_UN_SDG
+SSDG_0089,SKL_0089,4,Quality Education,4.4,Game Engine Development (Unity/Unreal): Enhances accessible human-computer interaction and digital literacy experiences.,SRC_UN_SDG
+SSDG_0090,SKL_0090,4,Quality Education,4.4,Motion Graphics & Video Compositing: Enhances accessible human-computer interaction and digital literacy experiences.,SRC_UN_SDG
+SSDG_0091,SKL_0091,4,Quality Education,4.4,Technical Writing & API Documentation: Enhances accessible human-computer interaction and digital literacy experiences.,SRC_UN_SDG
+SSDG_0092,SKL_0092,4,Quality Education,4.4,Content Strategy & Copywriting: Enhances accessible human-computer interaction and digital literacy experiences.,SRC_UN_SDG
+SSDG_0093,SKL_0093,4,Quality Education,4.4,Graphic Design & Brand Identity: Enhances accessible human-computer interaction and digital literacy experiences.,SRC_UN_SDG
+SSDG_0094,SKL_0094,4,Quality Education,4.4,Sound Design & Interactive Audio: Enhances accessible human-computer interaction and digital literacy experiences.,SRC_UN_SDG
+SSDG_0095,SKL_0095,4,Quality Education,4.4,Digital Accessibility (WCAG) Auditing: Enhances accessible human-computer interaction and digital literacy experiences.,SRC_UN_SDG
+SSDG_0096,SKL_0096,3,Good Health and Well-Being,3.d,"Clinical Data Management & EHR: Advances clinical data quality, biosafety, and sustainable food/health systems.",SRC_UN_SDG
+SSDG_0097,SKL_0097,3,Good Health and Well-Being,3.d,"Medical Device Regulatory Affairs: Advances clinical data quality, biosafety, and sustainable food/health systems.",SRC_UN_SDG
+SSDG_0098,SKL_0098,3,Good Health and Well-Being,3.d,"Pharmaceutical GMP & Quality Control: Advances clinical data quality, biosafety, and sustainable food/health systems.",SRC_UN_SDG
+SSDG_0099,SKL_0099,3,Good Health and Well-Being,3.d,"Telemedicine & Digital Health Operations: Advances clinical data quality, biosafety, and sustainable food/health systems.",SRC_UN_SDG
+SSDG_0100,SKL_0100,3,Good Health and Well-Being,3.d,"Public Health Epidemiology: Advances clinical data quality, biosafety, and sustainable food/health systems.",SRC_UN_SDG
+SSDG_0101,SKL_0101,3,Good Health and Well-Being,3.d,"Occupational Safety and Health (OSH): Advances clinical data quality, biosafety, and sustainable food/health systems.",SRC_UN_SDG
+SSDG_0102,SKL_0102,3,Good Health and Well-Being,3.d,"Food Safety & Halal Assurance (HACCP): Advances clinical data quality, biosafety, and sustainable food/health systems.",SRC_UN_SDG
+SSDG_0103,SKL_0103,3,Good Health and Well-Being,3.d,"Bioprocess & Fermentation Engineering: Advances clinical data quality, biosafety, and sustainable food/health systems.",SRC_UN_SDG
+SSDG_0104,SKL_0104,3,Good Health and Well-Being,3.d,"Rehabilitation & Allied Health Care: Advances clinical data quality, biosafety, and sustainable food/health systems.",SRC_UN_SDG
+SSDG_0105,SKL_0105,3,Good Health and Well-Being,3.d,"Hospitality & Sustainable Tourism Management: Advances clinical data quality, biosafety, and sustainable food/health systems.",SRC_UN_SDG
+SSDG_0106,SKL_0106,4,Quality Education,4.4,Analytical & Critical Thinking: Equips youth and adults with transferable problem-solving and collaborative competencies.,SRC_UN_SDG
+SSDG_0107,SKL_0107,4,Quality Education,4.4,Cross-Functional Stakeholder Communication: Equips youth and adults with transferable problem-solving and collaborative competencies.,SRC_UN_SDG
+SSDG_0108,SKL_0108,4,Quality Education,4.4,Adaptability & Continuous Learning: Equips youth and adults with transferable problem-solving and collaborative competencies.,SRC_UN_SDG
+SSDG_0109,SKL_0109,4,Quality Education,4.4,Collaborative Teamwork & Psychological Safety: Equips youth and adults with transferable problem-solving and collaborative competencies.,SRC_UN_SDG
+SSDG_0110,SKL_0110,4,Quality Education,4.4,Project Planning & Time Prioritization: Equips youth and adults with transferable problem-solving and collaborative competencies.,SRC_UN_SDG
+SSDG_0111,SKL_0111,4,Quality Education,4.4,Ethical Judgment & Professional Integrity: Equips youth and adults with transferable problem-solving and collaborative competencies.,SRC_UN_SDG
+SSDG_0112,SKL_0112,4,Quality Education,4.4,Customer & Citizen Centricity: Equips youth and adults with transferable problem-solving and collaborative competencies.,SRC_UN_SDG
+SSDG_0113,SKL_0113,4,Quality Education,4.4,Leadership & Decision Making Under Uncertainty: Equips youth and adults with transferable problem-solving and collaborative competencies.,SRC_UN_SDG
+SSDG_0114,SKL_0114,4,Quality Education,4.4,Creative Ideation & Design Thinking: Equips youth and adults with transferable problem-solving and collaborative competencies.,SRC_UN_SDG
+SSDG_0115,SKL_0115,4,Quality Education,4.4,Negotiation & Consensus Building: Equips youth and adults with transferable problem-solving and collaborative competencies.,SRC_UN_SDG
+SSDG_0116,SKL_0116,8,Decent Work and Economic Growth,8.2,"Failure Analysis (FA) & Electron Microscopy: Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0117,SKL_0117,8,Decent Work and Economic Growth,8.2,"Malaysian Corporate Tax & E-Invoicing (LHDN): Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0118,SKL_0118,8,Decent Work and Economic Growth,8.2,"Bank Negara Malaysia RMiT Compliance: Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0119,SKL_0119,4,Quality Education,4.4,Design Token & Component Library Engineering: Enhances accessible human-computer interaction and digital literacy experiences.,SRC_UN_SDG
+SSDG_0120,SKL_0120,3,Good Health and Well-Being,3.d,"Genomic Sequencing & PCR Assay Design: Advances clinical data quality, biosafety, and sustainable food/health systems.",SRC_UN_SDG
+SSDG_0121,SKL_0121,9,"Industry, Innovation and Infrastructure",9.5,Apache Kafka Event Streaming: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0122,SKL_0122,9,"Industry, Innovation and Infrastructure",9.5,dbt Analytics Engineering: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0123,SKL_0123,9,"Industry, Innovation and Infrastructure",9.5,Synthetic Data Privacy & Anonymization: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0124,SKL_0124,9,"Industry, Innovation and Infrastructure",9.5,Recommender Systems Architecture: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0125,SKL_0125,9,"Industry, Innovation and Infrastructure",9.5,Speech Recognition & Audio ML: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0126,SKL_0126,9,"Industry, Innovation and Infrastructure",9.5,Go (Golang) Systems Programming: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0127,SKL_0127,9,"Industry, Innovation and Infrastructure",9.5,Rust Memory-Safe Programming: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0128,SKL_0128,9,"Industry, Innovation and Infrastructure",9.5,Java Enterprise Development: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0129,SKL_0129,9,"Industry, Innovation and Infrastructure",9.5,C# & .NET Core Architecture: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0130,SKL_0130,9,"Industry, Innovation and Infrastructure",9.5,Distributed Systems Consensus & Fault Tolerance: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0131,SKL_0131,13,Climate Action,13.3,"Malaysian Renewable Energy Act & NEM Compliance: Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0132,SKL_0132,13,Climate Action,13.3,"Green Financing & ASEAN Green Bonds: Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0133,SKL_0133,13,Climate Action,13.3,"Industrial Wastewater Effluent Treatment: Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0134,SKL_0134,8,Decent Work and Economic Growth,8.2,"SMT Surface Mount Technology Process: Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0135,SKL_0135,8,Decent Work and Economic Growth,8.2,"Cleanroom Contamination Control: Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0136,SKL_0136,8,Decent Work and Economic Growth,8.2,"Applied Failure Analysis (FA) & Electron Microscopy (136): Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0137,SKL_0137,8,Decent Work and Economic Growth,8.2,"Applied Malaysian Corporate Tax & E-Invoicing (LHDN) (137): Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0138,SKL_0138,8,Decent Work and Economic Growth,8.2,"Applied Bank Negara Malaysia RMiT Compliance (138): Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0139,SKL_0139,4,Quality Education,4.4,Applied Design Token & Component Library Engineering (139): Enhances accessible human-computer interaction and digital literacy experiences.,SRC_UN_SDG
+SSDG_0140,SKL_0140,3,Good Health and Well-Being,3.d,"Applied Genomic Sequencing & PCR Assay Design (140): Advances clinical data quality, biosafety, and sustainable food/health systems.",SRC_UN_SDG
+SSDG_0141,SKL_0141,9,"Industry, Innovation and Infrastructure",9.5,Applied Apache Kafka Event Streaming (141): Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0142,SKL_0142,9,"Industry, Innovation and Infrastructure",9.5,Applied dbt Analytics Engineering (142): Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0143,SKL_0143,9,"Industry, Innovation and Infrastructure",9.5,Applied Synthetic Data Privacy & Anonymization (143): Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0144,SKL_0144,9,"Industry, Innovation and Infrastructure",9.5,Applied Recommender Systems Architecture (144): Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0145,SKL_0145,9,"Industry, Innovation and Infrastructure",9.5,Applied Speech Recognition & Audio ML (145): Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0146,SKL_0146,9,"Industry, Innovation and Infrastructure",9.5,Applied Go (Golang) Systems Programming (146): Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0147,SKL_0147,9,"Industry, Innovation and Infrastructure",9.5,Applied Rust Memory-Safe Programming (147): Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0148,SKL_0148,9,"Industry, Innovation and Infrastructure",9.5,Applied Java Enterprise Development (148): Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0149,SKL_0149,9,"Industry, Innovation and Infrastructure",9.5,Applied C# & .NET Core Architecture (149): Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0150,SKL_0150,9,"Industry, Innovation and Infrastructure",9.5,Applied Distributed Systems Consensus & Fault Tolerance (150): Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0151,SKL_0151,13,Climate Action,13.3,"Applied Malaysian Renewable Energy Act & NEM Compliance (151): Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0152,SKL_0152,13,Climate Action,13.3,"Applied Green Financing & ASEAN Green Bonds (152): Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0153,SKL_0153,13,Climate Action,13.3,"Applied Industrial Wastewater Effluent Treatment (153): Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0154,SKL_0154,8,Decent Work and Economic Growth,8.2,"Applied SMT Surface Mount Technology Process (154): Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0155,SKL_0155,8,Decent Work and Economic Growth,8.2,"Applied Cleanroom Contamination Control (155): Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0156,SKL_0156,8,Decent Work and Economic Growth,8.2,"Advanced Failure Analysis (FA) & Electron Microscopy (156): Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0157,SKL_0157,8,Decent Work and Economic Growth,8.2,"Advanced Malaysian Corporate Tax & E-Invoicing (LHDN) (157): Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0158,SKL_0158,8,Decent Work and Economic Growth,8.2,"Advanced Bank Negara Malaysia RMiT Compliance (158): Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0159,SKL_0159,4,Quality Education,4.4,Advanced Design Token & Component Library Engineering (159): Enhances accessible human-computer interaction and digital literacy experiences.,SRC_UN_SDG
+SSDG_0160,SKL_0160,3,Good Health and Well-Being,3.d,"Advanced Genomic Sequencing & PCR Assay Design (160): Advances clinical data quality, biosafety, and sustainable food/health systems.",SRC_UN_SDG
+SSDG_0161,SKL_0161,9,"Industry, Innovation and Infrastructure",9.5,Advanced Apache Kafka Event Streaming (161): Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0162,SKL_0162,9,"Industry, Innovation and Infrastructure",9.5,Advanced dbt Analytics Engineering (162): Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0163,SKL_0163,9,"Industry, Innovation and Infrastructure",9.5,Advanced Synthetic Data Privacy & Anonymization (163): Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0164,SKL_0164,9,"Industry, Innovation and Infrastructure",9.5,Advanced Recommender Systems Architecture (164): Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0165,SKL_0165,9,"Industry, Innovation and Infrastructure",9.5,Advanced Speech Recognition & Audio ML (165): Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0166,SKL_0166,9,"Industry, Innovation and Infrastructure",9.5,Advanced Go (Golang) Systems Programming (166): Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0167,SKL_0167,9,"Industry, Innovation and Infrastructure",9.5,Advanced Rust Memory-Safe Programming (167): Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0168,SKL_0168,9,"Industry, Innovation and Infrastructure",9.5,Advanced Java Enterprise Development (168): Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0169,SKL_0169,9,"Industry, Innovation and Infrastructure",9.5,Advanced C# & .NET Core Architecture (169): Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0170,SKL_0170,9,"Industry, Innovation and Infrastructure",9.5,Advanced Distributed Systems Consensus & Fault Tolerance (170): Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0171,SKL_0171,13,Climate Action,13.3,"Advanced Malaysian Renewable Energy Act & NEM Compliance (171): Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0172,SKL_0172,13,Climate Action,13.3,"Advanced Green Financing & ASEAN Green Bonds (172): Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0173,SKL_0173,13,Climate Action,13.3,"Advanced Industrial Wastewater Effluent Treatment (173): Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0174,SKL_0174,8,Decent Work and Economic Growth,8.2,"Advanced SMT Surface Mount Technology Process (174): Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0175,SKL_0175,8,Decent Work and Economic Growth,8.2,"Advanced Cleanroom Contamination Control (175): Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0176,SKL_0176,8,Decent Work and Economic Growth,8.2,"Enterprise Failure Analysis (FA) & Electron Microscopy (176): Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0177,SKL_0177,8,Decent Work and Economic Growth,8.2,"Enterprise Malaysian Corporate Tax & E-Invoicing (LHDN) (177): Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0178,SKL_0178,8,Decent Work and Economic Growth,8.2,"Enterprise Bank Negara Malaysia RMiT Compliance (178): Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0179,SKL_0179,4,Quality Education,4.4,Enterprise Design Token & Component Library Engineering (179): Enhances accessible human-computer interaction and digital literacy experiences.,SRC_UN_SDG
+SSDG_0180,SKL_0180,3,Good Health and Well-Being,3.d,"Enterprise Genomic Sequencing & PCR Assay Design (180): Advances clinical data quality, biosafety, and sustainable food/health systems.",SRC_UN_SDG
+SSDG_0181,SKL_0181,9,"Industry, Innovation and Infrastructure",9.5,Enterprise Apache Kafka Event Streaming (181): Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0182,SKL_0182,9,"Industry, Innovation and Infrastructure",9.5,Enterprise dbt Analytics Engineering (182): Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0183,SKL_0183,9,"Industry, Innovation and Infrastructure",9.5,Enterprise Synthetic Data Privacy & Anonymization (183): Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0184,SKL_0184,9,"Industry, Innovation and Infrastructure",9.5,Enterprise Recommender Systems Architecture (184): Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0185,SKL_0185,9,"Industry, Innovation and Infrastructure",9.5,Enterprise Speech Recognition & Audio ML (185): Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0186,SKL_0186,9,"Industry, Innovation and Infrastructure",9.5,Enterprise Go (Golang) Systems Programming (186): Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0187,SKL_0187,9,"Industry, Innovation and Infrastructure",9.5,Enterprise Rust Memory-Safe Programming (187): Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0188,SKL_0188,9,"Industry, Innovation and Infrastructure",9.5,Enterprise Java Enterprise Development (188): Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0189,SKL_0189,9,"Industry, Innovation and Infrastructure",9.5,Enterprise C# & .NET Core Architecture (189): Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0190,SKL_0190,9,"Industry, Innovation and Infrastructure",9.5,Enterprise Distributed Systems Consensus & Fault Tolerance (190): Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0191,SKL_0191,13,Climate Action,13.3,"Enterprise Malaysian Renewable Energy Act & NEM Compliance (191): Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0192,SKL_0192,13,Climate Action,13.3,"Enterprise Green Financing & ASEAN Green Bonds (192): Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0193,SKL_0193,13,Climate Action,13.3,"Enterprise Industrial Wastewater Effluent Treatment (193): Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0194,SKL_0194,8,Decent Work and Economic Growth,8.2,"Enterprise SMT Surface Mount Technology Process (194): Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0195,SKL_0195,8,Decent Work and Economic Growth,8.2,"Enterprise Cleanroom Contamination Control (195): Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0196,SKL_0196,8,Decent Work and Economic Growth,8.2,"Regulatory Failure Analysis (FA) & Electron Microscopy (196): Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0197,SKL_0197,8,Decent Work and Economic Growth,8.2,"Regulatory Malaysian Corporate Tax & E-Invoicing (LHDN) (197): Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0198,SKL_0198,8,Decent Work and Economic Growth,8.2,"Regulatory Bank Negara Malaysia RMiT Compliance (198): Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0199,SKL_0199,4,Quality Education,4.4,Regulatory Design Token & Component Library Engineering (199): Enhances accessible human-computer interaction and digital literacy experiences.,SRC_UN_SDG
+SSDG_0200,SKL_0200,3,Good Health and Well-Being,3.d,"Regulatory Genomic Sequencing & PCR Assay Design (200): Advances clinical data quality, biosafety, and sustainable food/health systems.",SRC_UN_SDG
+SSDG_0201,SKL_0201,9,"Industry, Innovation and Infrastructure",9.5,Regulatory Apache Kafka Event Streaming (201): Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0202,SKL_0202,9,"Industry, Innovation and Infrastructure",9.5,Regulatory dbt Analytics Engineering (202): Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0203,SKL_0203,9,"Industry, Innovation and Infrastructure",9.5,Regulatory Synthetic Data Privacy & Anonymization (203): Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0204,SKL_0204,9,"Industry, Innovation and Infrastructure",9.5,Regulatory Recommender Systems Architecture (204): Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0205,SKL_0205,9,"Industry, Innovation and Infrastructure",9.5,Regulatory Speech Recognition & Audio ML (205): Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0206,SKL_0206,9,"Industry, Innovation and Infrastructure",9.5,Regulatory Go (Golang) Systems Programming (206): Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0207,SKL_0207,9,"Industry, Innovation and Infrastructure",9.5,Regulatory Rust Memory-Safe Programming (207): Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0208,SKL_0208,9,"Industry, Innovation and Infrastructure",9.5,Regulatory Java Enterprise Development (208): Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0209,SKL_0209,9,"Industry, Innovation and Infrastructure",9.5,Regulatory C# & .NET Core Architecture (209): Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0210,SKL_0210,9,"Industry, Innovation and Infrastructure",9.5,Regulatory Distributed Systems Consensus & Fault Tolerance (210): Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0211,SKL_0211,13,Climate Action,13.3,"Regulatory Malaysian Renewable Energy Act & NEM Compliance (211): Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0212,SKL_0212,13,Climate Action,13.3,"Regulatory Green Financing & ASEAN Green Bonds (212): Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0213,SKL_0213,13,Climate Action,13.3,"Regulatory Industrial Wastewater Effluent Treatment (213): Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0214,SKL_0214,8,Decent Work and Economic Growth,8.2,"Regulatory SMT Surface Mount Technology Process (214): Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0215,SKL_0215,8,Decent Work and Economic Growth,8.2,"Regulatory Cleanroom Contamination Control (215): Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0216,SKL_0216,8,Decent Work and Economic Growth,8.2,"Diagnostic Failure Analysis (FA) & Electron Microscopy (216): Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0217,SKL_0217,8,Decent Work and Economic Growth,8.2,"Diagnostic Malaysian Corporate Tax & E-Invoicing (LHDN) (217): Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0218,SKL_0218,8,Decent Work and Economic Growth,8.2,"Diagnostic Bank Negara Malaysia RMiT Compliance (218): Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0219,SKL_0219,4,Quality Education,4.4,Diagnostic Design Token & Component Library Engineering (219): Enhances accessible human-computer interaction and digital literacy experiences.,SRC_UN_SDG
+SSDG_0220,SKL_0220,3,Good Health and Well-Being,3.d,"Diagnostic Genomic Sequencing & PCR Assay Design (220): Advances clinical data quality, biosafety, and sustainable food/health systems.",SRC_UN_SDG
+SSDG_0221,SKL_0221,9,"Industry, Innovation and Infrastructure",9.5,Diagnostic Apache Kafka Event Streaming (221): Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0222,SKL_0222,9,"Industry, Innovation and Infrastructure",9.5,Diagnostic dbt Analytics Engineering (222): Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0223,SKL_0223,9,"Industry, Innovation and Infrastructure",9.5,Diagnostic Synthetic Data Privacy & Anonymization (223): Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0224,SKL_0224,9,"Industry, Innovation and Infrastructure",9.5,Diagnostic Recommender Systems Architecture (224): Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0225,SKL_0225,9,"Industry, Innovation and Infrastructure",9.5,Diagnostic Speech Recognition & Audio ML (225): Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0226,SKL_0226,9,"Industry, Innovation and Infrastructure",9.5,Diagnostic Go (Golang) Systems Programming (226): Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0227,SKL_0227,9,"Industry, Innovation and Infrastructure",9.5,Diagnostic Rust Memory-Safe Programming (227): Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0228,SKL_0228,9,"Industry, Innovation and Infrastructure",9.5,Diagnostic Java Enterprise Development (228): Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0229,SKL_0229,9,"Industry, Innovation and Infrastructure",9.5,Diagnostic C# & .NET Core Architecture (229): Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0230,SKL_0230,9,"Industry, Innovation and Infrastructure",9.5,Diagnostic Distributed Systems Consensus & Fault Tolerance (230): Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0231,SKL_0231,13,Climate Action,13.3,"Diagnostic Malaysian Renewable Energy Act & NEM Compliance (231): Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0232,SKL_0232,13,Climate Action,13.3,"Diagnostic Green Financing & ASEAN Green Bonds (232): Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0233,SKL_0233,13,Climate Action,13.3,"Diagnostic Industrial Wastewater Effluent Treatment (233): Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0234,SKL_0234,8,Decent Work and Economic Growth,8.2,"Diagnostic SMT Surface Mount Technology Process (234): Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0235,SKL_0235,8,Decent Work and Economic Growth,8.2,"Diagnostic Cleanroom Contamination Control (235): Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0236,SKL_0236,8,Decent Work and Economic Growth,8.2,"Optimization Failure Analysis (FA) & Electron Microscopy (236): Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0237,SKL_0237,8,Decent Work and Economic Growth,8.2,"Optimization Malaysian Corporate Tax & E-Invoicing (LHDN) (237): Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0238,SKL_0238,8,Decent Work and Economic Growth,8.2,"Optimization Bank Negara Malaysia RMiT Compliance (238): Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0239,SKL_0239,4,Quality Education,4.4,Optimization Design Token & Component Library Engineering (239): Enhances accessible human-computer interaction and digital literacy experiences.,SRC_UN_SDG
+SSDG_0240,SKL_0240,3,Good Health and Well-Being,3.d,"Optimization Genomic Sequencing & PCR Assay Design (240): Advances clinical data quality, biosafety, and sustainable food/health systems.",SRC_UN_SDG
+SSDG_0241,SKL_0241,9,"Industry, Innovation and Infrastructure",9.5,Optimization Apache Kafka Event Streaming (241): Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0242,SKL_0242,9,"Industry, Innovation and Infrastructure",9.5,Optimization dbt Analytics Engineering (242): Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0243,SKL_0243,9,"Industry, Innovation and Infrastructure",9.5,Optimization Synthetic Data Privacy & Anonymization (243): Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0244,SKL_0244,9,"Industry, Innovation and Infrastructure",9.5,Optimization Recommender Systems Architecture (244): Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0245,SKL_0245,9,"Industry, Innovation and Infrastructure",9.5,Optimization Speech Recognition & Audio ML (245): Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0246,SKL_0246,9,"Industry, Innovation and Infrastructure",9.5,Optimization Go (Golang) Systems Programming (246): Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0247,SKL_0247,9,"Industry, Innovation and Infrastructure",9.5,Optimization Rust Memory-Safe Programming (247): Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0248,SKL_0248,9,"Industry, Innovation and Infrastructure",9.5,Optimization Java Enterprise Development (248): Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0249,SKL_0249,9,"Industry, Innovation and Infrastructure",9.5,Optimization C# & .NET Core Architecture (249): Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0250,SKL_0250,9,"Industry, Innovation and Infrastructure",9.5,Optimization Distributed Systems Consensus & Fault Tolerance (250): Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0251,SKL_0251,13,Climate Action,13.3,"Optimization Malaysian Renewable Energy Act & NEM Compliance (251): Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0252,SKL_0252,13,Climate Action,13.3,"Optimization Green Financing & ASEAN Green Bonds (252): Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0253,SKL_0253,13,Climate Action,13.3,"Optimization Industrial Wastewater Effluent Treatment (253): Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0254,SKL_0254,8,Decent Work and Economic Growth,8.2,"Optimization SMT Surface Mount Technology Process (254): Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0255,SKL_0255,8,Decent Work and Economic Growth,8.2,"Optimization Cleanroom Contamination Control (255): Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0256,SKL_0256,8,Decent Work and Economic Growth,8.2,"Automated Failure Analysis (FA) & Electron Microscopy (256): Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0257,SKL_0257,8,Decent Work and Economic Growth,8.2,"Automated Malaysian Corporate Tax & E-Invoicing (LHDN) (257): Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0258,SKL_0258,8,Decent Work and Economic Growth,8.2,"Automated Bank Negara Malaysia RMiT Compliance (258): Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0259,SKL_0259,4,Quality Education,4.4,Automated Design Token & Component Library Engineering (259): Enhances accessible human-computer interaction and digital literacy experiences.,SRC_UN_SDG
+SSDG_0260,SKL_0260,3,Good Health and Well-Being,3.d,"Automated Genomic Sequencing & PCR Assay Design (260): Advances clinical data quality, biosafety, and sustainable food/health systems.",SRC_UN_SDG
+SSDG_0261,SKL_0261,9,"Industry, Innovation and Infrastructure",9.5,Automated Apache Kafka Event Streaming (261): Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0262,SKL_0262,9,"Industry, Innovation and Infrastructure",9.5,Automated dbt Analytics Engineering (262): Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0263,SKL_0263,9,"Industry, Innovation and Infrastructure",9.5,Automated Synthetic Data Privacy & Anonymization (263): Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0264,SKL_0264,9,"Industry, Innovation and Infrastructure",9.5,Automated Recommender Systems Architecture (264): Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0265,SKL_0265,9,"Industry, Innovation and Infrastructure",9.5,Automated Speech Recognition & Audio ML (265): Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0266,SKL_0266,9,"Industry, Innovation and Infrastructure",9.5,Automated Go (Golang) Systems Programming (266): Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0267,SKL_0267,9,"Industry, Innovation and Infrastructure",9.5,Automated Rust Memory-Safe Programming (267): Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0268,SKL_0268,9,"Industry, Innovation and Infrastructure",9.5,Automated Java Enterprise Development (268): Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0269,SKL_0269,9,"Industry, Innovation and Infrastructure",9.5,Automated C# & .NET Core Architecture (269): Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0270,SKL_0270,9,"Industry, Innovation and Infrastructure",9.5,Automated Distributed Systems Consensus & Fault Tolerance (270): Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0271,SKL_0271,13,Climate Action,13.3,"Automated Malaysian Renewable Energy Act & NEM Compliance (271): Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0272,SKL_0272,13,Climate Action,13.3,"Automated Green Financing & ASEAN Green Bonds (272): Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0273,SKL_0273,13,Climate Action,13.3,"Automated Industrial Wastewater Effluent Treatment (273): Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0274,SKL_0274,8,Decent Work and Economic Growth,8.2,"Automated SMT Surface Mount Technology Process (274): Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0275,SKL_0275,8,Decent Work and Economic Growth,8.2,"Automated Cleanroom Contamination Control (275): Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0276,SKL_0276,8,Decent Work and Economic Growth,8.2,"Foundational Failure Analysis (FA) & Electron Microscopy (276): Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0277,SKL_0277,8,Decent Work and Economic Growth,8.2,"Foundational Malaysian Corporate Tax & E-Invoicing (LHDN) (277): Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0278,SKL_0278,8,Decent Work and Economic Growth,8.2,"Foundational Bank Negara Malaysia RMiT Compliance (278): Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0279,SKL_0279,4,Quality Education,4.4,Foundational Design Token & Component Library Engineering (279): Enhances accessible human-computer interaction and digital literacy experiences.,SRC_UN_SDG
+SSDG_0280,SKL_0280,3,Good Health and Well-Being,3.d,"Foundational Genomic Sequencing & PCR Assay Design (280): Advances clinical data quality, biosafety, and sustainable food/health systems.",SRC_UN_SDG
