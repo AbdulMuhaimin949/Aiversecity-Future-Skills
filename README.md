@@ -185,8 +185,8 @@ RunPod is not used. The repository contains no RunPod endpoint, handler, or inte
 | Name | Role | GitHub |
 |---|---|---|
 | Muhammad Asynawi bin Azwarrudin | Team Leader / AI / Data / Integration | https://github.com/asynawiazwarrudin-byte |
-| Arfarusyaidi Zafran | Project Coordination | https://github.com/<ARFARUSYAIDI_USERNAME> |
-| Muhammad Amir Farhan bin Noor Azman | Frontend / UI/UX | https://github.com/<AMIR_USERNAME> |
+| Arfarusyaidi Zafran bin Joezainy | Project Coordination | https://github.com/ |
+| Muhammad Amir Farhan bin Noor Azman | Frontend / UI/UX | https://github.com/ |
 | Abdul Muhaimin bin Abdul Zalani | Backend / API Integration | https://github.com/AbdulMuhaimin949 |
 
 ## License
