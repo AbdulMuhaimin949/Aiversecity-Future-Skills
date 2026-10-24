@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.zip
+AIVERSECITY_COMPLETE_BUNDLE.md
