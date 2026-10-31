@@ -18,11 +18,11 @@
 | Resource | Link |
 |---|---|
 | GitHub Repository | https://github.com/AbdulMuhaimin949/Aiversecity-Future-Skills |
-| Live Demo | https://CtrlCV-AI-Skill.replit.app/ |
+| Live Demo | https://ctrlcv-analyzeai.replit.app/ |
 | RunPod Endpoint | Not applicable. The system does not use RunPod. |
 | Slide Deck | [AI Workforce Pathon pitch deck.pdf](./AI%20Workforce%20Pathon%20pitch%20deck.pdf) |
-| Demo Video | https://www.youtube.com/watch?v=DtsbfbobK18 |
-| Presentation Video | https://youtu.be/9EheDTVm41I |
+| Demo Video | https://youtu.be/mNFmoPtX0Mo |
+| Presentation Video |  |
 | Replit Proof of Use | [replit-utilization.jpg](./replit-utilization.jpg) |
 
 ## Overview
