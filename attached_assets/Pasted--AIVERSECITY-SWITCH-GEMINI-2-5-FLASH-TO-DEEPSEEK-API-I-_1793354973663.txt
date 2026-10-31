@@ -1,0 +1,142 @@
+# AIVERSECITY — SWITCH GEMINI 2.5 FLASH TO DEEPSEEK API
+
+I want to replace Google Gemini 2.5 Flash with DeepSeek for my existing Aiversecity AI Mentor chatbot.
+
+IMPORTANT:
+- Do not rebuild the website.
+- Preserve the existing Aiversecity interface.
+- Keep the floating Ask AI chatbot at the bottom-right.
+- Keep the existing blue robot mascot.
+- Keep the PostgreSQL database.
+- Keep the synthetic RAG knowledge base.
+- Preserve all existing functionality.
+
+## 1. SWITCH LLM PROVIDER
+
+Remove Gemini as the chat generation provider and integrate the official DeepSeek API.
+
+Use:
+
+Provider: DeepSeek
+Base URL: https://api.deepseek.com
+Model: deepseek-flash
+API key environment variable: DEEPSEEK_API_KEY
+
+DeepSeek supports an OpenAI-compatible API, so use the official OpenAI JavaScript SDK with the DeepSeek base URL.
+
+Use a configurable model name through DEEPSEEK_MODEL.
+
+Do not hardcode API keys.
+
+## 2. COST REQUIREMENTS
+
+I prefer free usage because this is a student hackathon project.
+
+Before enabling API calls:
+- Check whether my DeepSeek account has promotional credits.
+- Explain any usage charges.
+- Do not assume DeepSeek API is permanently free.
+- Do not automatically enable paid API usage without my approval.
+- Add rate limiting, token limits, and configurable usage safeguards.
+
+If DeepSeek API is unavailable due to insufficient balance, show a clear error rather than pretending the AI is working.
+
+## 3. PRESERVE RAG FUNCTIONALITY
+
+Do not delete my existing RAG knowledge database.
+
+Keep:
+- knowledge_sources
+- knowledge_documents
+- knowledge_chunks
+- knowledge_chunk_embeddings
+- knowledge_approvals
+
+The chatbot must retrieve approved synthetic knowledge before generating answers.
+
+RAG workflow:
+
+User Question → Knowledge Retrieval → DeepSeek → Grounded Answer + Citations
+
+Do not fabricate citations.
+
+IMPORTANT: DeepSeek chat generation and embedding generation are separate components.
+
+If existing Gemini embeddings are valid and the current embedding service is available, preserve the existing embedding model and vector index.
+
+Do not attempt to generate embeddings through the DeepSeek chat endpoint.
+
+If the embedding provider must change, implement a compatible embedding service and rebuild the vector index safely.
+
+## 4. THREE-LANGUAGE SUPPORT
+
+Maintain:
+- Bahasa Melayu (ms)
+- Mandarin Simplified Chinese (zh-CN)
+- English (en)
+
+Default language: Bahasa Melayu.
+
+DeepSeek must respond in the language selected by the user.
+
+## 5. CHATBOT UI
+
+Preserve the current floating chatbot.
+
+Keep:
+- Bottom-right position
+- Robot mascot
+- Blue and white Aiversecity theme
+- Chat history
+- New chat button
+- Minimize and close buttons
+- Source citations
+- Suggested questions
+
+Do not add Ask AI back to the top navigation.
+
+## 6. FIX CHATBOT READINESS
+
+My chatbot currently shows:
+
+"Mentor AI sedang disediakan. Belum ada pengetahuan diluluskan yang diindeks, jadi tiada apa untuk dicari."
+
+Investigate and resolve this separately from the LLM provider migration.
+
+Check:
+1. Synthetic documents imported
+2. Admin approval completed
+3. Knowledge chunks created
+4. Embeddings available
+5. Retrieval working
+6. DeepSeek API connection working
+
+Do not bypass approval checks.
+
+## 7. TESTING
+
+Test:
+
+"Apakah kemahiran yang diperlukan untuk menjadi Data Analyst?"
+
+Verify that:
+- DeepSeek generates the answer.
+- RAG retrieves approved synthetic documents.
+- The answer includes valid citations.
+- Bahasa Melayu, Mandarin and English work.
+- Chat history is saved.
+- No original system functionality is broken.
+
+## FINAL REPORT
+
+Provide:
+1. Actual DeepSeek model configured
+2. Successful API connection test
+3. API cost or available-credit status
+4. RAG retrieval status
+5. Number of approved knowledge documents
+6. Embedding service used
+7. Successful multilingual chatbot test
+8. Files modified and any remaining issues
+
+Do not replace the chatbot with hardcoded demo responses.

@@ -1,0 +1,121 @@
+# FIX AIVERSECITY AI MENTOR — FREE-FIRST RAG AND LLM
+
+My Aiversecity AI Mentor chatbot is not functioning.
+
+The latest diagnostics show:
+
+- ready: false
+- embeddingModel: null
+- approvedDocuments: 0
+- embeddedChunks: 0
+- 480 synthetic knowledge documents are pending approval
+- DeepSeek API is configured but its balance is $0.00
+
+I need a working AI chatbot for my student hackathon, preferably without paid API usage.
+
+## STEP 1 — ACTIVATE SYNTHETIC KNOWLEDGE
+
+Use the existing Admin Knowledge dashboard at `/admin/knowledge`.
+
+Implement or fix guarded bulk approval for the 480 synthetic documents.
+
+Requirements:
+- Only authorized admins can approve documents.
+- Approval must be explicitly confirmed.
+- Record approval decisions in PostgreSQL and audit logs.
+- Preserve source information and document versions.
+- Do not bypass access control.
+- Do not automatically approve unreviewed documents.
+
+## STEP 2 — IMPLEMENT FREE RAG RETRIEVAL
+
+First implement PostgreSQL full-text search for approved synthetic knowledge documents and chunks.
+
+This must function without calling Gemini or DeepSeek.
+
+Requirements:
+- Retrieve relevant approved documents.
+- Return ranked matching chunks.
+- Return document IDs and citations.
+- Filter out pending and rejected documents.
+- Support queries in Bahasa Melayu, Mandarin and English.
+
+Use a suitable multilingual search strategy. Add verified translations or local multilingual embeddings when feasible, because English keyword indexing alone is insufficient for cross-language search.
+
+Clearly identify full-text search as lexical retrieval rather than vector semantic search.
+
+If resources allow, add a local open-source multilingual embedding model and vector search later.
+
+## STEP 3 — DECOUPLE RAG FROM LLM READINESS
+
+Currently the chatbot blocks all requests when embeddings are missing.
+
+Separate status checks:
+
+- retrievalReady
+- embeddingReady
+- llmReady
+- chatReady
+
+Allow RAG retrieval through PostgreSQL even when Gemini embeddings are unavailable.
+
+Do not claim DeepSeek is available if its balance is insufficient.
+
+## STEP 4 — FIND A FREE LLM OPTION
+
+Check whether this Replit workspace supports any genuinely free LLM inference option.
+
+Requirements:
+- Supports BM, Mandarin and English.
+- Can receive retrieved knowledge context.
+- Can generate actual responses.
+- No unexpected API charges.
+
+Do not assume Replit Agent Free Mode means free application LLM inference.
+
+If no free inference option is available, report that clearly.
+
+Do not make paid API calls without my explicit approval.
+
+## STEP 5 — CONNECT THE FLOATING CHATBOT
+
+Preserve the existing Aiversecity chatbot design and blue robot mascot.
+
+When the user submits a question:
+
+1. Retrieve approved synthetic knowledge.
+2. Send retrieved evidence to the available LLM.
+3. Generate an answer in the selected language.
+4. Display citations from actual retrieved documents.
+5. Save chat history to PostgreSQL.
+
+If LLM inference is unavailable, provide an explicitly labelled search-only mode that displays retrieved knowledge directly, without pretending it was AI-generated.
+
+## STEP 6 — TEST
+
+Test these three questions:
+
+- Apakah kemahiran untuk Data Analyst?
+- What skills are needed for Data Analyst?
+- 成为数据分析师需要哪些技能？
+
+Confirm:
+- Approved documents can be retrieved.
+- Pending documents are excluded.
+- Actual citations are returned.
+- No paid model calls are made.
+- Chat UI accepts user input.
+- Errors are displayed clearly.
+
+## FINAL REPORT
+
+Report:
+1. Whether admin approval works.
+2. Number of approved documents.
+3. Number of searchable chunks.
+4. Retrieval method used.
+5. Free LLM provider availability.
+6. Actual chat functionality.
+7. Remaining limitations.
+
+Preserve the existing website and database. Do not rebuild Aiversecity.

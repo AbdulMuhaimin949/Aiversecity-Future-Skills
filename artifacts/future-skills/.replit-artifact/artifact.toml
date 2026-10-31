@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Aiversecity Future Skills"
+description = "A hackathon proof-of-concept for the Aiversecity Future-Ready Workforce domain. Takes a Malaysian worker, graduate or career switcher from their current skills profile to a Future Skills Radar (rising/slowing skills and roles under moderate vs fast AI-disruption scenarios), explainable future-role matches with skill gaps, and a personalised reskilling pathway with free HRD Corp e-LATiH resources, every role and skill linked to UN SDGs and cited to its data source."
+version = "1.0.0"
+id = "artifacts/future-skills"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25893
+
+[services.development]
+run = "pnpm --filter @workspace/future-skills run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/future-skills", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/future-skills/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25893"
+BASE_PATH = "/"

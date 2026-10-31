@@ -1,0 +1,712 @@
+# AIVERSECITY FUTURE SKILLS
+## MASTER DEVELOPMENT PROMPT — AI Career Intelligence Platform
+
+### YOUR ROLE
+
+Act as a senior full-stack software engineer, AI/ML engineer, NLP engineer, database architect, cybersecurity engineer, and system integration specialist.
+
+You are modifying an existing hackathon project called **Aiversecity Future Skills**.
+
+Your responsibility is to inspect, improve, connect, and test the existing modules to produce a functional AI-powered career intelligence platform.
+
+**CRITICAL INSTRUCTIONS:**
+
+- DO NOT rebuild the application from scratch.
+- DO NOT redesign the existing website.
+- DO NOT delete existing PostgreSQL records or synthetic datasets.
+- DO NOT replace working career-matching algorithms.
+- DO NOT create fake AI responses or fabricated citations.
+- DO NOT expose API keys.
+- DO NOT describe unfinished or mocked functionality as implemented.
+- Implement features incrementally and run tests after every phase.
+
+---
+
+# PHASE 1 — INSPECT EXISTING PROJECT
+
+Before modifying code, inspect the actual repository.
+
+Expected architecture:
+
+**Frontend**
+- React
+- TypeScript
+- Vite
+- Existing Aiversecity design system
+
+**Backend**
+- Express
+- TypeScript
+- Existing API routes
+
+**Database**
+- Replit PostgreSQL Development Database
+
+**Existing AI**
+- Floating Ask AI chatbot
+- PostgreSQL full-text retrieval
+- Synthetic RAG knowledge documents
+- Existing DeepSeek/Gemini integration attempts
+
+**Existing main features**
+- Profile
+- Future Skills Radar
+- Career Matches
+- Learning Pathway
+- CV Check
+- Human Review
+- Synthetic knowledge management
+
+Inspect all relevant source files, dependencies, environment variables, database tables, and API specifications.
+
+Generate an implementation map showing existing components, missing functionality, and required modifications.
+
+Reuse existing architecture.
+
+---
+
+# PHASE 2 — OFFICIAL KRACKDEVS HACKATHON LLM API
+
+## Objective
+
+Make the existing Aiversecity AI Mentor generate real LLM answers through the official hackathon API.
+
+The API uses an OpenAI-compatible endpoint.
+
+### Configuration
+
+Use these backend environment variables:
+
+- `KD_API_KEY`
+- `KD_BASE_URL`
+- `KD_MODEL`
+
+Base URL:
+
+`https://litellm.rapidscreen.io/v1`
+
+Selected LLM model:
+
+`gpt-5.4-mini`
+
+Use the exact model identifier without renaming it.
+
+Install or reuse an OpenAI-compatible Node.js SDK.
+
+### Security
+
+- Load the key only from Replit Secrets.
+- Never expose API credentials in browser code.
+- Never commit API keys to source control.
+- Never print credentials in logs.
+- Do not use Gemini or DeepSeek as automatic fallback providers.
+
+### Provider Implementation
+
+Create or reuse a server-side LLM provider abstraction.
+
+The provider should support:
+
+- Chat completions
+- Configurable model
+- Maximum output tokens
+- Request timeout
+- Error handling
+- Rate limiting
+- Usage logging
+- Provider availability reporting
+
+Handle:
+- Invalid API key
+- Unsupported model
+- Insufficient balance
+- Rate limits
+- Timeout
+- Service unavailable
+
+Before any live API call, ask for explicit authorization to consume hackathon credit.
+
+Use mocked responses only for automated unit tests, and clearly separate mocks from real LLM generation.
+
+---
+
+# PHASE 3 — ACTIVATE EXISTING SYNTHETIC RAG
+
+## Current Context
+
+Aiversecity previously imported approximately:
+
+- 240 occupations
+- 255 skills
+- 2,073 occupation-skill relationships
+- 480 synthetic RAG knowledge documents
+- 480 synthetic knowledge chunks
+
+Inspect current database counts rather than assuming these are unchanged.
+
+### RAG Workflow
+
+User Question
+→ PostgreSQL Retrieval
+→ Approved Synthetic Knowledge
+→ KrackDevs LLM
+→ Grounded AI Answer
+→ Source Citations
+
+Preserve the existing PostgreSQL full-text search implementation.
+
+Do not require Gemini embeddings for the existing lexical retrieval path.
+
+### Knowledge Approval
+
+Use the existing `/admin/knowledge` dashboard where available.
+
+Support:
+
+- Document validation
+- Source approval
+- Guarded bulk approval
+- Individual approval
+- Approval history
+- Audit logging
+- Source version tracking
+
+Only approved knowledge can reach the AI Mentor.
+
+Do not bypass human approval.
+
+### Retrieval Requirements
+
+- Retrieve actual approved documents.
+- Apply source and document approval filters.
+- Return matching chunk IDs.
+- Preserve original document IDs.
+- Return source references.
+- Preserve synthetic labels.
+- Prevent citation fabrication.
+
+Support Bahasa Melayu, Mandarin, and English queries.
+
+For cross-language retrieval, improve the existing small glossary or implement a suitable multilingual retrieval approach without making unapproved paid embedding calls.
+
+Label keyword retrieval accurately as lexical search.
+
+### Chatbot Readiness
+
+Maintain separate statuses:
+
+- `retrievalReady`
+- `embeddingReady`
+- `llmReady`
+- `chatReady`
+
+Do not block lexical RAG solely because vector embeddings are unavailable.
+
+Do not report that the live LLM works merely because credentials are configured.
+
+Preserve search-only fallback when generation is unavailable.
+
+---
+
+# PHASE 4 — FLOATING AI MENTOR CHATBOX
+
+Preserve the existing floating robot assistant.
+
+### Position
+
+- Bottom-right corner
+- Fixed positioning
+- Responsive desktop and mobile design
+- Does not interfere with the main page
+- No duplicate Ask AI button in top navigation
+
+### Design
+
+Preserve the existing:
+- Blue robot mascot
+- Royal blue header
+- White message bubbles
+- Navy and blue accents
+- Aiversecity typography
+- Minimize button
+- Close button
+- New conversation button
+- Chat history
+
+### Functionality
+
+Implement real end-to-end chat:
+
+1. User writes a question.
+2. Backend validates the request.
+3. Retrieval finds relevant approved synthetic knowledge.
+4. Backend sends retrieved evidence to the hackathon LLM.
+5. LLM generates an answer.
+6. Frontend displays the answer.
+7. Citations appear below relevant claims.
+8. Conversation is saved in PostgreSQL.
+
+Show whether a response is:
+- AI-generated
+- Search-only fallback
+
+Do not use hardcoded responses as if generated by the model.
+
+---
+
+# PHASE 5 — INTELLIGENT CV CHECKER WITH NLP
+
+## Objective
+
+Allow students to submit CVs for structured analysis and career guidance.
+
+Support:
+- PDF
+- DOCX
+- TXT where appropriate
+
+Use reliable document parsing and NLP extraction to identify:
+
+- Education
+- Work experience
+- Internships
+- Technical skills
+- Certifications
+- Projects
+- Employment dates
+- Qualifications
+
+### NLP Validation
+
+Detect potential:
+- Conflicting dates
+- Duplicate claims
+- Missing evidence
+- Qualification inconsistencies
+- Unclear work experience
+- Unsupported certification claims
+
+Never declare a CV fake merely because:
+- It contains AI-written language.
+- It has professional formatting.
+- It lacks a certificate.
+- It contains unusual wording.
+- It contains employment gaps.
+
+An actual trained ML model may be used only if the model, evaluation data, and performance have been documented.
+
+Otherwise describe the implementation as NLP, document parsing, or rule-based analysis.
+
+Use synthetic applicant data for the hackathon demonstration.
+
+---
+
+# PHASE 6 — CERTIFICATE VERIFICATION
+
+## Objective
+
+Evaluate certificate claims using evidence, not appearance alone.
+
+Support:
+- PDF certificates
+- PNG/JPG certificate images
+
+Use OCR when necessary.
+
+Extract:
+- Certificate holder
+- Issuing organization
+- Certificate title
+- Issue date
+- Credential ID
+- Verification URL, when present
+
+### Verification States
+
+- SELF_REPORTED
+- EVIDENCE_SUBMITTED
+- UNVERIFIED
+- EVIDENCE_SUPPORTED
+- HUMAN_REVIEW_REQUIRED
+
+Compare extracted details against the applicant's CV.
+
+When an authorized official issuer verification mechanism is available, support checking that evidence.
+
+Never claim that a certificate has been independently verified unless such a check actually succeeded.
+
+AI-generated-looking certificates are not automatically fraudulent.
+
+---
+
+# PHASE 7 — ALTERNATIVE SKILL VERIFICATION
+
+## Objective
+
+Students without certificates must still be able to demonstrate their skills.
+
+Add a feature called:
+
+**Aiversecity Skill Assessment**
+
+### Assessment Options
+
+1. Practical Skill Assessment
+2. Portfolio / GitHub Submission
+3. Project-Based Assessment
+4. Internship or Work Experience Evidence
+
+### Supported Skills for MVP
+
+- Python
+- SQL
+- Data Analysis
+
+Create a synthetic assessment question bank for the hackathon.
+
+### Assessment Requirements
+
+- Allow users to select a skill.
+- Display relevant assessment questions.
+- Accept answers.
+- Evaluate answers using deterministic grading.
+- Save actual scores.
+- Record assessment attempts.
+- Display strengths and weaknesses.
+- Provide feedback and learning suggestions.
+
+Do not allow the LLM to invent assessment scores.
+
+Avoid running arbitrary user-submitted code directly inside the application server.
+
+If sandboxed code execution is unavailable, use automatically graded conceptual, SQL interpretation, and code-tracing questions.
+
+### Results
+
+Distinguish:
+- Self-reported skill
+- Supporting evidence provided
+- Assessment completed
+- Competency demonstrated within assessment scope
+- Additional review required
+
+Do not represent internal assessment completion as an official professional certification.
+
+---
+
+# PHASE 8 — HUMAN-IN-THE-LOOP REVIEW
+
+Preserve human oversight for important verification decisions.
+
+Remove Admin Login from normal student navigation if it is currently displayed.
+
+However:
+
+**Do not remove authentication or authorization from protected reviewer and admin actions.**
+
+Keep protected reviewer functionality for:
+- Examining evidence
+- Reviewing claims
+- Requesting additional evidence
+- Escalating cases
+- Recording decisions
+- Recording rationales
+- Managing appeals
+
+### Review Decisions
+
+- EVIDENCE_SUFFICIENT
+- REQUEST_MORE_EVIDENCE
+- ESCALATED
+
+Each decision must record:
+- Reviewer identity
+- Claim ID
+- Evidence references
+- Verification method
+- Rationale
+- Timestamp
+- Review version
+
+Use append-only historical decision records and preserve audit logs.
+
+For the hackathon, provide secure fictional reviewer demonstrations.
+
+Do not expose unrestricted review endpoints to anonymous users.
+
+---
+
+# PHASE 9 — CONNECT CV ANALYSIS TO AI MENTOR
+
+The AI Mentor must be able to explain authorized user-specific results.
+
+Example questions:
+
+- What skills were found in my CV?
+- Is my certificate verified?
+- I have no Python certificate. What can I do?
+- What were my SQL assessment results?
+- Which skills should I improve?
+- Why did I match with Data Analyst?
+- Which learning pathway should I follow?
+
+### Data Flow
+
+Authorized User
+→ Private Profile & CV Analysis
+→ Assessment Results
+→ Approved Synthetic Career RAG
+→ Hackathon LLM
+→ Personalized Explanation
+
+The chatbot must only access information belonging to the authorized user.
+
+Keep private CV and certificate data separate from the shared career knowledge index.
+
+Require appropriate permission before sending relevant personal CV data to the external LLM provider.
+
+Minimize identifying information included in prompts.
+
+Never let the LLM override a recorded human review decision.
+
+---
+
+# PHASE 10 — SMART AUTOMATION
+
+Build lightweight event-based automation.
+
+### CV Automation
+
+When a CV is uploaded:
+- Validate file type.
+- Queue document parsing.
+- Extract skill claims.
+- Save extraction results.
+- Flag missing evidence.
+- Create review tasks only when needed.
+
+### Assessment Automation
+
+When an assessment is submitted:
+- Grade supported question types.
+- Save answers and scores.
+- Update assessment status.
+- Notify the user.
+
+### Reviewer Automation
+
+When a claim requires review:
+- Create a reviewer task.
+- Track review status.
+- Notify assigned reviewers.
+- Record audit events.
+
+### RAG Automation
+
+When approved knowledge changes:
+- Refresh searchable records.
+- Update retrieval metadata.
+- Keep rejected content excluded.
+
+Automated workflows must be idempotent and handle errors safely.
+
+Do not automatically decide whether an applicant is fraudulent.
+
+---
+
+# PHASE 11 — PRIVACY AND DATA PROTECTION
+
+Implement privacy-by-design.
+
+### Privacy Center
+
+Allow users to:
+- View privacy information.
+- Manage optional AI data usage consent.
+- Request a copy of their data.
+- Request correction of inaccurate information.
+- Request deletion where permitted.
+- Control optional learning reminders.
+
+### Security
+
+Implement:
+- Authentication
+- Role-based access control
+- Per-user data isolation
+- Private file storage
+- Input validation
+- File size/type validation
+- Rate limiting
+- Protected API secrets
+- Audit logging
+- Safe retention handling
+
+Do not store private applicant CVs in the shared RAG index.
+
+Do not expose personal documents to unauthorized users.
+
+Do not log raw CV contents or secrets unnecessarily.
+
+---
+
+# PHASE 12 — THREE-LANGUAGE SUPPORT
+
+Support:
+
+- Bahasa Melayu (`ms`)
+- Simplified Chinese (`zh-CN`)
+- English (`en`)
+
+Default: Bahasa Melayu.
+
+Apply translations to:
+- CV Checker
+- Certificate Verification
+- Skill Assessment
+- Assessment Results
+- AI Mentor
+- Human Review
+- Privacy Center
+- Error messages and notifications
+
+The LLM must respond in the user's selected language.
+
+Maintain original evidence text in the database.
+
+Preserve internal codes and identifiers independent of displayed language.
+
+---
+
+# PHASE 13 — DATABASE INTEGRATION
+
+Use the existing PostgreSQL Development Database.
+
+Inspect existing schemas and reuse existing tables.
+
+Expected existing entities include:
+
+- users
+- user_profiles
+- occupations
+- skills
+- occupation_skills
+- cv_documents
+- cv_claims
+- cv_claim_evidence
+- review_decisions
+- appeals
+- audit_logs
+- knowledge_documents
+- knowledge_chunks
+- chat_sessions
+- chat_messages
+
+Create only the missing database structures.
+
+Suggested additional entities:
+
+- skill_assessments
+- assessment_questions
+- assessment_attempts
+- assessment_answers
+- assessment_results
+- portfolio_evidence
+- privacy_preferences
+- privacy_requests
+- automation_jobs
+- notifications
+
+Use version-controlled migrations, foreign keys, appropriate indexes, and transaction safety.
+
+Preserve existing data.
+
+---
+
+# PHASE 14 — REQUIRED HACKATHON DEMONSTRATION
+
+Implement this complete scenario using fictional student information.
+
+### Fictional Student: Amir
+
+1. Amir opens Aiversecity.
+2. Amir uploads a synthetic CV.
+3. NLP extracts Python, SQL, and Excel skills.
+4. Amir does not have a Python certificate.
+5. The system offers a Python Skill Assessment.
+6. Amir completes the assessment.
+7. The system grades the submitted answers.
+8. The result is saved in PostgreSQL.
+9. A separate certificate claim is flagged for human review.
+10. An authorized reviewer checks the supporting evidence.
+11. The reviewer records a decision and rationale.
+12. The decision and audit log are saved.
+13. Amir opens the floating Ask AI chatbot.
+14. RAG retrieves approved synthetic career knowledge.
+15. The official hackathon LLM generates a personalized response using the permitted assessment summary and retrieved knowledge.
+16. The response includes real citations.
+17. Amir sees a recommended learning pathway.
+
+Clearly label synthetic data and simulated evidence.
+
+Do not fabricate assessment outcomes or independent certificate verification.
+
+---
+
+# PHASE 15 — END-TO-END TESTING
+
+Run tests for:
+
+- CV parsing
+- NLP extraction
+- Certificate parsing
+- Missing certificate handling
+- Skill assessment scoring
+- Database persistence
+- Human review permissions
+- Audit logging
+- Applicant appeals
+- RAG retrieval
+- Hackathon LLM integration
+- Citation accuracy
+- Language switching
+- Privacy consent enforcement
+- Cross-user data access prevention
+
+Test invalid input, missing evidence, unavailable LLM, insufficient credits, and rate limits.
+
+Keep search-only mode as a fallback when LLM generation is unavailable.
+
+Do not claim live AI functionality until a real authorized model request has succeeded.
+
+---
+
+# IMPLEMENTATION ORDER
+
+Implement sequentially:
+
+1. Inspect repository and existing database.
+2. Verify existing RAG and knowledge approval functionality.
+3. Prepare KrackDevs LLM provider integration.
+4. Connect existing Ask AI to grounded LLM generation.
+5. Implement NLP CV extraction.
+6. Implement certificate evidence checking.
+7. Implement alternative skill assessments.
+8. Integrate Human Review and audit logs.
+9. Connect CV and assessment results to AI Mentor.
+10. Add automation and privacy features.
+11. Complete multilingual support.
+12. Run end-to-end demonstration and tests.
+
+After each phase:
+- Explain code changes.
+- Show modified files.
+- Report database changes.
+- Report tests and failures.
+- Confirm existing functionality still works.
+
+If a feature already exists, improve or connect it rather than duplicating it.
+
+**Start with a repository inspection, then prioritize getting the existing Ask AI chatbot working with the official hackathon API and approved synthetic RAG knowledge before adding new features.**
+
+Do not make a chargeable API request until I explicitly authorize the initial live test.

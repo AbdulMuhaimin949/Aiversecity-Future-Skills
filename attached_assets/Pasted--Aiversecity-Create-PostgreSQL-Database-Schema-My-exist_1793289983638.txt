@@ -1,0 +1,86 @@
+# Aiversecity — Create PostgreSQL Database Schema
+
+My existing Aiversecity Future Skills project already has a Replit Development Database, but it currently contains zero tables.
+
+I want you to build the database foundation using the existing PostgreSQL database.
+
+IMPORTANT:
+- Do not create another database unnecessarily.
+- Do not rebuild or redesign Aiversecity.
+- Preserve all existing frontend components, routes, algorithms and CSV datasets.
+- Inspect the repository before modifying it.
+
+## Step 1 — Inspect the project
+
+Identify:
+- Existing Express backend architecture
+- Existing authentication implementation
+- Existing user profile storage
+- Existing career datasets under pipeline/data
+- Existing ORM or database configuration
+- Database connection availability
+
+## Step 2 — Create database schema
+
+Create the necessary tables for:
+
+1. Users, profiles, roles and language preferences
+2. Occupations, skills and occupation-skill relationships
+3. Career matching results
+4. Gemini chatbot sessions and messages
+5. RAG knowledge sources, documents and chunks
+6. Knowledge approval and ingestion tracking
+7. CV documents, claims and supporting evidence
+8. Human review decisions
+9. Audit logs and applicant appeals
+
+Use PostgreSQL with proper primary keys, foreign keys, indexes, timestamps and constraints.
+
+Support three languages:
+- Bahasa Melayu (ms)
+- Mandarin Simplified Chinese (zh-CN)
+- English (en)
+
+Default language: ms.
+
+## Step 3 — RAG preparation
+
+Check whether pgvector is available.
+
+If supported, prepare a knowledge embedding schema compatible with the Gemini embedding model and its configured dimensions.
+
+If unsupported, report the limitation and recommend a suitable vector store.
+
+Do not create fake embeddings or pretend retrieval is functioning.
+
+## Step 4 — Import existing data
+
+Inspect the existing Aiversecity CSV datasets.
+
+Create safe, repeatable import scripts for occupations, skills and related records.
+
+Preserve original IDs.
+
+Clearly distinguish synthetic data from real-world source data.
+
+## Step 5 — Verify everything
+
+- Run database migrations.
+- Confirm the tables appear under Replit Database → My Data.
+- Verify database connectivity.
+- Show table names and row counts.
+- Test foreign key relationships.
+- Confirm data persists after application restart.
+- Do not expose database credentials.
+
+## Step 6 — Report
+
+After completion, tell me:
+
+1. Which database tables were created.
+2. Which files were added or modified.
+3. Which datasets were imported.
+4. Whether pgvector is supported.
+5. Whether the database is ready for Gemini LLM and RAG integration.
+
+Do not build the complete chatbot yet. Complete the database foundation first.

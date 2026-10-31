@@ -1,0 +1,8 @@
+- [Pipeline data quirks](pipeline-data-quirks.md) — pathway_steps mostly mismatched, scenarios near-uniform; API compensates. Check before changing matching/pathways.
+- [World industries & CV scan](world-industries.md) — non-tech scope rules, ILO exposure assumptions, no-key AI scan decision.
+- [Skill AI-resilience badges](skill-resilience.md) — median-split score from role exposure/augmentation; scenario lambda ratio sets exposure penalty; why (1+lambda) failed.
+- [Frontend theme & codegen](frontend-theme.md) — blue-folder theme, AI Risk/Job Safety caveats, and generated-client/codegen quirks.
+- [Responsive overflow](responsive-overflow.md) — visually hidden tables need a clipped wrapper; intrinsic table width can create page-level scrolling.
+- [Gemini RAG assistant](gemini-rag.md) — CLI "--" quirk, 402 billing state, model availability, widget/SDK preferences.
+- [Production catalogue sync](production-catalogue-sync.md) — prod DB unreachable from workspace; published API imports catalogue at startup, data-only, change-gated.
+- [CV review, reviewer/admin auth](cv-review-auth.md) — zod coerce.boolean trap, REVIEWER_EMAILS/ADMIN_EMAILS bootstrap, separate embed step, signed-in test recipe.

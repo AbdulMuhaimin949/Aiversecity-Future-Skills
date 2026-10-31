@@ -1,0 +1,23 @@
+Please do a complete frontend UI/UX redesign of my app into an "Aesthetic iOS Core / Layered Blue Folder" theme while keeping 100% of my existing backend data, CV parsing, MASCO/MyCOL figures, and scenario logic untouched.
+
+First, save these design rules into a file called `design-system/MASTER.md` and apply them across all pages (Landing Hero, Step 1 Profile, Step 2 Radar, Step 3 Matches, Step 4 Pathway):
+
+1. COLOR PALETTE & EDITORIAL THEME:
+- Main Page Background: Warm Editorial Cream (`#F5F3EB`) with a subtle dot-grid background.
+- Replace all dark-green (`#0D6E5B`) buttons and accents with our 3-Tone iOS Blue Folder palette:
+  - Back Folder Tab: Deep Navy (`#0B4F9E`)
+  - Middle Folder Tab: Classic Royal Blue (`#1E78D6`)
+  - Front Active Folder Shell: Bright iOS Sky Blue (`#3898F8`) with rounded corners (`28px`) and crisp white inner cards (`#FFFFFF`).
+- Top Step Navigation (1 Profile, 2 Radar, 3 Matches, 4 Pathway): Turn these into physical notched blue folder-ear tabs stacked on top of the main container so switching steps looks like flipping through stacked blue folders.
+- Typography: Huge bold geometric headers (`#18191C`) + clean sans-serif body text + monospace badges (`JetBrains Mono`).
+
+2. SIGNATURE VISUAL ELEMENTS:
+- Floating Tilted Charcoal Pills: Add floating dark charcoal badges (`#18191C` background, white text, rotated `-3deg` or `+2deg`) overlapping card corners (e.g., "2026 Edition", "A career compass for Malaysia's AI era", "TOP #01 MATCH").
+- "Result & Growth" Circular Metric Badges: Display key percentages (AI Exposure %, Augmentation %, Demand Forecast %) inside soft pastel-blue circles (`#DCE8F5`) with bold numbers and a small dark pill label underneath.
+
+3. INTERACTIVE 3D PHYSICS LANYARD FOR TOP 3 MATCHES (STEP 3 & STEP 4):
+- In Step 3 (Matches) and Step 4 (Pathway), highlight the user's Top 3 Matched Positions with stacked blue folder tabs (#1, #2, #3).
+- Alongside the role details and Demand Index chart, build an interactive "3D Lanyard Role Pass" component using HTML5 Canvas + CSS 3D transforms:
+  - Render a woven black lanyard strap from the top of the card container connected to a hanging iOS-blue & white ID badge.
+  - Add spring-pendulum physics so the user can grab, drag, pull, and release the badge with their mouse/touch and watch it swing naturally.
+  - Clicking the badge flips it 180 degrees in 3D (Front: User Name, Top Matched Role Title, Match %, MASCO code, and a custom animated SVG illustration representing that specific job; Back: Required Skills checklist, SDG alignment, and verified source barcode).

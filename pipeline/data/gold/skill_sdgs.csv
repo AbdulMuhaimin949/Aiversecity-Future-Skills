@@ -1,0 +1,256 @@
+skill_sdg_id,skill_id,sdg_goal_number,sdg_goal_title,sdg_target_code,evidence_rationale,source_id
+SSDG_0001,SKL_0001,9,"Industry, Innovation and Infrastructure",9.5,Python Programming: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0002,SKL_0002,9,"Industry, Innovation and Infrastructure",9.5,SQL & Relational Databases: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0003,SKL_0003,9,"Industry, Innovation and Infrastructure",9.5,Machine Learning Engineering: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0004,SKL_0004,9,"Industry, Innovation and Infrastructure",9.5,Deep Learning & Neural Networks: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0005,SKL_0005,9,"Industry, Innovation and Infrastructure",9.5,Natural Language Processing: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0006,SKL_0006,9,"Industry, Innovation and Infrastructure",9.5,Retrieval-Augmented Generation: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0007,SKL_0007,9,"Industry, Innovation and Infrastructure",9.5,Computer Vision: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0008,SKL_0008,9,"Industry, Innovation and Infrastructure",9.5,Data Engineering & ETL Pipelines: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0009,SKL_0009,9,"Industry, Innovation and Infrastructure",9.5,Big Data Distributed Computing: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0010,SKL_0010,9,"Industry, Innovation and Infrastructure",9.5,Data Warehousing & Lakehouse: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0011,SKL_0011,9,"Industry, Innovation and Infrastructure",9.5,Business Intelligence & Dashboards: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0012,SKL_0012,9,"Industry, Innovation and Infrastructure",9.5,Statistical Analysis & Hypothesis Testing: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0013,SKL_0013,9,"Industry, Innovation and Infrastructure",9.5,Time-Series Forecasting: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0014,SKL_0014,9,"Industry, Innovation and Infrastructure",9.5,MLOps & Model Deployment: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0015,SKL_0015,9,"Industry, Innovation and Infrastructure",9.5,"AI Ethics, Governance & Bias Auditing: Builds scientific and data analytics capabilities for industrial innovation.",SRC_UN_SDG
+SSDG_0016,SKL_0016,9,"Industry, Innovation and Infrastructure",9.5,Data Governance & PDPA Compliance: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0017,SKL_0017,9,"Industry, Innovation and Infrastructure",9.5,Graph Analytics & Knowledge Graphs: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0018,SKL_0018,9,"Industry, Innovation and Infrastructure",9.5,Quantitative Risk Modeling: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0019,SKL_0019,9,"Industry, Innovation and Infrastructure",9.5,Geospatial Data Analysis: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0020,SKL_0020,9,"Industry, Innovation and Infrastructure",9.5,Bioinformatics & Genomic Data: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0021,SKL_0021,9,"Industry, Innovation and Infrastructure",9.5,JavaScript & TypeScript Development: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0022,SKL_0022,9,"Industry, Innovation and Infrastructure",9.5,React & Modern Web Frameworks: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0023,SKL_0023,9,"Industry, Innovation and Infrastructure",9.5,Backend API Development: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0024,SKL_0024,9,"Industry, Innovation and Infrastructure",9.5,Cloud Computing Architecture: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0025,SKL_0025,9,"Industry, Innovation and Infrastructure",9.5,Containerization & Kubernetes: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0026,SKL_0026,9,"Industry, Innovation and Infrastructure",9.5,CI/CD & DevOps Automation: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0027,SKL_0027,9,"Industry, Innovation and Infrastructure",9.5,Cybersecurity Operations & SOC: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0028,SKL_0028,9,"Industry, Innovation and Infrastructure",9.5,Penetration Testing & Vulnerability Assessment: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0029,SKL_0029,9,"Industry, Innovation and Infrastructure",9.5,Cloud & Network Security: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0030,SKL_0030,9,"Industry, Innovation and Infrastructure",9.5,Mobile Application Development: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0031,SKL_0031,9,"Industry, Innovation and Infrastructure",9.5,Microservices & Event-Driven Systems: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0032,SKL_0032,9,"Industry, Innovation and Infrastructure",9.5,Software Quality Assurance & Test Automation: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0033,SKL_0033,9,"Industry, Innovation and Infrastructure",9.5,Embedded C/C++ Firmware Development: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0034,SKL_0034,9,"Industry, Innovation and Infrastructure",9.5,Blockchain & Smart Contracts: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0035,SKL_0035,9,"Industry, Innovation and Infrastructure",9.5,Database Administration & Tuning: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0036,SKL_0036,9,"Industry, Innovation and Infrastructure",9.5,Linux System Administration: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0037,SKL_0037,9,"Industry, Innovation and Infrastructure",9.5,Enterprise ERP Configuration: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0038,SKL_0038,9,"Industry, Innovation and Infrastructure",9.5,Mainframe & Legacy Modernization: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0039,SKL_0039,9,"Industry, Innovation and Infrastructure",9.5,Site Reliability Engineering: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0040,SKL_0040,9,"Industry, Innovation and Infrastructure",9.5,API Gateway & Systems Integration: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0041,SKL_0041,13,Climate Action,13.3,"Carbon Accounting & GHG Inventory: Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0042,SKL_0042,13,Climate Action,13.3,"ESG Reporting & Bursa Malaysia Sustainability: Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0043,SKL_0043,13,Climate Action,13.3,"Solar Photovoltaic System Design: Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0044,SKL_0044,13,Climate Action,13.3,"Energy Efficiency & Building Audits: Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0045,SKL_0045,13,Climate Action,13.3,"Circular Economy & Waste Valorization: Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0046,SKL_0046,13,Climate Action,13.3,"Life Cycle Assessment (LCA): Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0047,SKL_0047,13,Climate Action,13.3,"Environmental Impact Assessment (EIA): Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0048,SKL_0048,13,Climate Action,13.3,"Sustainable Supply Chain Traceability: Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0049,SKL_0049,13,Climate Action,13.3,"Electric Vehicle & Battery Management Systems: Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0050,SKL_0050,13,Climate Action,13.3,"Hydrogen & Alternative Fuels Engineering: Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0051,SKL_0051,13,Climate Action,13.3,"Climate Risk & Scenario Modeling: Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0052,SKL_0052,13,Climate Action,13.3,"Smart Grid & Energy Storage Integration: Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0053,SKL_0053,13,Climate Action,13.3,"Biodiversity & Conservation Management: Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0054,SKL_0054,13,Climate Action,13.3,"Precision Agriculture & Smart Farming: Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0055,SKL_0055,13,Climate Action,13.3,"Water Resource & Flood Mitigation Engineering: Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0056,SKL_0056,8,Decent Work and Economic Growth,8.2,"Semiconductor IC Design & VLSI: Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0057,SKL_0057,8,Decent Work and Economic Growth,8.2,"Semiconductor Wafer Fabrication & Packaging: Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0058,SKL_0058,8,Decent Work and Economic Growth,8.2,"Automated Test Equipment (ATE) Engineering: Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0059,SKL_0059,8,Decent Work and Economic Growth,8.2,"PLC & SCADA Industrial Automation: Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0060,SKL_0060,8,Decent Work and Economic Growth,8.2,"Industrial Robotics & Cobots: Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0061,SKL_0061,8,Decent Work and Economic Growth,8.2,"Lean Six Sigma & Continuous Improvement: Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0062,SKL_0062,8,Decent Work and Economic Growth,8.2,"CAD/CAM & 3D Mechanical Modeling: Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0063,SKL_0063,8,Decent Work and Economic Growth,8.2,"Additive Manufacturing & 3D Printing: Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0064,SKL_0064,8,Decent Work and Economic Growth,8.2,"Chemical Process Simulation & Safety: Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0065,SKL_0065,8,Decent Work and Economic Growth,8.2,"Quality Management Systems (ISO 9001/IATF): Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0066,SKL_0066,8,Decent Work and Economic Growth,8.2,"Aerospace Avionics & MRO Operations: Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0067,SKL_0067,8,Decent Work and Economic Growth,8.2,"Supply Chain & Logistics Optimization: Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0068,SKL_0068,8,Decent Work and Economic Growth,8.2,"Predictive Maintenance & IIoT Sensors: Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0069,SKL_0069,8,Decent Work and Economic Growth,8.2,"Printed Circuit Board (PCB) Layout: Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0070,SKL_0070,8,Decent Work and Economic Growth,8.2,"Civil Structural BIM Modeling: Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0071,SKL_0071,8,Decent Work and Economic Growth,8.2,"Financial Modeling & Valuation: Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0072,SKL_0072,8,Decent Work and Economic Growth,8.2,"Islamic Finance & Shariah Compliance: Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0073,SKL_0073,8,Decent Work and Economic Growth,8.2,"Management Accounting & Cost Control: Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0074,SKL_0074,8,Decent Work and Economic Growth,8.2,"External & Internal Auditing: Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0075,SKL_0075,8,Decent Work and Economic Growth,8.2,"FinTech Digital Payments & E-Wallets: Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0076,SKL_0076,8,Decent Work and Economic Growth,8.2,"Anti-Money Laundering (AML) & KYC: Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0077,SKL_0077,8,Decent Work and Economic Growth,8.2,"Digital Marketing & Performance Analytics: Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0078,SKL_0078,8,Decent Work and Economic Growth,8.2,"E-Commerce Marketplace Management: Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0079,SKL_0079,8,Decent Work and Economic Growth,8.2,"Agile Product Management: Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0080,SKL_0080,8,Decent Work and Economic Growth,8.2,"Human Resource Analytics & Talent Acquisition: Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0081,SKL_0081,8,Decent Work and Economic Growth,8.2,"Learning & Development Instructional Design: Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0082,SKL_0082,8,Decent Work and Economic Growth,8.2,"Business Development & B2B Enterprise Sales: Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0083,SKL_0083,8,Decent Work and Economic Growth,8.2,"Procurement & Vendor Contract Management: Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0084,SKL_0084,8,Decent Work and Economic Growth,8.2,"Risk Management & Corporate Governance: Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0085,SKL_0085,8,Decent Work and Economic Growth,8.2,"Actuarial Pricing & Reserving: Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0086,SKL_0086,4,Quality Education,4.4,UI/UX Design & Wireframing: Enhances accessible human-computer interaction and digital literacy experiences.,SRC_UN_SDG
+SSDG_0087,SKL_0087,4,Quality Education,4.4,User Research & Usability Testing: Enhances accessible human-computer interaction and digital literacy experiences.,SRC_UN_SDG
+SSDG_0088,SKL_0088,4,Quality Education,4.4,3D Animation & Game Asset Creation: Enhances accessible human-computer interaction and digital literacy experiences.,SRC_UN_SDG
+SSDG_0089,SKL_0089,4,Quality Education,4.4,Game Engine Development (Unity/Unreal): Enhances accessible human-computer interaction and digital literacy experiences.,SRC_UN_SDG
+SSDG_0090,SKL_0090,4,Quality Education,4.4,Motion Graphics & Video Compositing: Enhances accessible human-computer interaction and digital literacy experiences.,SRC_UN_SDG
+SSDG_0091,SKL_0091,4,Quality Education,4.4,Technical Writing & API Documentation: Enhances accessible human-computer interaction and digital literacy experiences.,SRC_UN_SDG
+SSDG_0092,SKL_0092,4,Quality Education,4.4,Content Strategy & Copywriting: Enhances accessible human-computer interaction and digital literacy experiences.,SRC_UN_SDG
+SSDG_0093,SKL_0093,4,Quality Education,4.4,Graphic Design & Brand Identity: Enhances accessible human-computer interaction and digital literacy experiences.,SRC_UN_SDG
+SSDG_0094,SKL_0094,4,Quality Education,4.4,Sound Design & Interactive Audio: Enhances accessible human-computer interaction and digital literacy experiences.,SRC_UN_SDG
+SSDG_0095,SKL_0095,4,Quality Education,4.4,Digital Accessibility (WCAG) Auditing: Enhances accessible human-computer interaction and digital literacy experiences.,SRC_UN_SDG
+SSDG_0096,SKL_0096,3,Good Health and Well-Being,3.d,"Clinical Data Management & EHR: Advances clinical data quality, biosafety, and sustainable food/health systems.",SRC_UN_SDG
+SSDG_0097,SKL_0097,3,Good Health and Well-Being,3.d,"Medical Device Regulatory Affairs: Advances clinical data quality, biosafety, and sustainable food/health systems.",SRC_UN_SDG
+SSDG_0098,SKL_0098,3,Good Health and Well-Being,3.d,"Pharmaceutical GMP & Quality Control: Advances clinical data quality, biosafety, and sustainable food/health systems.",SRC_UN_SDG
+SSDG_0099,SKL_0099,3,Good Health and Well-Being,3.d,"Telemedicine & Digital Health Operations: Advances clinical data quality, biosafety, and sustainable food/health systems.",SRC_UN_SDG
+SSDG_0100,SKL_0100,3,Good Health and Well-Being,3.d,"Public Health Epidemiology: Advances clinical data quality, biosafety, and sustainable food/health systems.",SRC_UN_SDG
+SSDG_0101,SKL_0101,3,Good Health and Well-Being,3.d,"Occupational Safety and Health (OSH): Advances clinical data quality, biosafety, and sustainable food/health systems.",SRC_UN_SDG
+SSDG_0102,SKL_0102,3,Good Health and Well-Being,3.d,"Food Safety & Halal Assurance (HACCP): Advances clinical data quality, biosafety, and sustainable food/health systems.",SRC_UN_SDG
+SSDG_0103,SKL_0103,3,Good Health and Well-Being,3.d,"Bioprocess & Fermentation Engineering: Advances clinical data quality, biosafety, and sustainable food/health systems.",SRC_UN_SDG
+SSDG_0104,SKL_0104,3,Good Health and Well-Being,3.d,"Rehabilitation & Allied Health Care: Advances clinical data quality, biosafety, and sustainable food/health systems.",SRC_UN_SDG
+SSDG_0105,SKL_0105,3,Good Health and Well-Being,3.d,"Hospitality & Sustainable Tourism Management: Advances clinical data quality, biosafety, and sustainable food/health systems.",SRC_UN_SDG
+SSDG_0106,SKL_0106,4,Quality Education,4.4,Analytical & Critical Thinking: Equips youth and adults with transferable problem-solving and collaborative competencies.,SRC_UN_SDG
+SSDG_0107,SKL_0107,4,Quality Education,4.4,Cross-Functional Stakeholder Communication: Equips youth and adults with transferable problem-solving and collaborative competencies.,SRC_UN_SDG
+SSDG_0108,SKL_0108,4,Quality Education,4.4,Adaptability & Continuous Learning: Equips youth and adults with transferable problem-solving and collaborative competencies.,SRC_UN_SDG
+SSDG_0109,SKL_0109,4,Quality Education,4.4,Collaborative Teamwork & Psychological Safety: Equips youth and adults with transferable problem-solving and collaborative competencies.,SRC_UN_SDG
+SSDG_0110,SKL_0110,4,Quality Education,4.4,Project Planning & Time Prioritization: Equips youth and adults with transferable problem-solving and collaborative competencies.,SRC_UN_SDG
+SSDG_0111,SKL_0111,4,Quality Education,4.4,Ethical Judgment & Professional Integrity: Equips youth and adults with transferable problem-solving and collaborative competencies.,SRC_UN_SDG
+SSDG_0112,SKL_0112,4,Quality Education,4.4,Customer & Citizen Centricity: Equips youth and adults with transferable problem-solving and collaborative competencies.,SRC_UN_SDG
+SSDG_0113,SKL_0113,4,Quality Education,4.4,Leadership & Decision Making Under Uncertainty: Equips youth and adults with transferable problem-solving and collaborative competencies.,SRC_UN_SDG
+SSDG_0114,SKL_0114,4,Quality Education,4.4,Creative Ideation & Design Thinking: Equips youth and adults with transferable problem-solving and collaborative competencies.,SRC_UN_SDG
+SSDG_0115,SKL_0115,4,Quality Education,4.4,Negotiation & Consensus Building: Equips youth and adults with transferable problem-solving and collaborative competencies.,SRC_UN_SDG
+SSDG_0116,SKL_0116,9,"Industry, Innovation and Infrastructure",9.5,Apache Kafka Event Streaming: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0117,SKL_0117,9,"Industry, Innovation and Infrastructure",9.5,dbt Analytics Engineering: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0118,SKL_0118,9,"Industry, Innovation and Infrastructure",9.5,Synthetic Data Privacy & Anonymization: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0119,SKL_0119,9,"Industry, Innovation and Infrastructure",9.5,Recommender Systems Architecture: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0120,SKL_0120,9,"Industry, Innovation and Infrastructure",9.5,Speech Recognition & Audio ML: Builds scientific and data analytics capabilities for industrial innovation.,SRC_UN_SDG
+SSDG_0121,SKL_0121,9,"Industry, Innovation and Infrastructure",9.5,Go (Golang) Systems Programming: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0122,SKL_0122,9,"Industry, Innovation and Infrastructure",9.5,Rust Memory-Safe Programming: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0123,SKL_0123,9,"Industry, Innovation and Infrastructure",9.5,Java Enterprise Development: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0124,SKL_0124,9,"Industry, Innovation and Infrastructure",9.5,C# & .NET Core Architecture: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0125,SKL_0125,9,"Industry, Innovation and Infrastructure",9.5,Distributed Systems Consensus & Fault Tolerance: Develops resilient digital software and cybersecurity infrastructure.,SRC_UN_SDG
+SSDG_0126,SKL_0126,13,Climate Action,13.3,"Malaysian Renewable Energy Act & NEM Compliance: Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0127,SKL_0127,13,Climate Action,13.3,"Green Financing & ASEAN Green Bonds: Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0128,SKL_0128,13,Climate Action,13.3,"Industrial Wastewater Effluent Treatment: Directly enables decarbonization, renewable energy transition, and climate reporting.",SRC_UN_SDG
+SSDG_0129,SKL_0129,8,Decent Work and Economic Growth,8.2,"SMT Surface Mount Technology Process: Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0130,SKL_0130,8,Decent Work and Economic Growth,8.2,"Cleanroom Contamination Control: Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0131,SKL_0131,8,Decent Work and Economic Growth,8.2,"Failure Analysis (FA) & Electron Microscopy: Drives high-value-added semiconductor, automation, and industrial productivity.",SRC_UN_SDG
+SSDG_0132,SKL_0132,8,Decent Work and Economic Growth,8.2,"Malaysian Corporate Tax & E-Invoicing (LHDN): Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0133,SKL_0133,8,Decent Work and Economic Growth,8.2,"Bank Negara Malaysia RMiT Compliance: Strengthens inclusive financial management, governance, and decent work systems.",SRC_UN_SDG
+SSDG_0134,SKL_0134,4,Quality Education,4.4,Design Token & Component Library Engineering: Enhances accessible human-computer interaction and digital literacy experiences.,SRC_UN_SDG
+SSDG_0135,SKL_0135,3,Good Health and Well-Being,3.d,"Genomic Sequencing & PCR Assay Design: Advances clinical data quality, biosafety, and sustainable food/health systems.",SRC_UN_SDG
+SSDG_0136,SKL_0136,8,Decent Work and Economic Growth,8.9,Front Office & Guest Relations: Supports tourism jobs that promote local culture and products.,SRC_UN_SDG
+SSDG_0137,SKL_0137,8,Decent Work and Economic Growth,8.9,Food & Beverage Service: Supports tourism jobs that promote local culture and products.,SRC_UN_SDG
+SSDG_0138,SKL_0138,8,Decent Work and Economic Growth,8.9,Culinary Arts & Kitchen Operations: Supports tourism jobs that promote local culture and products.,SRC_UN_SDG
+SSDG_0139,SKL_0139,8,Decent Work and Economic Growth,8.9,Food Handling & Kitchen Hygiene: Supports tourism jobs that promote local culture and products.,SRC_UN_SDG
+SSDG_0140,SKL_0140,8,Decent Work and Economic Growth,8.9,Housekeeping & Room Operations: Supports tourism jobs that promote local culture and products.,SRC_UN_SDG
+SSDG_0141,SKL_0141,8,Decent Work and Economic Growth,8.9,Tour Guiding & Destination Knowledge: Supports tourism jobs that promote local culture and products.,SRC_UN_SDG
+SSDG_0142,SKL_0142,8,Decent Work and Economic Growth,8.9,Travel Booking & Reservation Systems: Supports tourism jobs that promote local culture and products.,SRC_UN_SDG
+SSDG_0143,SKL_0143,8,Decent Work and Economic Growth,8.9,Event & Banquet Coordination: Supports tourism jobs that promote local culture and products.,SRC_UN_SDG
+SSDG_0144,SKL_0144,8,Decent Work and Economic Growth,8.9,Hotel Rooms Division Management: Supports tourism jobs that promote local culture and products.,SRC_UN_SDG
+SSDG_0145,SKL_0145,8,Decent Work and Economic Growth,8.9,Multilingual Guest Communication: Supports tourism jobs that promote local culture and products.,SRC_UN_SDG
+SSDG_0146,SKL_0146,8,Decent Work and Economic Growth,8.9,Barista & Beverage Preparation: Supports tourism jobs that promote local culture and products.,SRC_UN_SDG
+SSDG_0147,SKL_0147,8,Decent Work and Economic Growth,8.9,"Spa, Beauty & Wellness Services: Supports tourism jobs that promote local culture and products.",SRC_UN_SDG
+SSDG_0148,SKL_0148,8,Decent Work and Economic Growth,8.5,Retail Sales & Product Knowledge: Supports productive employment in one of the largest entry-level job sectors.,SRC_UN_SDG
+SSDG_0149,SKL_0149,8,Decent Work and Economic Growth,8.5,Cashiering & POS Operations: Supports productive employment in one of the largest entry-level job sectors.,SRC_UN_SDG
+SSDG_0150,SKL_0150,8,Decent Work and Economic Growth,8.5,Visual Merchandising & Store Display: Supports productive employment in one of the largest entry-level job sectors.,SRC_UN_SDG
+SSDG_0151,SKL_0151,8,Decent Work and Economic Growth,8.5,Stock Control & Inventory Counting: Supports productive employment in one of the largest entry-level job sectors.,SRC_UN_SDG
+SSDG_0152,SKL_0152,8,Decent Work and Economic Growth,8.5,Customer Service & Complaint Handling: Supports productive employment in one of the largest entry-level job sectors.,SRC_UN_SDG
+SSDG_0153,SKL_0153,8,Decent Work and Economic Growth,8.5,Store Operations Management: Supports productive employment in one of the largest entry-level job sectors.,SRC_UN_SDG
+SSDG_0154,SKL_0154,8,Decent Work and Economic Growth,8.5,Telesales & Direct Selling: Supports productive employment in one of the largest entry-level job sectors.,SRC_UN_SDG
+SSDG_0155,SKL_0155,8,Decent Work and Economic Growth,8.5,Retail Loss Prevention: Supports productive employment in one of the largest entry-level job sectors.,SRC_UN_SDG
+SSDG_0156,SKL_0156,8,Decent Work and Economic Growth,8.5,Merchandise Buying & Category Management: Supports productive employment in one of the largest entry-level job sectors.,SRC_UN_SDG
+SSDG_0157,SKL_0157,8,Decent Work and Economic Growth,8.5,Live Streaming & Social Selling: Supports productive employment in one of the largest entry-level job sectors.,SRC_UN_SDG
+SSDG_0158,SKL_0158,8,Decent Work and Economic Growth,8.5,Customer Loyalty & After-Sales Service: Supports productive employment in one of the largest entry-level job sectors.,SRC_UN_SDG
+SSDG_0159,SKL_0159,8,Decent Work and Economic Growth,8.5,Contact Centre & Helpdesk Tools: Supports productive employment in one of the largest entry-level job sectors.,SRC_UN_SDG
+SSDG_0160,SKL_0160,2,Zero Hunger,2.4,"Crop Production & Field Agronomy: Supports sustainable, productive food production systems.",SRC_UN_SDG
+SSDG_0161,SKL_0161,2,Zero Hunger,2.4,"Oil Palm Plantation Operations: Supports sustainable, productive food production systems.",SRC_UN_SDG
+SSDG_0162,SKL_0162,2,Zero Hunger,2.4,"Livestock & Poultry Husbandry: Supports sustainable, productive food production systems.",SRC_UN_SDG
+SSDG_0163,SKL_0163,2,Zero Hunger,2.4,"Aquaculture & Fisheries Operations: Supports sustainable, productive food production systems.",SRC_UN_SDG
+SSDG_0164,SKL_0164,2,Zero Hunger,2.4,"Pest & Plant Disease Management: Supports sustainable, productive food production systems.",SRC_UN_SDG
+SSDG_0165,SKL_0165,2,Zero Hunger,2.4,"Soil Science & Plant Nutrition: Supports sustainable, productive food production systems.",SRC_UN_SDG
+SSDG_0166,SKL_0166,2,Zero Hunger,2.4,"Farm Machinery Operation: Supports sustainable, productive food production systems.",SRC_UN_SDG
+SSDG_0167,SKL_0167,2,Zero Hunger,2.4,"Food Processing & Production Lines: Supports sustainable, productive food production systems.",SRC_UN_SDG
+SSDG_0168,SKL_0168,2,Zero Hunger,2.4,"Post-Harvest Handling & Cold Storage: Supports sustainable, productive food production systems.",SRC_UN_SDG
+SSDG_0169,SKL_0169,2,Zero Hunger,2.4,"Agribusiness & Farm Management: Supports sustainable, productive food production systems.",SRC_UN_SDG
+SSDG_0170,SKL_0170,2,Zero Hunger,2.4,"Veterinary Care & Animal Health: Supports sustainable, productive food production systems.",SRC_UN_SDG
+SSDG_0171,SKL_0171,2,Zero Hunger,2.4,"Forestry & Land Management: Supports sustainable, productive food production systems.",SRC_UN_SDG
+SSDG_0172,SKL_0172,3,Good Health and Well-Being,3.c,Nursing Care & Patient Assessment: Builds the health and care workforce.,SRC_UN_SDG
+SSDG_0173,SKL_0173,3,Good Health and Well-Being,3.c,Medication Administration & Pharmacy Practice: Builds the health and care workforce.,SRC_UN_SDG
+SSDG_0174,SKL_0174,3,Good Health and Well-Being,3.c,First Aid & Emergency Response: Builds the health and care workforce.,SRC_UN_SDG
+SSDG_0175,SKL_0175,3,Good Health and Well-Being,3.c,Elderly & Home Care: Builds the health and care workforce.,SRC_UN_SDG
+SSDG_0176,SKL_0176,3,Good Health and Well-Being,3.c,Infection Prevention & Control: Builds the health and care workforce.,SRC_UN_SDG
+SSDG_0177,SKL_0177,3,Good Health and Well-Being,3.c,Medical Laboratory Testing: Builds the health and care workforce.,SRC_UN_SDG
+SSDG_0178,SKL_0178,3,Good Health and Well-Being,3.c,Medical Imaging & Radiography: Builds the health and care workforce.,SRC_UN_SDG
+SSDG_0179,SKL_0179,3,Good Health and Well-Being,3.c,Patient Records & Clinic Administration: Builds the health and care workforce.,SRC_UN_SDG
+SSDG_0180,SKL_0180,3,Good Health and Well-Being,3.c,Counselling & Mental Health Support: Builds the health and care workforce.,SRC_UN_SDG
+SSDG_0181,SKL_0181,3,Good Health and Well-Being,3.c,Dental Care Assistance: Builds the health and care workforce.,SRC_UN_SDG
+SSDG_0182,SKL_0182,3,Good Health and Well-Being,3.c,Nutrition & Dietetics: Builds the health and care workforce.,SRC_UN_SDG
+SSDG_0183,SKL_0183,3,Good Health and Well-Being,3.c,Midwifery & Maternal Care: Builds the health and care workforce.,SRC_UN_SDG
+SSDG_0184,SKL_0184,9,"Industry, Innovation and Infrastructure",9.1,"Electrical Wiring & Installation: Builds and maintains quality, resilient infrastructure.",SRC_UN_SDG
+SSDG_0185,SKL_0185,9,"Industry, Innovation and Infrastructure",9.1,"Plumbing & Pipe Fitting: Builds and maintains quality, resilient infrastructure.",SRC_UN_SDG
+SSDG_0186,SKL_0186,9,"Industry, Innovation and Infrastructure",9.1,"Welding & Metal Fabrication: Builds and maintains quality, resilient infrastructure.",SRC_UN_SDG
+SSDG_0187,SKL_0187,9,"Industry, Innovation and Infrastructure",9.1,"Carpentry & Joinery: Builds and maintains quality, resilient infrastructure.",SRC_UN_SDG
+SSDG_0188,SKL_0188,9,"Industry, Innovation and Infrastructure",9.1,"Masonry, Tiling & Concrete Works: Builds and maintains quality, resilient infrastructure.",SRC_UN_SDG
+SSDG_0189,SKL_0189,9,"Industry, Innovation and Infrastructure",9.1,"Heavy Machinery & Crane Operation: Builds and maintains quality, resilient infrastructure.",SRC_UN_SDG
+SSDG_0190,SKL_0190,9,"Industry, Innovation and Infrastructure",9.1,"Air-Conditioning & Refrigeration Servicing: Builds and maintains quality, resilient infrastructure.",SRC_UN_SDG
+SSDG_0191,SKL_0191,9,"Industry, Innovation and Infrastructure",9.1,"Construction Site Supervision: Builds and maintains quality, resilient infrastructure.",SRC_UN_SDG
+SSDG_0192,SKL_0192,9,"Industry, Innovation and Infrastructure",9.1,"Building & Facility Maintenance: Builds and maintains quality, resilient infrastructure.",SRC_UN_SDG
+SSDG_0193,SKL_0193,9,"Industry, Innovation and Infrastructure",9.1,"Technical Drawing Interpretation: Builds and maintains quality, resilient infrastructure.",SRC_UN_SDG
+SSDG_0194,SKL_0194,9,"Industry, Innovation and Infrastructure",9.1,"Painting, Renovation & Interior Fit-Out: Builds and maintains quality, resilient infrastructure.",SRC_UN_SDG
+SSDG_0195,SKL_0195,9,"Industry, Innovation and Infrastructure",9.1,"Mechanical Equipment Maintenance: Builds and maintains quality, resilient infrastructure.",SRC_UN_SDG
+SSDG_0196,SKL_0196,4,Quality Education,4.c,Classroom Teaching & Lesson Planning: Increases the supply of qualified teachers and trainers.,SRC_UN_SDG
+SSDG_0197,SKL_0197,4,Quality Education,4.c,Curriculum & Assessment Design: Increases the supply of qualified teachers and trainers.,SRC_UN_SDG
+SSDG_0198,SKL_0198,4,Quality Education,4.c,Early Childhood Education & Childcare: Increases the supply of qualified teachers and trainers.,SRC_UN_SDG
+SSDG_0199,SKL_0199,4,Quality Education,4.c,Special Needs & Inclusive Education: Increases the supply of qualified teachers and trainers.,SRC_UN_SDG
+SSDG_0200,SKL_0200,4,Quality Education,4.c,Language Teaching: Increases the supply of qualified teachers and trainers.,SRC_UN_SDG
+SSDG_0201,SKL_0201,4,Quality Education,4.c,STEM Subject Teaching: Increases the supply of qualified teachers and trainers.,SRC_UN_SDG
+SSDG_0202,SKL_0202,4,Quality Education,4.c,Tutoring & Academic Coaching: Increases the supply of qualified teachers and trainers.,SRC_UN_SDG
+SSDG_0203,SKL_0203,4,Quality Education,4.c,Online & Blended Teaching: Increases the supply of qualified teachers and trainers.,SRC_UN_SDG
+SSDG_0204,SKL_0204,4,Quality Education,4.c,Student Counselling & Career Guidance: Increases the supply of qualified teachers and trainers.,SRC_UN_SDG
+SSDG_0205,SKL_0205,4,Quality Education,4.c,School Administration & Leadership: Increases the supply of qualified teachers and trainers.,SRC_UN_SDG
+SSDG_0206,SKL_0206,4,Quality Education,4.c,Training Delivery & Facilitation: Increases the supply of qualified teachers and trainers.,SRC_UN_SDG
+SSDG_0207,SKL_0207,4,Quality Education,4.c,Academic Research & Writing: Increases the supply of qualified teachers and trainers.,SRC_UN_SDG
+SSDG_0208,SKL_0208,11,Sustainable Cities and Communities,11.2,"Commercial Driving & Road Safety: Keeps transport systems safe, accessible and reliable.",SRC_UN_SDG
+SSDG_0209,SKL_0209,11,Sustainable Cities and Communities,11.2,"Automotive Repair & Diagnostics: Keeps transport systems safe, accessible and reliable.",SRC_UN_SDG
+SSDG_0210,SKL_0210,11,Sustainable Cities and Communities,11.2,"Electric & Hybrid Vehicle Servicing: Keeps transport systems safe, accessible and reliable.",SRC_UN_SDG
+SSDG_0211,SKL_0211,11,Sustainable Cities and Communities,11.2,"Motorcycle & Small Engine Repair: Keeps transport systems safe, accessible and reliable.",SRC_UN_SDG
+SSDG_0212,SKL_0212,11,Sustainable Cities and Communities,11.2,"Last-Mile Delivery & Dispatch: Keeps transport systems safe, accessible and reliable.",SRC_UN_SDG
+SSDG_0213,SKL_0213,11,Sustainable Cities and Communities,11.2,"Passenger Transport Services: Keeps transport systems safe, accessible and reliable.",SRC_UN_SDG
+SSDG_0214,SKL_0214,11,Sustainable Cities and Communities,11.2,"Maritime Operations & Seafaring: Keeps transport systems safe, accessible and reliable.",SRC_UN_SDG
+SSDG_0215,SKL_0215,11,Sustainable Cities and Communities,11.2,"Airport Ground Handling & Cabin Services: Keeps transport systems safe, accessible and reliable.",SRC_UN_SDG
+SSDG_0216,SKL_0216,11,Sustainable Cities and Communities,11.2,"Rail Operations & Maintenance: Keeps transport systems safe, accessible and reliable.",SRC_UN_SDG
+SSDG_0217,SKL_0217,11,Sustainable Cities and Communities,11.2,"Transport & Traffic Planning: Keeps transport systems safe, accessible and reliable.",SRC_UN_SDG
+SSDG_0218,SKL_0218,11,Sustainable Cities and Communities,11.2,"Freight Documentation & Customs Forms: Keeps transport systems safe, accessible and reliable.",SRC_UN_SDG
+SSDG_0219,SKL_0219,11,Sustainable Cities and Communities,11.2,"Vehicle Body Repair & Spray Painting: Keeps transport systems safe, accessible and reliable.",SRC_UN_SDG
+SSDG_0220,SKL_0220,7,Affordable and Clean Energy,7.1,Upstream Oil & Gas Operations: Keeps energy and water services reliable and accessible.,SRC_UN_SDG
+SSDG_0221,SKL_0221,7,Affordable and Clean Energy,7.1,Process Plant Operation: Keeps energy and water services reliable and accessible.,SRC_UN_SDG
+SSDG_0222,SKL_0222,7,Affordable and Clean Energy,7.1,Instrumentation & Calibration: Keeps energy and water services reliable and accessible.,SRC_UN_SDG
+SSDG_0223,SKL_0223,7,Affordable and Clean Energy,7.1,Rotating Equipment & Pipeline Maintenance: Keeps energy and water services reliable and accessible.,SRC_UN_SDG
+SSDG_0224,SKL_0224,7,Affordable and Clean Energy,7.1,Mining & Quarry Operations: Keeps energy and water services reliable and accessible.,SRC_UN_SDG
+SSDG_0225,SKL_0225,7,Affordable and Clean Energy,7.1,Power Generation & Substation Operations: Keeps energy and water services reliable and accessible.,SRC_UN_SDG
+SSDG_0226,SKL_0226,7,Affordable and Clean Energy,7.1,Water & Wastewater Plant Operation: Keeps energy and water services reliable and accessible.,SRC_UN_SDG
+SSDG_0227,SKL_0227,7,Affordable and Clean Energy,7.1,Permit-to-Work & Offshore Safety: Keeps energy and water services reliable and accessible.,SRC_UN_SDG
+SSDG_0228,SKL_0228,7,Affordable and Clean Energy,7.1,Non-Destructive Testing & Inspection: Keeps energy and water services reliable and accessible.,SRC_UN_SDG
+SSDG_0229,SKL_0229,7,Affordable and Clean Energy,7.1,Geoscience & Reservoir Engineering: Keeps energy and water services reliable and accessible.,SRC_UN_SDG
+SSDG_0230,SKL_0230,7,Affordable and Clean Energy,7.1,Utility Metering & Billing: Keeps energy and water services reliable and accessible.,SRC_UN_SDG
+SSDG_0231,SKL_0231,7,Affordable and Clean Energy,7.1,Corrosion Protection & Coating: Keeps energy and water services reliable and accessible.,SRC_UN_SDG
+SSDG_0232,SKL_0232,16,"Peace, Justice and Strong Institutions",16.6,"Legal Research & Drafting: Supports effective, accountable and transparent institutions.",SRC_UN_SDG
+SSDG_0233,SKL_0233,16,"Peace, Justice and Strong Institutions",16.6,"Paralegal & Court Documentation: Supports effective, accountable and transparent institutions.",SRC_UN_SDG
+SSDG_0234,SKL_0234,16,"Peace, Justice and Strong Institutions",16.6,"Public Administration & Policy Implementation: Supports effective, accountable and transparent institutions.",SRC_UN_SDG
+SSDG_0235,SKL_0235,16,"Peace, Justice and Strong Institutions",16.6,"Social Work & Case Management: Supports effective, accountable and transparent institutions.",SRC_UN_SDG
+SSDG_0236,SKL_0236,16,"Peace, Justice and Strong Institutions",16.6,"Security Patrol & Access Control: Supports effective, accountable and transparent institutions.",SRC_UN_SDG
+SSDG_0237,SKL_0237,16,"Peace, Justice and Strong Institutions",16.6,"Investigation & Enforcement: Supports effective, accountable and transparent institutions.",SRC_UN_SDG
+SSDG_0238,SKL_0238,16,"Peace, Justice and Strong Institutions",16.6,"Fire & Rescue Operations: Supports effective, accountable and transparent institutions.",SRC_UN_SDG
+SSDG_0239,SKL_0239,16,"Peace, Justice and Strong Institutions",16.6,"Clerical Administration & Records Management: Supports effective, accountable and transparent institutions.",SRC_UN_SDG
+SSDG_0240,SKL_0240,16,"Peace, Justice and Strong Institutions",16.6,"Secretarial & Executive Support: Supports effective, accountable and transparent institutions.",SRC_UN_SDG
+SSDG_0241,SKL_0241,16,"Peace, Justice and Strong Institutions",16.6,"Translation & Interpretation: Supports effective, accountable and transparent institutions.",SRC_UN_SDG
+SSDG_0242,SKL_0242,16,"Peace, Justice and Strong Institutions",16.6,"Volunteer & Community Programme Coordination: Supports effective, accountable and transparent institutions.",SRC_UN_SDG
+SSDG_0243,SKL_0243,16,"Peace, Justice and Strong Institutions",16.6,"Licensing & Compliance Inspection: Supports effective, accountable and transparent institutions.",SRC_UN_SDG
+SSDG_0244,SKL_0244,11,Sustainable Cities and Communities,11.4,Photography & Videography: Helps protect and sustain cultural heritage and creative work.,SRC_UN_SDG
+SSDG_0245,SKL_0245,11,Sustainable Cities and Communities,11.4,Journalism & News Reporting: Helps protect and sustain cultural heritage and creative work.,SRC_UN_SDG
+SSDG_0246,SKL_0246,11,Sustainable Cities and Communities,11.4,"Broadcasting, Hosting & Voice Work: Helps protect and sustain cultural heritage and creative work.",SRC_UN_SDG
+SSDG_0247,SKL_0247,11,Sustainable Cities and Communities,11.4,"Performing Arts (Music, Dance, Theatre): Helps protect and sustain cultural heritage and creative work.",SRC_UN_SDG
+SSDG_0248,SKL_0248,11,Sustainable Cities and Communities,11.4,Fashion Design & Tailoring: Helps protect and sustain cultural heritage and creative work.,SRC_UN_SDG
+SSDG_0249,SKL_0249,11,Sustainable Cities and Communities,11.4,Traditional Crafts & Artisan Production: Helps protect and sustain cultural heritage and creative work.,SRC_UN_SDG
+SSDG_0250,SKL_0250,11,Sustainable Cities and Communities,11.4,Fine Art & Illustration: Helps protect and sustain cultural heritage and creative work.,SRC_UN_SDG
+SSDG_0251,SKL_0251,11,Sustainable Cities and Communities,11.4,Film & Video Production: Helps protect and sustain cultural heritage and creative work.,SRC_UN_SDG
+SSDG_0252,SKL_0252,11,Sustainable Cities and Communities,11.4,Social Media Content Creation: Helps protect and sustain cultural heritage and creative work.,SRC_UN_SDG
+SSDG_0253,SKL_0253,11,Sustainable Cities and Communities,11.4,Public Relations & Media Relations: Helps protect and sustain cultural heritage and creative work.,SRC_UN_SDG
+SSDG_0254,SKL_0254,11,Sustainable Cities and Communities,11.4,Museum & Heritage Management: Helps protect and sustain cultural heritage and creative work.,SRC_UN_SDG
+SSDG_0255,SKL_0255,11,Sustainable Cities and Communities,11.4,Interior & Spatial Design: Helps protect and sustain cultural heritage and creative work.,SRC_UN_SDG

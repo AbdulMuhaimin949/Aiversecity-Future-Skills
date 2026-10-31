@@ -1,0 +1,66 @@
+You are a senior full-stack engineer working on the "Aiversecity Future Skills" web application (Streamlit / Python codebase). 
+
+Please refactor and implement the following 4 core functional requirements and bug fixes across our state management, CV parsing, role matching, and UI display pipelines:
+
+---
+
+### 1. BUG FIX: Reset Session State on New CV Upload (Prevent Skill Stacking)
+**Issue:** When a user uploads a new CV or switches to a different demo persona, previously parsed skills remain stored in memory and stack on top of the new skills instead of resetting.
+**Required Implementation:**
+- Implement state tracking on file upload and persona selection (e.g., check if `uploaded_file.name` or `persona_id` has changed).
+- Whenever a new CV is uploaded or a persona is selected, **completely flush and reset** all related session variables:
+  - Clear `st.session_state['skills']` and `st.session_state['detected_skills']`
+  - Reset `st.session_state['selected_role']`
+  - Reset `st.session_state['work_experience']`
+  - Clear any previously generated pathway steps or radar data.
+- Ensure the skills list displays *only* the skills extracted from the most recent upload/selection.
+
+---
+
+### 2. REFACTOR: Weighting Past Work Experience (Professional Work Only)
+**Requirement:** Career matching must explicitly factor in verifiable, professional work history—not general background, extracurriculars, or pure academic coursework.
+**Required Implementation:**
+- Refactor the parser to isolate the **"Work Experience" / "Employment History"** section of the CV.
+- Extract:
+  1. Job titles held
+  2. Duration / total years of professional employment
+  3. Key operational responsibilities and tools applied on the job.
+- Integrate a **Seniority / Readiness Weight** into the role matching formula:
+  - Candidate with $\ge 3$ years of professional work in a related domain should receive higher baseline readiness for mid-tier future roles.
+  - Candidate with $< 1$ year or fresh graduate work experience should be matched primarily to foundational/entry-level pathways (e.g., Junior / Associate roles).
+  - Clearly display in the UI: *"Based on X years of verified professional work experience."*
+
+---
+
+### 3. FEATURE: User-Driven Career Pathway Selection (Decouple from Default Top Match)
+**Issue:** Currently, the system forces the #1 highest-scoring job (e.g., Junior Data Analyst) into the Future Skills Pass, Disruption Radar, and Step 4 Reskilling Pathway by default.
+**Required Implementation:**
+- Instead of forcing the highest mathematical match, allow the user to **freely select their desired target role** from the ranked matches or sector catalog.
+- Add an interactive selection action on all role cards: e.g., `[ Select as My Target Pathway ]`.
+- Store the user's choice in `st.session_state['target_role']`.
+- **Dynamic Propagation:**
+  - **Step 2 / Future Skills Radar:** Dynamically update the disruption curve, AI risk, and job safety metrics to reflect the *user's chosen target role*.
+  - **Step 3 / Role Details:** Update the lanyard Future Skills Pass to display the *user-selected role*.
+  - **Step 4 / Reskilling Pathway:** Generate the roadmap, hours, and HRD Corp courses strictly for the *user-selected target role*, rather than the algorithmic default.
+
+---
+
+### 4. DOMAIN INCLUSIVITY: Eliminate Tech/IT Bias
+**Issue:** The system currently skews heavily toward software, IT, and data roles. It must be unbiased and represent diverse Malaysian workforce sectors.
+**Required Implementation:**
+- Expand the role taxonomy and database to ensure equal representation across non-IT and hybrid sectors:
+  1. **Healthcare & Care Economy:** e.g., Clinical Data Coordinator, Telehealth Operations Specialist.
+  2. **Green Transition & Sustainability:** e.g., ESG Compliance Auditor, Energy Efficiency Analyst.
+  3. **Smart Logistics & Supply Chain:** e.g., Cold-Chain Logistics Coordinator, Predictive Inventory Specialist.
+  4. **Financial & Professional Services:** e.g., FinTech Compliance Analyst, Islamic Banking Digital Associate.
+  5. **Advanced TVET & Modern Manufacturing:** e.g., IIoT Predictive Maintenance Tech, Automation Quality Inspector.
+- Ensure the initial recommendation engine respects the user's toggled **"Interest Sectors"** rather than forcing AI/Data as the default sector.
+
+---
+
+### VERIFICATION & ACCEPTANCE CRITERIA
+1. **Upload Test:** Upload `CV_Accountant.pdf`, verify only accounting skills appear. Then upload `CV_Engineer.pdf` $\rightarrow$ verify all accounting skills are erased and only engineering skills appear.
+2. **Pathway Switch Test:** On the Matches screen, click on `#2 Data Governance Specialist` or a non-tech role $\rightarrow$ verify that the Step 4 Pathway instantly recalculates the roadmap and SDG metrics for that specific chosen role.
+3. **Experience Test:** Verify that changing the "Years of experience" slider or extracting 5+ years of work history visibly shifts readiness recommendations.
+
+Please provide the updated code snippets and indicate which files to modify.

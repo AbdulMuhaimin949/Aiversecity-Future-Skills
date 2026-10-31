@@ -1,0 +1,21 @@
+{
+  "dataset_name": "Aiversecity Synthetic Add-on",
+  "version": "1.0",
+  "generated_date": "2026-10-30",
+  "seed": 20261030,
+  "is_synthetic": true,
+  "row_counts": {
+    "rag_knowledge_documents.csv": 480,
+    "rag_knowledge_chunks.csv": 480,
+    "synthetic_cv_profiles.csv": 800,
+    "synthetic_cv_claims.csv": 3200,
+    "synthetic_cv_evidence.csv": 2400,
+    "synthetic_claim_test_oracle.csv": 3200,
+    "synthetic_learning_resources.csv": 480,
+    "synthetic_trend_scenarios.csv": 1920,
+    "synthetic_review_cases.csv": 80
+  },
+  "base_occupations": 240,
+  "base_skills": 255,
+  "base_relationships": 2073
+}

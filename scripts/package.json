@@ -1,0 +1,31 @@
+{
+  "name": "@workspace/scripts",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "hello": "tsx ./src/hello.ts",
+    "db:import-catalogue": "tsx ./src/import-catalogue.ts",
+    "db:catalogue-status": "tsx ./src/catalogue-status.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test:deepseek": "tsx --test test/deepseek.test.ts",
+    "test:lexical": "tsx --test test/lexical.test.ts",
+    "knowledge:ingest": "tsx ./src/knowledge/ingest.ts",
+    "knowledge:review": "tsx ./src/knowledge/review.ts",
+    "knowledge:status": "tsx ./src/knowledge/status.ts",
+    "db:import-synthetic-cvs": "tsx ./src/import-synthetic-cvs.ts",
+    "db:import-synthetic-learning": "tsx ./src/import-synthetic-learning.ts",
+    "cv:reviewer": "tsx ./src/cv-reviewer.ts"
+  },
+  "dependencies": {
+    "@workspace/catalogue": "workspace:*",
+    "@workspace/db": "workspace:*",
+    "@workspace/rag": "workspace:*",
+    "csv-parse": "^7.0.3",
+    "drizzle-orm": "catalog:"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "tsx": "catalog:"
+  }
+}

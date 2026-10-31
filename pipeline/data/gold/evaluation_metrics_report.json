@@ -1,0 +1,82 @@
+{
+  "pipeline_execution_seconds": 16.8,
+  "dataset_counts": {
+    "sources": 10,
+    "occupations": 240,
+    "skills": 255,
+    "occupation_skills": 2073,
+    "synthetic_cvs": 1000,
+    "extracted_profile_skills": 7524,
+    "trend_observations": 5520,
+    "role_match_pairs": 2400,
+    "career_nodes": 256,
+    "career_edges": 479
+  },
+  "cv_skill_extraction_holdout_metrics": {
+    "evaluated_profiles": 150,
+    "gold_skill_mentions": 1053,
+    "predicted_skill_mentions": 1140,
+    "true_positives": 1048,
+    "false_positives": 92,
+    "false_negatives": 5,
+    "precision": 0.9193,
+    "recall": 0.9953,
+    "f1_score": 0.9558
+  },
+  "demand_forecasting_chronological_test_metrics": {
+    "train_period": "2021-Q4 to 2024-Q4",
+    "val_period": "2025-Q1 to 2025-Q4",
+    "test_period": "2026-Q1 to 2026-Q3",
+    "test_samples": 720,
+    "persistence_baseline_mae": 1.7637,
+    "persistence_baseline_rmse": 2.1491,
+    "moving_average_3q_mae": 2.8173,
+    "moving_average_3q_rmse": 3.3442,
+    "ridge_autoregressive_mae": 1.1045,
+    "ridge_autoregressive_rmse": 1.3707
+  },
+  "career_matching_group_test_metrics": {
+    "train_profiles": 210,
+    "val_profiles": 45,
+    "test_profiles": 45,
+    "test_pairs": 360,
+    "test_roc_auc": 0.9929,
+    "test_f1_score": 0.9486,
+    "test_accuracy": 0.975
+  },
+  "sample_branching_routes_from_junior_data_analyst": [
+    {
+      "path_node_ids": "NODE_OCC_0001 -> NODE_MLS_002",
+      "path_titles": "Junior Data Analyst -> Applied Machine Learning & GenAI RAG Lab Milestone",
+      "transition_sequence": "UPSKILL_BRIDGE",
+      "hops": 1,
+      "total_estimated_hours": 30,
+      "prerequisite_status": "ALL_MET"
+    },
+    {
+      "path_node_ids": "NODE_OCC_0001 -> NODE_MLS_002 -> NODE_OCC_0017",
+      "path_titles": "Junior Data Analyst -> Applied Machine Learning & GenAI RAG Lab Milestone -> Junior Frontend Developer",
+      "transition_sequence": "UPSKILL_BRIDGE -> UPSKILL_BRIDGE",
+      "hops": 2,
+      "total_estimated_hours": 65,
+      "prerequisite_status": "ALL_MET"
+    },
+    {
+      "path_node_ids": "NODE_OCC_0001 -> NODE_MLS_002 -> NODE_OCC_0020",
+      "path_titles": "Junior Data Analyst -> Applied Machine Learning & GenAI RAG Lab Milestone -> Mobile Application Developer",
+      "transition_sequence": "UPSKILL_BRIDGE -> UPSKILL_BRIDGE",
+      "hops": 2,
+      "total_estimated_hours": 65,
+      "prerequisite_status": "ALL_MET"
+    }
+  ],
+  "automated_quality_tests": {
+    "test_all_25_tables_exist_and_match_schema": "PASSED",
+    "test_taxonomy_volume_and_referential_integrity": "PASSED",
+    "test_cv_pipeline_and_independent_gold_separation": "PASSED",
+    "test_chronological_forecasting_and_no_future_leakage": "PASSED",
+    "test_career_matching_zero_profile_leakage": "PASSED",
+    "test_dope_deterministic_scoring_and_ties": "PASSED",
+    "test_career_graph_integrity_and_pathfinding": "PASSED"
+  }
+}

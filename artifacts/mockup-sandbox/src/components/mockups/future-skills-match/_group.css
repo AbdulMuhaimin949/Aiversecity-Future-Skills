@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap");
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-card: hsl(var(--card));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-cream: #f5f3eb;
+  --color-navy: #0b4f9e;
+  --color-royal: #1e78d6;
+  --color-mist: #dce8f5;
+  --color-charcoal: #18191c;
+  --font-sans: var(--app-font-sans);
+  --font-serif: var(--app-font-serif);
+  --font-mono: var(--app-font-mono);
+}
+
+:root {
+  --background: 49 33% 94%;
+  --foreground: 228 8% 10%;
+  --border: 214 28% 85%;
+  --card: 0 0% 100%;
+  --primary: 212 87% 33%;
+  --primary-foreground: 0 0% 100%;
+  --muted: 212 30% 92%;
+  --muted-foreground: 220 10% 34%;
+  --accent: 42 96% 54%;
+  --app-font-sans: "Plus Jakarta Sans", sans-serif;
+  --app-font-serif: "Outfit", sans-serif;
+  --app-font-mono: "JetBrains Mono", monospace;
+}
+
+.font-display {
+  font-family: "Outfit", sans-serif;
+}
+
+.font-data {
+  font-family: "JetBrains Mono", monospace;
+}
+
+.mockup-paper {
+  background-color: #f5f3eb;
+  background-image: radial-gradient(rgba(11, 79, 158, 0.16) 1.1px, transparent 1.2px);
+  background-size: 22px 22px;
+}

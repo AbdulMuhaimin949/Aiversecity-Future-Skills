@@ -1,0 +1,21 @@
+Refactor the entire frontend UI/UX of my existing AIversecity 4-step application (1. Profile, 2. Radar, 3. Matches, 4. Pathway) into an "Aesthetic iOS Core / Layered Blue Folder" editorial design system while strictly preserving all my existing state, CV scanning logic, MASCO/ESCO datasets, and scenario calculators.
+
+1. COLOR PALETTE & EDITORIAL THEME:
+- Main Page Background: Warm Editorial Cream (#F5F3EB) with subtle dot-grid texture.
+- Typography: Oversized bold geometric headers (like "Portfolio.", "Radar & Growth.", "Top 3 Matches.", "Work with Me!") paired with clean sans-serif body text (#18191C) and monospace slide counters (e.g., "STEP 01/04").
+- Layered 3-Tone iOS Blue Folder System:
+  - Back Folder Tab: Deep Navy Blue (#0B4F9E)
+  - Middle Folder Tab: Classic Royal Blue (#1E78D6)
+  - Front Active Folder Body: Bright iOS Sky Blue (#3898F8) with a 28px rounded container and crisp inner white/cream workspace cards (#FFFFFF and #FBF9F4).
+  - Build custom notched folder-ear tabs at the top of the main container so switching between Step 1, 2, 3, and 4 looks like flipping through physical stacked blue folders.
+
+2. SIGNATURE UI COMPONENTS:
+- Floating Tilted Charcoal Pills: Add floating dark charcoal badges (#18191C, text #FFFFFF, slight rotation like -3deg or +2deg, with small status dots or bullet checklists) overlapping folder corners (e.g., "2026 Edition", "Hi! I'm [User Name]", "TOP #01 SUITABILITY").
+- "Result & Growth" Circular Metric Badges: Display key metrics (like AI Exposure %, Augmentation %, Demand Growth %) inside soft pastel-blue circles (#DCE8F5) with bold dark text and a small dark pill tag underneath.
+- Process Stepper Circles: In Step 4 (Pathway), add a 4-circle horizontal workflow ("01 Research -> 02 Planning -> 03 Execution -> 04 Optimization") connected by dashed lines.
+
+3. INTERACTIVE 3D PHYSICS LANYARD & ROLE ANIMATIONS (IN STEP 3 MATCHES & STEP 4 PATHWAY):
+- For the user's Top 3 Matched Positions, add a split-view or toggleable "Interactive 3D Lanyard Pass" alongside the role details and Demand Index chart.
+- Build an HTML5 Canvas + CSS 3D swinging ID badge hanging from a woven black lanyard strap using Verlet / spring-pendulum physics so the user can grab, drag, pull, and release the card with their mouse or touch screen, and it swings naturally with gravity.
+- Clicking the badge flips it 180 degrees in 3D (Front: Candidate Photo, Name, Top Matched Role Title, Suitability %, MASCO Code, and a custom animated SVG illustration for that specific role; Back: Required Skills checklist, SDG alignment, and QR/Verification barcode).
+- Allow switching between Top #1, #2, and #3 matched roles via stacked blue folder tabs, updating both the Lanyard card and the role's animated SVG visual dynamically.

@@ -1,0 +1,2649 @@
+openapi: 3.1.0
+info:
+  # Do not change the title, if the title changes, the import paths will be broken
+  title: Api
+  version: 0.1.0
+  description: Aiversecity Future Skills API — serves the Bronze/Silver/Gold pipeline data (taxonomy, trend signals, scenarios, matching, pathways, SDGs).
+servers:
+  - url: /api
+    description: Base API path
+tags:
+  - name: health
+  - name: catalogue
+  - name: radar
+  - name: matching
+  - name: pathway
+  - name: assistant
+  - name: cv-review
+  - name: reviewer
+  - name: knowledge-admin
+  - name: synthetic
+paths:
+  /healthz:
+    get:
+      operationId: healthCheck
+      tags: [health]
+      summary: Health check
+      responses:
+        "200":
+          description: Healthy
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthStatus"
+
+  /overview:
+    get:
+      operationId: getOverview
+      tags: [catalogue]
+      summary: Headline numbers, data freshness and model metrics
+      responses:
+        "200":
+          description: Overview
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Overview"
+
+  /sources:
+    get:
+      operationId: listSources
+      tags: [catalogue]
+      summary: Data source catalogue with dates and verification status
+      responses:
+        "200":
+          description: Sources
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/DataSource"
+
+  /skills:
+    get:
+      operationId: listSkills
+      tags: [catalogue]
+      summary: Canonical skill taxonomy (for the intake picker)
+      responses:
+        "200":
+          description: Skills
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Skill"
+
+  /sectors:
+    get:
+      operationId: listSectors
+      tags: [catalogue]
+      summary: Industry sectors with occupation counts (for interests)
+      responses:
+        "200":
+          description: Sectors
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Sector"
+
+  /sample-profiles:
+    get:
+      operationId: listSampleProfiles
+      tags: [catalogue]
+      summary: Synthetic demo personas the user can load instead of typing
+      responses:
+        "200":
+          description: Sample profiles
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/SampleProfile"
+
+  /profile/extract:
+    post:
+      operationId: extractSkills
+      tags: [matching]
+      summary: Extract canonical skills from pasted CV text (synonym-normalised extractor)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CvTextInput"
+      responses:
+        "200":
+          description: Extracted skills
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExtractionResult"
+
+  /profile/scan-cv:
+    post:
+      operationId: scanCv
+      tags: [matching]
+      summary: Scan a CV (PDF file or pasted text) for skills, education level, years of experience and related industries
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CvScanInput"
+      responses:
+        "200":
+          description: Scan result for the user to review
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CvScanResult"
+        "400":
+          description: Invalid input or unreadable PDF
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /radar:
+    get:
+      operationId: getRadar
+      tags: [radar]
+      summary: Future Skills Radar — rising and slowing roles and skills under a scenario
+      parameters:
+        - name: scenario
+          in: query
+          required: false
+          schema:
+            $ref: "#/components/schemas/Scenario"
+      responses:
+        "200":
+          description: Radar
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Radar"
+
+  /scenarios/compare:
+    get:
+      operationId: compareScenarios
+      tags: [radar]
+      summary: Side-by-side scenario summary (sector-level projected change under each scenario)
+      responses:
+        "200":
+          description: Scenario comparison
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ScenarioComparison"
+
+  /occupations/{occupationId}:
+    get:
+      operationId: getOccupation
+      tags: [catalogue]
+      summary: Role detail with skills, SDGs, trend history and scenario forecasts
+      parameters:
+        - name: occupationId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Occupation detail
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OccupationDetail"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /matches:
+    post:
+      operationId: matchRoles
+      tags: [matching]
+      summary: Rank future roles for a profile with explainable scores and skill gaps
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ProfileInput"
+      responses:
+        "200":
+          description: Ranked matches
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MatchResponse"
+        "400":
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /pathway:
+    post:
+      operationId: buildPathway
+      tags: [pathway]
+      summary: Ordered reskilling plan for a chosen role, with hours, free resources and SDG links
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PathwayInput"
+      responses:
+        "200":
+          description: Pathway
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Pathway"
+        "404":
+          description: Occupation not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /sdgs:
+    get:
+      operationId: listSdgSummary
+      tags: [catalogue]
+      summary: SDG goals covered by roles and skills in the taxonomy
+      responses:
+        "200":
+          description: SDG summary
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/SdgSummary"
+
+  /assistant/status:
+    get:
+      operationId: getAssistantStatus
+      tags: [assistant]
+      summary: Whether the career assistant is configured and how much approved knowledge it can search
+      responses:
+        "200":
+          description: Assistant status
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AssistantStatus"
+
+  /assistant/sessions:
+    get:
+      operationId: listChatSessions
+      tags: [assistant]
+      summary: The caller's chat sessions, newest first (identified by the guest bearer token)
+      responses:
+        "200":
+          description: Sessions
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ChatSession"
+        "401":
+          description: Missing or invalid guest token
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+    post:
+      operationId: createChatSession
+      tags: [assistant]
+      summary: Start a new chat session
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateChatSessionInput"
+      responses:
+        "201":
+          description: Created session
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ChatSession"
+        "400":
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "401":
+          description: Missing or invalid guest token
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /assistant/sessions/{sessionId}:
+    get:
+      operationId: getChatSession
+      tags: [assistant]
+      summary: A session with all its messages and citations
+      parameters:
+        - name: sessionId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Session detail
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ChatSessionDetail"
+        "401":
+          description: Missing or invalid guest token
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+    delete:
+      operationId: deleteChatSession
+      tags: [assistant]
+      summary: Delete a chat session (marked deleted and hidden from the list)
+      parameters:
+        - name: sessionId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "204":
+          description: Deleted
+        "401":
+          description: Missing or invalid guest token
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /assistant/sessions/{sessionId}/messages:
+    post:
+      operationId: sendChatMessage
+      tags: [assistant]
+      summary: Ask a question; the reply is grounded in approved knowledge and stores the chunks it cites
+      parameters:
+        - name: sessionId
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SendChatMessageInput"
+      responses:
+        "200":
+          description: The stored question and answer
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ChatExchange"
+        "400":
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "401":
+          description: Missing or invalid guest token
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "429":
+          description: Too many messages
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "502":
+          description: The Gemini API failed; nothing was stored
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "503":
+          description: The assistant is not configured (no Gemini key or no embedded knowledge)
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /cv-review/status:
+    get:
+      operationId: getCvReviewStatus
+      tags: [cv-review]
+      summary: Whether AI claim extraction is available and how many fictional demo CVs exist
+      responses:
+        "200":
+          description: Status
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CvReviewStatus"
+
+  /cv-review/demo-cvs:
+    get:
+      operationId: listDemoCvs
+      tags: [cv-review]
+      summary: Fictional demo CVs from the synthetic dataset (paged, searchable)
+      parameters:
+        - name: search
+          in: query
+          required: false
+          schema: { type: string, maxLength: 100 }
+        - name: reviewCasesOnly
+          in: query
+          required: false
+          schema: { type: boolean }
+        - name: page
+          in: query
+          required: false
+          schema: { type: integer, minimum: 1 }
+      responses:
+        "200":
+          description: Page of demo CVs
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DemoCvPage"
+
+  /cv-review/demo-cvs/{cvId}:
+    get:
+      operationId: getDemoCv
+      tags: [cv-review]
+      summary: A demo CV with its claims, fictional evidence and review results as the applicant sees them
+      parameters:
+        - name: cvId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Applicant view
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApplicantCvDetail"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /cv-review/demo-cvs/{cvId}/extract:
+    post:
+      operationId: extractDemoCvClaims
+      tags: [cv-review]
+      summary: Ask Gemini to extract claims from the CV text (quotes are checked verbatim; AI never decides a claim)
+      parameters:
+        - name: cvId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Applicant view including the AI-extracted claims
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApplicantCvDetail"
+        "401":
+          description: Missing or invalid guest token
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "429":
+          description: Too many extractions
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "502":
+          description: Gemini failed or returned no verifiable claims; nothing was stored
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "503":
+          description: No Gemini API key configured
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /cv-review/claims/{claimId}/appeals:
+    post:
+      operationId: submitClaimAppeal
+      tags: [cv-review]
+      summary: Appeal a reviewer's decision on a claim (as the guest applicant)
+      parameters:
+        - name: claimId
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AppealInput"
+      responses:
+        "201":
+          description: The stored appeal
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApplicantAppeal"
+        "400":
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "401":
+          description: Missing or invalid guest token
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "409":
+          description: The claim has no decision yet, or you already appealed this decision
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "429":
+          description: Too many appeals
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /reviewer/me:
+    get:
+      operationId: getReviewerMe
+      tags: [reviewer]
+      summary: The signed-in user and whether they hold the reviewer role
+      responses:
+        "200":
+          description: Current user
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReviewerMe"
+
+  /reviewer/queue:
+    get:
+      operationId: getReviewQueue
+      tags: [reviewer]
+      summary: Claims waiting for or holding a human decision (reviewers only)
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          schema: { $ref: "#/components/schemas/ReviewQueueFilter" }
+        - name: search
+          in: query
+          required: false
+          schema: { type: string, maxLength: 100 }
+        - name: page
+          in: query
+          required: false
+          schema: { type: integer, minimum: 1 }
+      responses:
+        "200":
+          description: Page of claims
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReviewQueuePage"
+        "401":
+          description: Not signed in
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "403":
+          description: Signed in without the reviewer role
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /reviewer/cvs/{cvId}:
+    get:
+      operationId: getReviewerCv
+      tags: [reviewer]
+      summary: A CV with claims, evidence, decision history, appeals and audit trail (reviewers only)
+      parameters:
+        - name: cvId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Reviewer view
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReviewerCvDetail"
+        "401":
+          description: Not signed in
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "403":
+          description: Signed in without the reviewer role
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /reviewer/claims/{claimId}/decisions:
+    post:
+      operationId: decideClaim
+      tags: [reviewer]
+      summary: Record a reviewer's decision with rationale (writes review_decisions and audit_logs)
+      parameters:
+        - name: claimId
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ClaimDecisionInput"
+      responses:
+        "200":
+          description: The updated claim
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReviewerClaim"
+        "400":
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "401":
+          description: Not signed in
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "403":
+          description: Signed in without the reviewer role
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "409":
+          description: The claim has an open appeal; resolve the appeal instead
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /reviewer/appeals/{appealId}/resolve:
+    post:
+      operationId: resolveAppeal
+      tags: [reviewer]
+      summary: Uphold (and change the claim decision) or reject an appeal, with rationale
+      parameters:
+        - name: appealId
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AppealResolutionInput"
+      responses:
+        "200":
+          description: The updated claim
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReviewerClaim"
+        "400":
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "401":
+          description: Not signed in
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "403":
+          description: Signed in without the reviewer role
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "409":
+          description: The appeal is already resolved
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /admin/knowledge:
+    get:
+      operationId: getKnowledgeOverview
+      tags: [knowledge-admin]
+      summary: Knowledge sources with approval and embedding counts, plus recent ingestion runs (admins only)
+      responses:
+        "200":
+          description: Overview
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/KnowledgeOverview"
+        "401":
+          description: Not signed in
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "403":
+          description: Signed in without the admin role
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /admin/knowledge/documents:
+    get:
+      operationId: listKnowledgeDocuments
+      tags: [knowledge-admin]
+      summary: Knowledge documents with approval status, version and embedding progress (admins only)
+      parameters:
+        - name: status
+          in: query
+          required: false
+          schema: { $ref: "#/components/schemas/KnowledgeDocumentFilter" }
+        - name: sourceId
+          in: query
+          required: false
+          schema: { type: string }
+        - name: search
+          in: query
+          required: false
+          schema: { type: string, maxLength: 100 }
+        - name: page
+          in: query
+          required: false
+          schema: { type: integer, minimum: 1 }
+      responses:
+        "200":
+          description: Page of documents
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/KnowledgeDocumentPage"
+        "400":
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "401":
+          description: Not signed in
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "403":
+          description: Signed in without the admin role
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+    post:
+      operationId: createKnowledgeDocument
+      tags: [knowledge-admin]
+      summary: Add a knowledge document; it is stored as pending and is not retrieved until approved and embedded
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/KnowledgeDocumentInput"
+      responses:
+        "201":
+          description: The new pending document
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/KnowledgeDocumentDetail"
+        "400":
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "401":
+          description: Not signed in
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "403":
+          description: Signed in without the admin role
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "409":
+          description: The same text already exists in this source
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /admin/knowledge/documents/{documentId}:
+    get:
+      operationId: getKnowledgeDocument
+      tags: [knowledge-admin]
+      summary: A knowledge document with chunks, versions and approval history (admins only)
+      parameters:
+        - name: documentId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Document detail
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/KnowledgeDocumentDetail"
+        "401":
+          description: Not signed in
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "403":
+          description: Signed in without the admin role
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /admin/knowledge/documents/{documentId}/decisions:
+    post:
+      operationId: decideKnowledgeDocument
+      tags: [knowledge-admin]
+      summary: Approve, reject, send back or retire a document with notes (approving retires older versions)
+      parameters:
+        - name: documentId
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/KnowledgeDocumentDecisionInput"
+      responses:
+        "200":
+          description: The updated document
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/KnowledgeDocumentDetail"
+        "400":
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "401":
+          description: Not signed in
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "403":
+          description: Signed in without the admin role
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /admin/knowledge/documents/{documentId}/try-question:
+    post:
+      operationId: tryKnowledgeDocumentQuestion
+      tags: [knowledge-admin]
+      summary: Embed a question and retrieve approved knowledge chunks without generating a reply (admins only)
+      parameters:
+        - name: documentId
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TryKnowledgeDocumentInput"
+      responses:
+        "200":
+          description: Top matching approved chunks and whether the selected document is retrievable
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TryKnowledgeDocumentResult"
+        "400":
+          description: Invalid question
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "401":
+          description: Not signed in
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "403":
+          description: Signed in without the admin role
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "404":
+          description: Document not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "502":
+          description: Question embedding or retrieval failed
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "503":
+          description: GEMINI_API_KEY is not configured
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /admin/knowledge/documents/{documentId}/embed:
+    post:
+      operationId: embedKnowledgeDocument
+      tags: [knowledge-admin]
+      summary: Generate Gemini embeddings for an approved document's chunks that have none yet
+      parameters:
+        - name: documentId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Embedding result (may include partial failures)
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/KnowledgeEmbedResult"
+        "401":
+          description: Not signed in
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "403":
+          description: Signed in without the admin role
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "409":
+          description: The document or its source is not approved, or embedding is already running
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "502":
+          description: Gemini could not embed any chunk
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "503":
+          description: GEMINI_API_KEY is not configured
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /admin/knowledge/sources/{sourceId}/decisions:
+    post:
+      operationId: decideKnowledgeSource
+      tags: [knowledge-admin]
+      summary: Approve, reject, retire or reset a whole knowledge source with notes
+      parameters:
+        - name: sourceId
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/KnowledgeSourceDecisionInput"
+      responses:
+        "200":
+          description: The updated source
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/KnowledgeSource"
+        "400":
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "401":
+          description: Not signed in
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "403":
+          description: Signed in without the admin role
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /admin/knowledge/sources/{sourceId}/bulk-approve-documents:
+    post:
+      operationId: approveSyntheticKnowledgeDocuments
+      tags: [knowledge-admin]
+      summary: Approve all reviewed pending documents in the synthetic RAG source
+      parameters:
+        - name: sourceId
+          in: path
+          required: true
+          schema: { type: string, format: uuid }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/BulkApproveSyntheticDocumentsInput"
+      responses:
+        "200":
+          description: Documents approved; embeddings were neither created nor deleted
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BulkApproveSyntheticDocumentsResponse"
+        "400":
+          description: Invalid approval request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "401":
+          description: Not signed in
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "403":
+          description: Signed in without the admin role
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "404":
+          description: Source not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "409":
+          description: The source or pending-document set does not match the reviewed synthetic dataset
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /admin/knowledge/sources/{sourceId}/embed:
+    post:
+      operationId: embedKnowledgeSource
+      tags: [knowledge-admin]
+      summary: Generate Gemini embeddings for every approved document in an approved source that has none yet
+      parameters:
+        - name: sourceId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Embedding result (may include partial failures)
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/KnowledgeEmbedResult"
+        "401":
+          description: Not signed in
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "403":
+          description: Signed in without the admin role
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "409":
+          description: The source is not approved, or embedding is already running
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "502":
+          description: Gemini could not embed any chunk
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "503":
+          description: GEMINI_API_KEY is not configured
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+
+  /synthetic/occupations/{occupationId}/trend-scenario:
+    get:
+      operationId: getSyntheticTrendScenario
+      tags: [synthetic]
+      summary: Fictional quarterly demand index for a role (synthetic demo data, not a real statistic or forecast)
+      parameters:
+        - name: occupationId
+          in: path
+          required: true
+          schema: { type: string, maxLength: 40 }
+      responses:
+        "200":
+          description: Fictional trend scenario (points may be empty when the dataset is not imported)
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SyntheticTrendScenario"
+        "404":
+          description: Occupation not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /synthetic/learning-resources:
+    get:
+      operationId: listSyntheticLearningResources
+      tags: [synthetic]
+      summary: Fictional practice labs that target the given skills (synthetic demo data, not actual courses)
+      parameters:
+        - name: skillIds
+          in: query
+          required: true
+          description: Comma-separated skill ids (at most 100)
+          schema: { type: string, maxLength: 1200 }
+      responses:
+        "200":
+          description: Fictional practice labs
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SyntheticLearningResourceList"
+        "400":
+          description: Invalid skill ids
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+
+components:
+  schemas:
+
+    SyntheticTrendPoint:
+      type: object
+      required: [observationId, quarter, index]
+      properties:
+        observationId: { type: string }
+        quarter: { type: string, description: "Calendar quarter, e.g. 2025Q1" }
+        index: { type: number, description: "Fictional demand index (unit FICTIONAL_DEMAND_INDEX)" }
+
+    SyntheticTrendScenario:
+      type: object
+      required: [occupationId, isSynthetic, unit, geography, disclaimer, datasetId, points]
+      properties:
+        occupationId: { type: string }
+        isSynthetic: { type: boolean, enum: [true] }
+        unit: { type: string }
+        geography: { type: string }
+        disclaimer: { type: string }
+        datasetId: { type: string, description: "Fictional dataset id, empty when nothing is imported" }
+        points:
+          type: array
+          items:
+            $ref: "#/components/schemas/SyntheticTrendPoint"
+
+    SyntheticLearningResource:
+      type: object
+      required: [resourceId, title, provider, deliveryMode, estimatedHours, cost, currency, level, availabilityStatus, datasetId, isSynthetic, targetSkills]
+      properties:
+        resourceId: { type: string }
+        title: { type: string }
+        provider: { type: string }
+        deliveryMode: { type: string }
+        estimatedHours: { type: number }
+        cost: { type: number }
+        currency: { type: string }
+        level: { type: string }
+        availabilityStatus: { type: string, description: "Always NOT_AN_ACTUAL_COURSE" }
+        datasetId: { type: string }
+        isSynthetic: { type: boolean, enum: [true] }
+        targetSkills:
+          type: array
+          items:
+            type: object
+            required: [skillId, name]
+            properties:
+              skillId: { type: string }
+              name: { type: string }
+
+    SyntheticLearningResourceList:
+      type: object
+      required: [disclaimer, resources]
+      properties:
+        disclaimer: { type: string }
+        resources:
+          type: array
+          items:
+            $ref: "#/components/schemas/SyntheticLearningResource"
+
+    KnowledgeStatus:
+      type: string
+      enum: [pending, approved, rejected, retired]
+
+    KnowledgeDocumentFilter:
+      type: string
+      enum: [all, pending, approved, rejected, retired]
+
+    KnowledgeDocumentDecision:
+      type: string
+      enum: [approved, rejected, needs_changes, retired]
+      description: needs_changes keeps the document pending
+
+    KnowledgeSourceDecision:
+      type: string
+      enum: [approved, rejected, retired, pending]
+
+    KnowledgeDataOrigin:
+      type: string
+      enum: [SYNTHETIC, SOURCE_ATTRIBUTED]
+
+    KnowledgeStatusCounts:
+      type: object
+      required: [pending, approved, rejected, retired]
+      properties:
+        pending: { type: integer }
+        approved: { type: integer }
+        rejected: { type: integer }
+        retired: { type: integer }
+
+    KnowledgeSource:
+      type: object
+      required: [id, name, sourceType, approvalStatus, licenceNotes, documentCounts, chunkCount, embeddedChunkCount, awaitingEmbeddingCount]
+      properties:
+        id: { type: string }
+        name: { type: string }
+        sourceType: { type: string }
+        approvalStatus: { $ref: "#/components/schemas/KnowledgeStatus" }
+        licenceNotes: { type: [string, "null"] }
+        documentCounts: { $ref: "#/components/schemas/KnowledgeStatusCounts" }
+        chunkCount: { type: integer }
+        embeddedChunkCount: { type: integer, description: "Chunks with a vector for the active embedding model" }
+        awaitingEmbeddingCount: { type: integer, description: "Approved chunks (approved document in an approved source) with no vector yet" }
+
+    KnowledgeIngestionRun:
+      type: object
+      required: [id, sourceName, runType, status, recordsSeen, recordsInserted, recordsUpdated, errorMessage, triggeredByName, startedAt, finishedAt]
+      properties:
+        id: { type: string }
+        sourceName: { type: [string, "null"] }
+        runType: { type: string }
+        status: { type: string }
+        recordsSeen: { type: integer }
+        recordsInserted: { type: integer }
+        recordsUpdated: { type: integer }
+        errorMessage: { type: [string, "null"] }
+        triggeredByName: { type: [string, "null"] }
+        startedAt: { type: string, format: date-time }
+        finishedAt: { type: [string, "null"], format: date-time }
+
+    KnowledgeOverview:
+      type: object
+      required: [geminiConfigured, embeddingModel, embeddingModelActive, adminSourceName, sources, recentRuns]
+      properties:
+        geminiConfigured: { type: boolean }
+        embeddingModel: { type: string }
+        embeddingModelActive: { type: boolean, description: "The embedding model is registered, so the AI Mentor can search" }
+        adminSourceName: { type: string, description: "Source used for documents added here when no source is chosen" }
+        sources:
+          type: array
+          items: { $ref: "#/components/schemas/KnowledgeSource" }
+        recentRuns:
+          type: array
+          items: { $ref: "#/components/schemas/KnowledgeIngestionRun" }
+
+    KnowledgeApproval:
+      type: object
+      required: [id, decision, notes, reviewerName, decidedAt]
+      properties:
+        id: { type: string }
+        decision: { $ref: "#/components/schemas/KnowledgeDocumentDecision" }
+        notes: { type: [string, "null"] }
+        reviewerName: { type: string }
+        decidedAt: { type: string, format: date-time }
+
+    KnowledgeDocumentSummary:
+      type: object
+      required: [id, title, sourceId, sourceName, sourceStatus, language, dataOrigin, approvalStatus, version, versionCount, chunkCount, embeddedChunkCount, createdAt, lastDecision]
+      properties:
+        id: { type: string }
+        title: { type: string }
+        sourceId: { type: string }
+        sourceName: { type: string }
+        sourceStatus: { $ref: "#/components/schemas/KnowledgeStatus" }
+        language: { type: string }
+        dataOrigin: { $ref: "#/components/schemas/KnowledgeDataOrigin" }
+        approvalStatus: { $ref: "#/components/schemas/KnowledgeStatus" }
+        version: { type: integer, description: "1-based position among documents with the same title in the same source, oldest first" }
+        versionCount: { type: integer }
+        chunkCount: { type: integer }
+        embeddedChunkCount: { type: integer }
+        createdAt: { type: string, format: date-time }
+        lastDecision:
+          oneOf:
+            - $ref: "#/components/schemas/KnowledgeApproval"
+            - type: "null"
+
+    KnowledgeDocumentPage:
+      type: object
+      required: [items, page, pageSize, total, counts]
+      properties:
+        items:
+          type: array
+          items: { $ref: "#/components/schemas/KnowledgeDocumentSummary" }
+        page: { type: integer }
+        pageSize: { type: integer }
+        total: { type: integer }
+        counts:
+          type: object
+          required: [all, pending, approved, rejected, retired]
+          properties:
+            all: { type: integer }
+            pending: { type: integer }
+            approved: { type: integer }
+            rejected: { type: integer }
+            retired: { type: integer }
+
+    KnowledgeChunk:
+      type: object
+      required: [id, chunkIndex, content, embedded]
+      properties:
+        id: { type: string }
+        chunkIndex: { type: integer }
+        content: { type: string }
+        embedded: { type: boolean }
+
+    KnowledgeVersion:
+      type: object
+      required: [id, version, approvalStatus, createdAt]
+      properties:
+        id: { type: string }
+        version: { type: integer }
+        approvalStatus: { $ref: "#/components/schemas/KnowledgeStatus" }
+        createdAt: { type: string, format: date-time }
+
+    KnowledgeDocumentDetail:
+      type: object
+      required: [document, url, contentHash, retrievable, chunks, versions, approvals]
+      properties:
+        document: { $ref: "#/components/schemas/KnowledgeDocumentSummary" }
+        url: { type: [string, "null"] }
+        contentHash: { type: string }
+        retrievable: { type: boolean, description: "Approved, in an approved source, and every chunk embedded: the AI Mentor can cite it" }
+        chunks:
+          type: array
+          items: { $ref: "#/components/schemas/KnowledgeChunk" }
+        versions:
+          type: array
+          items: { $ref: "#/components/schemas/KnowledgeVersion" }
+        approvals:
+          type: array
+          items: { $ref: "#/components/schemas/KnowledgeApproval" }
+
+    KnowledgeDocumentInput:
+      type: object
+      required: [title, language, dataOrigin, text]
+      properties:
+        sourceId: { type: [string, "null"], description: "Existing source; omit to use the admin uploads source" }
+        title: { type: string, minLength: 3, maxLength: 200, description: "Reuse an existing title in the same source to add a new version" }
+        language: { $ref: "#/components/schemas/ChatLanguage" }
+        dataOrigin: { $ref: "#/components/schemas/KnowledgeDataOrigin" }
+        url: { type: [string, "null"], maxLength: 500 }
+        text: { type: string, minLength: 50, maxLength: 100000 }
+
+    KnowledgeDocumentDecisionInput:
+      type: object
+      required: [decision, notes]
+      properties:
+        decision: { $ref: "#/components/schemas/KnowledgeDocumentDecision" }
+        notes: { type: string, minLength: 10, maxLength: 2000 }
+
+    KnowledgeSourceDecisionInput:
+      type: object
+      required: [decision, notes]
+      properties:
+        decision: { $ref: "#/components/schemas/KnowledgeSourceDecision" }
+        notes: { type: string, minLength: 10, maxLength: 2000 }
+
+    BulkApproveSyntheticDocumentsInput:
+      type: object
+      required: [expectedPendingCount, notes]
+      properties:
+        expectedPendingCount: { type: integer, minimum: 1, maximum: 500, description: "The number shown to the reviewer; approval fails if the source changed" }
+        notes: { type: string, minLength: 10, maxLength: 2000 }
+
+    BulkApproveSyntheticDocumentsResponse:
+      type: object
+      required: [approvedCount, source]
+      properties:
+        approvedCount: { type: integer }
+        source: { $ref: "#/components/schemas/KnowledgeSource" }
+
+    KnowledgeEmbedResult:
+      type: object
+      required: [embedded, failed, remaining, errors]
+      properties:
+        embedded: { type: integer }
+        failed: { type: integer }
+        remaining: { type: integer, description: "Approved chunks in scope still without a vector" }
+        errors:
+          type: array
+          items: { type: string }
+    TryKnowledgeDocumentInput:
+      type: object
+      required: [question]
+      properties:
+        question: { type: string, minLength: 3, maxLength: 1000 }
+    RetrievedKnowledgeChunk:
+      type: object
+      required: [chunkId, chunkIndex, content, language, documentId, documentTitle, documentUrl, sourceName, sourceUrl, dataSourceId, score, isCurrentDocument]
+      properties:
+        chunkId: { type: string, format: uuid }
+        chunkIndex: { type: integer }
+        content: { type: string }
+        language: { type: string }
+        documentId: { type: string, format: uuid }
+        documentTitle: { type: string }
+        documentUrl: { type: [string, "null"] }
+        sourceName: { type: string }
+        sourceUrl: { type: [string, "null"] }
+        dataSourceId: { type: [string, "null"] }
+        score: { type: number, description: "Cosine similarity; higher is a closer match." }
+        isCurrentDocument: { type: boolean }
+    TryKnowledgeDocumentResult:
+      type: object
+      required: [documentRetrievable, results]
+      properties:
+        documentRetrievable: { type: boolean, description: "Whether the selected document is approved, its source is approved, and all its chunks are embedded." }
+        results:
+          type: array
+          items: { $ref: "#/components/schemas/RetrievedKnowledgeChunk" }
+    CvReviewStatus:
+      type: object
+      required: [aiExtractionAvailable, extractionModel, demoCvCount, reviewCaseCount]
+      properties:
+        aiExtractionAvailable: { type: boolean, description: "True when a Gemini API key is configured" }
+        extractionModel: { type: string }
+        demoCvCount: { type: integer }
+        reviewCaseCount: { type: integer, description: "Claims marked as curated review cases in the dataset" }
+
+    ClaimType:
+      type: string
+      enum: [education, experience, certification, skill, industry, other]
+
+    ClaimStatus:
+      type: string
+      enum: [pending_review, evidence_sufficient, more_evidence_requested, escalated, accepted, rejected]
+
+    ReviewerDecision:
+      type: string
+      enum: [EVIDENCE_SUFFICIENT, REQUEST_MORE_EVIDENCE, ESCALATED]
+
+    AppealStatus:
+      type: string
+      enum: [submitted, under_review, upheld, rejected, withdrawn]
+
+    ExtractionMethod:
+      type: string
+      enum: [synthetic_fixture, ai_model, rule_based, manual]
+
+    DemoCvSummary:
+      type: object
+      required: [id, externalId, candidateName, state, education, yearsExperience, targetOccupation, status, claimCount, pendingCount, decidedCount, reviewCaseCount, aiExtracted]
+      properties:
+        id: { type: string }
+        externalId: { type: string, description: "Dataset id, e.g. SYN_PROFILE_0001" }
+        candidateName: { type: string, description: "Fictional name" }
+        state: { type: [string, "null"] }
+        education: { type: [string, "null"] }
+        yearsExperience: { type: [number, "null"] }
+        targetOccupation:
+          oneOf:
+            - $ref: "#/components/schemas/OccupationRef"
+            - type: "null"
+        status: { type: string, enum: [uploaded, scanned, reviewed, deleted] }
+        claimCount: { type: integer }
+        pendingCount: { type: integer }
+        decidedCount: { type: integer }
+        reviewCaseCount: { type: integer }
+        aiExtracted: { type: boolean }
+
+    OccupationRef:
+      type: object
+      required: [id, title]
+      properties:
+        id: { type: string }
+        title: { type: string }
+
+    DemoCvPage:
+      type: object
+      required: [items, total, page, pageSize]
+      properties:
+        items:
+          type: array
+          items: { $ref: "#/components/schemas/DemoCvSummary" }
+        total: { type: integer }
+        page: { type: integer }
+        pageSize: { type: integer }
+
+    ClaimEvidence:
+      type: object
+      required: [id, kind, quote, documentTitle, issuerName, description, isSynthetic, verifiedExternal]
+      properties:
+        id: { type: string }
+        kind:
+          type: string
+          enum: [cv_quote, simulated_document_metadata]
+          description: "cv_quote = verbatim CV text; simulated_document_metadata = fictional placeholder, not a real document"
+        quote: { type: [string, "null"] }
+        documentTitle: { type: [string, "null"] }
+        issuerName: { type: [string, "null"] }
+        description: { type: [string, "null"] }
+        isSynthetic: { type: boolean }
+        verifiedExternal: { type: boolean, description: "Always false for fictional evidence" }
+
+    DecisionSummary:
+      type: object
+      required: [decision, rationale, decidedAt, viaAppeal]
+      properties:
+        decision: { $ref: "#/components/schemas/ReviewerDecision" }
+        rationale: { type: string }
+        decidedAt: { type: string, format: date-time }
+        viaAppeal: { type: boolean, description: "True when the decision was changed by upholding an appeal" }
+
+    ApplicantAppeal:
+      type: object
+      required: [id, claimId, reason, language, status, resolution, submittedAt, resolvedAt]
+      properties:
+        id: { type: string }
+        claimId: { type: string }
+        reason: { type: string }
+        language: { $ref: "#/components/schemas/ChatLanguage" }
+        status: { $ref: "#/components/schemas/AppealStatus" }
+        resolution: { type: [string, "null"] }
+        submittedAt: { type: string, format: date-time }
+        resolvedAt: { type: [string, "null"], format: date-time }
+
+    ClaimSkill:
+      type: object
+      required: [id, name]
+      properties:
+        id: { type: string }
+        name: { type: string }
+
+    ApplicantClaim:
+      type: object
+      required: [id, externalId, claimType, claimText, skill, extractionMethod, extractionModel, status, reviewCase, evidence, latestDecision, myAppeal, canAppeal]
+      properties:
+        id: { type: string }
+        externalId: { type: [string, "null"] }
+        claimType: { $ref: "#/components/schemas/ClaimType" }
+        claimText: { type: string }
+        skill:
+          oneOf:
+            - $ref: "#/components/schemas/ClaimSkill"
+            - type: "null"
+        extractionMethod: { $ref: "#/components/schemas/ExtractionMethod" }
+        extractionModel: { type: [string, "null"] }
+        status: { $ref: "#/components/schemas/ClaimStatus" }
+        reviewCase: { type: boolean, description: "Curated review case in the dataset (expected outcome is never exposed)" }
+        evidence:
+          type: array
+          items: { $ref: "#/components/schemas/ClaimEvidence" }
+        latestDecision:
+          oneOf:
+            - $ref: "#/components/schemas/DecisionSummary"
+            - type: "null"
+        myAppeal:
+          oneOf:
+            - $ref: "#/components/schemas/ApplicantAppeal"
+            - type: "null"
+        canAppeal: { type: boolean }
+
+    DemoCvDetail:
+      allOf:
+        - $ref: "#/components/schemas/DemoCvSummary"
+        - type: object
+          required: [cvText, provenance]
+          properties:
+            cvText: { type: string }
+            provenance: { type: [string, "null"] }
+
+    ApplicantCvDetail:
+      type: object
+      required: [cv, claims]
+      properties:
+        cv: { $ref: "#/components/schemas/DemoCvDetail" }
+        claims:
+          type: array
+          items: { $ref: "#/components/schemas/ApplicantClaim" }
+
+    AppealInput:
+      type: object
+      required: [reason]
+      properties:
+        reason: { type: string, minLength: 10, maxLength: 2000 }
+        language: { $ref: "#/components/schemas/ChatLanguage" }
+
+    ReviewerMe:
+      type: object
+      required: [signedIn, isReviewer, isAdmin, email, displayName]
+      properties:
+        signedIn: { type: boolean }
+        isReviewer: { type: boolean }
+        isAdmin: { type: boolean, description: "Holds the admin role (knowledge-base management)" }
+        email: { type: [string, "null"] }
+        displayName: { type: [string, "null"] }
+
+    ReviewQueueFilter:
+      type: string
+      enum: [pending, review_cases, appeals, decided]
+
+    ReviewQueueItem:
+      type: object
+      required: [claimId, cvId, cvExternalId, candidateName, claimType, claimText, status, reviewCase, extractionMethod, evidenceCount, openAppealCount, lastDecisionAt]
+      properties:
+        claimId: { type: string }
+        cvId: { type: string }
+        cvExternalId: { type: string }
+        candidateName: { type: string }
+        claimType: { $ref: "#/components/schemas/ClaimType" }
+        claimText: { type: string }
+        status: { $ref: "#/components/schemas/ClaimStatus" }
+        reviewCase: { type: boolean }
+        extractionMethod: { $ref: "#/components/schemas/ExtractionMethod" }
+        evidenceCount: { type: integer }
+        openAppealCount: { type: integer }
+        lastDecisionAt: { type: [string, "null"], format: date-time }
+
+    ReviewQueuePage:
+      type: object
+      required: [items, total, page, pageSize, counts]
+      properties:
+        items:
+          type: array
+          items: { $ref: "#/components/schemas/ReviewQueueItem" }
+        total: { type: integer }
+        page: { type: integer }
+        pageSize: { type: integer }
+        counts:
+          type: object
+          required: [pending, review_cases, appeals, decided]
+          properties:
+            pending: { type: integer }
+            review_cases: { type: integer, description: "Review cases still pending" }
+            appeals: { type: integer, description: "Claims with an open appeal" }
+            decided: { type: integer }
+
+    ReviewerDecisionRecord:
+      type: object
+      required: [id, decision, rationale, reviewerName, decidedAt, viaAppeal]
+      properties:
+        id: { type: string }
+        decision: { $ref: "#/components/schemas/ReviewerDecision" }
+        rationale: { type: string }
+        reviewerName: { type: string }
+        decidedAt: { type: string, format: date-time }
+        viaAppeal: { type: boolean }
+
+    ReviewerAppeal:
+      allOf:
+        - $ref: "#/components/schemas/ApplicantAppeal"
+        - type: object
+          required: [applicantLabel, resolvedByName]
+          properties:
+            applicantLabel: { type: string, description: "Pseudonymous guest label" }
+            resolvedByName: { type: [string, "null"] }
+
+    ReviewerClaim:
+      type: object
+      required: [id, externalId, cvId, claimType, claimText, skill, extractionMethod, extractionModel, status, reviewCaseId, evidence, decisions, appeals]
+      properties:
+        id: { type: string }
+        externalId: { type: [string, "null"] }
+        cvId: { type: string }
+        claimType: { $ref: "#/components/schemas/ClaimType" }
+        claimText: { type: string }
+        skill:
+          oneOf:
+            - $ref: "#/components/schemas/ClaimSkill"
+            - type: "null"
+        extractionMethod: { $ref: "#/components/schemas/ExtractionMethod" }
+        extractionModel: { type: [string, "null"] }
+        status: { $ref: "#/components/schemas/ClaimStatus" }
+        reviewCaseId: { type: [string, "null"] }
+        evidence:
+          type: array
+          items: { $ref: "#/components/schemas/ClaimEvidence" }
+        decisions:
+          type: array
+          description: Newest first
+          items: { $ref: "#/components/schemas/ReviewerDecisionRecord" }
+        appeals:
+          type: array
+          description: Newest first
+          items: { $ref: "#/components/schemas/ReviewerAppeal" }
+
+    AuditEntry:
+      type: object
+      required: [id, action, actorType, actorName, entityType, entityId, summary, createdAt]
+      properties:
+        id: { type: integer }
+        action: { type: string }
+        actorType: { type: string }
+        actorName: { type: [string, "null"] }
+        entityType: { type: string }
+        entityId: { type: [string, "null"] }
+        summary: { type: string }
+        createdAt: { type: string, format: date-time }
+
+    ReviewerCvDetail:
+      type: object
+      required: [cv, claims, auditTrail]
+      properties:
+        cv: { $ref: "#/components/schemas/DemoCvDetail" }
+        claims:
+          type: array
+          items: { $ref: "#/components/schemas/ReviewerClaim" }
+        auditTrail:
+          type: array
+          description: Newest first
+          items: { $ref: "#/components/schemas/AuditEntry" }
+
+    ClaimDecisionInput:
+      type: object
+      required: [decision, rationale]
+      properties:
+        decision: { $ref: "#/components/schemas/ReviewerDecision" }
+        rationale: { type: string, minLength: 10, maxLength: 2000 }
+
+    AppealResolutionInput:
+      type: object
+      required: [outcome, rationale]
+      properties:
+        outcome: { type: string, enum: [upheld, rejected] }
+        rationale: { type: string, minLength: 10, maxLength: 2000 }
+        newDecision:
+          $ref: "#/components/schemas/ReviewerDecision"
+          description: Required when upheld; must differ from the current decision
+
+    ChatLanguage:
+      type: string
+      enum: [ms, zh-CN, en]
+      description: Bahasa Melayu (default), Simplified Chinese, English
+
+    AssistantStatus:
+      type: object
+      required: [ready, retrievalReady, embeddingReady, llmReady, chatReady, mode, retrievalMethod, llmUnavailableReason, deepseekConfigured, geminiConfigured, chatModel, embeddingModel, approvedDocuments, approvedChunks, embeddedChunks, languages]
+      properties:
+        ready: { type: boolean, description: "Same as chatReady (kept for compatibility)" }
+        retrievalReady: { type: boolean, description: "Approved knowledge is searchable through PostgreSQL full-text search (no external API)" }
+        embeddingReady: { type: boolean, description: "Gemini embeddings exist for approved chunks (vector search possible)" }
+        llmReady: { type: boolean, description: "DeepSeek has a key and its balance endpoint reports the account usable" }
+        chatReady: { type: boolean, description: "The chat can answer: AI answers when llmReady, otherwise labelled search-only results" }
+        mode: { type: string, enum: [ai, search_only, unavailable] }
+        retrievalMethod: { type: string }
+        llmUnavailableReason: { type: [string, "null"], description: "no_key, insufficient_balance, key_rejected or unreachable" }
+        approvedChunks: { type: integer }
+        deepseekConfigured: { type: boolean, description: "True when DEEPSEEK_API_KEY is configured" }
+        geminiConfigured: { type: boolean, description: "True when the Gemini embedding API key is configured" }
+        chatModel: { type: string }
+        embeddingModel: { type: [string, "null"] }
+        approvedDocuments: { type: integer }
+        embeddedChunks: { type: integer }
+        languages:
+          type: array
+          items: { $ref: "#/components/schemas/ChatLanguage" }
+
+    CreateChatSessionInput:
+      type: object
+      properties:
+        language: { $ref: "#/components/schemas/ChatLanguage" }
+
+    SendChatMessageInput:
+      type: object
+      required: [content]
+      properties:
+        content: { type: string, minLength: 1, maxLength: 2000 }
+        language: { $ref: "#/components/schemas/ChatLanguage" }
+
+    ChatSession:
+      type: object
+      required: [id, title, language, modelName, createdAt, lastMessageAt]
+      properties:
+        id: { type: string }
+        title: { type: [string, "null"] }
+        language: { $ref: "#/components/schemas/ChatLanguage" }
+        modelName: { type: [string, "null"] }
+        createdAt: { type: string, format: date-time }
+        lastMessageAt: { type: [string, "null"], format: date-time }
+
+    ChatCitation:
+      type: object
+      required: [rank, chunkId, relevanceScore, documentTitle, documentUrl, sourceName, sourceUrl, excerpt]
+      properties:
+        rank: { type: integer, description: "Matches the [n] marker in the answer text" }
+        chunkId: { type: string }
+        relevanceScore: { type: [number, "null"], description: "Cosine similarity between question and chunk" }
+        documentTitle: { type: string }
+        documentUrl: { type: [string, "null"] }
+        sourceName: { type: string }
+        sourceUrl: { type: [string, "null"] }
+        excerpt: { type: string }
+
+    ChatMessage:
+      type: object
+      required: [id, role, content, language, modelName, createdAt, citations]
+      properties:
+        id: { type: string }
+        role:
+          type: string
+          enum: [user, assistant, system]
+        content: { type: string }
+        language: { type: [string, "null"] }
+        modelName: { type: [string, "null"] }
+        createdAt: { type: string, format: date-time }
+        citations:
+          type: array
+          items: { $ref: "#/components/schemas/ChatCitation" }
+
+    ChatSessionDetail:
+      type: object
+      required: [session, messages]
+      properties:
+        session: { $ref: "#/components/schemas/ChatSession" }
+        messages:
+          type: array
+          items: { $ref: "#/components/schemas/ChatMessage" }
+
+    ChatExchange:
+      type: object
+      required: [session, userMessage, assistantMessage, followUps]
+      properties:
+        session: { $ref: "#/components/schemas/ChatSession" }
+        userMessage: { $ref: "#/components/schemas/ChatMessage" }
+        assistantMessage: { $ref: "#/components/schemas/ChatMessage" }
+        followUps:
+          type: array
+          description: Suggested next questions in the chat language (not stored)
+          items: { type: string }
+
+    HealthStatus:
+      type: object
+      properties:
+        status:
+          type: string
+      required:
+        - status
+
+    ErrorResponse:
+      type: object
+      required: [error]
+      properties:
+        error: { type: string }
+
+    Scenario:
+      type: string
+      enum: [baseline, moderate, fast]
+
+    Direction:
+      type: string
+      enum: [RISING, STEADY, SLOWING]
+      description: Relative to the other roles/skills under the same scenario (top third, middle third, bottom third).
+
+    SdgTag:
+      type: object
+      required: [goalNumber, goalTitle, targetCode, rationale]
+      properties:
+        goalNumber: { type: integer }
+        goalTitle: { type: string }
+        targetCode: { type: string }
+        rationale: { type: string }
+
+    SourceRef:
+      type: object
+      required: [id, name, url, date, verificationStatus]
+      properties:
+        id: { type: string }
+        name: { type: string }
+        url: { type: string }
+        date: { type: string, description: "Publication date of the source" }
+        verificationStatus: { type: string }
+
+    SkillRef:
+      type: object
+      required: [skillId, name, category]
+      properties:
+        skillId: { type: string }
+        name: { type: string }
+        category: { type: string }
+
+    ProfileSkill:
+      type: object
+      required: [skillId, proficiency]
+      properties:
+        skillId: { type: string }
+        proficiency: { type: integer, minimum: 1, maximum: 5 }
+
+    Overview:
+      type: object
+      required: [occupationCount, skillCount, sourceCount, trendObservationCount, sectorCount, latestObservationDate, forecastTargetDate, syntheticProfileCount, metrics, aiDisclosure, disclaimer]
+      properties:
+        occupationCount: { type: integer }
+        skillCount: { type: integer }
+        sourceCount: { type: integer }
+        sectorCount: { type: integer }
+        trendObservationCount: { type: integer }
+        syntheticProfileCount: { type: integer }
+        latestObservationDate: { type: string }
+        forecastTargetDate: { type: string }
+        metrics:
+          type: array
+          items:
+            $ref: "#/components/schemas/ModelMetric"
+        aiDisclosure: { type: string }
+        disclaimer: { type: string }
+
+    ModelMetric:
+      type: object
+      required: [task, model, metric, value, note]
+      properties:
+        task: { type: string }
+        model: { type: string }
+        metric: { type: string }
+        value: { type: number }
+        note: { type: string }
+
+    DataSource:
+      type: object
+      required: [id, name, url, sourceType, publicationDate, retrievalDate, licenceNotes, verificationStatus, usedFor]
+      properties:
+        id: { type: string }
+        name: { type: string }
+        url: { type: string }
+        sourceType: { type: string }
+        publicationDate: { type: string }
+        retrievalDate: { type: string }
+        licenceNotes: { type: string }
+        verificationStatus: { type: string }
+        usedFor:
+          type: array
+          items: { type: string }
+
+    Skill:
+      type: object
+      required: [skillId, name, category, skillType, synonyms, sdgs]
+      properties:
+        skillId: { type: string }
+        name: { type: string }
+        category: { type: string }
+        skillType: { type: string }
+        synonyms:
+          type: array
+          items: { type: string }
+        sdgs:
+          type: array
+          items:
+            $ref: "#/components/schemas/SdgTag"
+
+    Sector:
+      type: object
+      required: [name, occupationCount, averageChangePct, featuredOccupationId]
+      properties:
+        name: { type: string }
+        occupationCount: { type: integer }
+        averageChangePct: { type: number, description: "Baseline-scenario average projected demand change" }
+        featuredOccupationId: { type: string, description: "Data-backed representative role with the strongest baseline demand change in this sector" }
+
+    SampleProfile:
+      type: object
+      required: [profileId, personaSegment, state, education, fieldOfStudy, yearsExperience, currentRoleTitle, interestSectors, weeklyLearningHours, skills]
+      properties:
+        profileId: { type: string }
+        personaSegment: { type: string }
+        state: { type: string }
+        education: { type: string }
+        fieldOfStudy: { type: string }
+        yearsExperience: { type: number }
+        currentRoleTitle: { type: ["string", "null"] }
+        interestSectors:
+          type: array
+          items: { type: string }
+        weeklyLearningHours: { type: integer }
+        skills:
+          type: array
+          items:
+            $ref: "#/components/schemas/ExtractedSkill"
+
+    CvTextInput:
+      type: object
+      required: [text]
+      properties:
+        text: { type: string, minLength: 1, maxLength: 20000 }
+
+    CvScanInput:
+      type: object
+      properties:
+        fileName: { type: string, maxLength: 200 }
+        fileBase64:
+          type: string
+          maxLength: 7000000
+          description: Base64-encoded PDF (max 5 MB)
+        text: { type: string, maxLength: 50000 }
+
+    ScannedSkill:
+      type: object
+      required: [skillId, name, category, proficiency, matchedTerm, evidence]
+      properties:
+        skillId: { type: string }
+        name: { type: string }
+        category: { type: string }
+        proficiency: { type: integer, minimum: 1, maximum: 5 }
+        matchedTerm: { type: string }
+        evidence: { type: string }
+
+    SectorSuggestion:
+      type: object
+      required: [sector, matchedSkillCount]
+      properties:
+        sector: { type: string }
+        matchedSkillCount: { type: integer }
+
+    CvScanResult:
+      type: object
+      required: [engine, method, note, personName, fileName, pageCount, characterCount, textPreview, skills, suggestedEducation, educationEvidence, suggestedYearsExperience, experienceEvidence, suggestedSectors]
+      properties:
+        engine:
+          type: string
+          enum: [AI_MODEL, RULE_BASED]
+        method: { type: string }
+        note: { type: string }
+        personName: { type: [string, "null"], description: "Best-effort person name from the CV header; null when uncertain" }
+        fileName: { type: [string, "null"] }
+        pageCount: { type: [integer, "null"] }
+        characterCount: { type: integer }
+        textPreview: { type: string }
+        skills:
+          type: array
+          items:
+            $ref: "#/components/schemas/ScannedSkill"
+        suggestedEducation:
+          type: [string, "null"]
+          enum: [SPM, Diploma/DKM, Bachelor, Master/PhD, null]
+        educationEvidence: { type: [string, "null"] }
+        suggestedYearsExperience: { type: [number, "null"] }
+        experienceEvidence: { type: [string, "null"] }
+        suggestedSectors:
+          type: array
+          items:
+            $ref: "#/components/schemas/SectorSuggestion"
+
+    ExtractedSkill:
+      type: object
+      required: [skillId, name, category, proficiency, matchedTerm]
+      properties:
+        skillId: { type: string }
+        name: { type: string }
+        category: { type: string }
+        proficiency: { type: integer }
+        matchedTerm: { type: string }
+
+    ExtractionResult:
+      type: object
+      required: [skills, method, note]
+      properties:
+        skills:
+          type: array
+          items:
+            $ref: "#/components/schemas/ExtractedSkill"
+        method: { type: string }
+        note: { type: string }
+
+    RoleTrend:
+      type: object
+      required: [occupationId, title, sector, careerLevel, currentIndex, projectedIndex, lower90, upper90, changePct, direction, aiExposure, aiAugmentation, mycolStatus, primarySdg, evidenceStatus, sourceIds]
+      properties:
+        occupationId: { type: string }
+        title: { type: string }
+        sector: { type: string }
+        careerLevel: { type: string }
+        currentIndex: { type: number }
+        projectedIndex: { type: number }
+        lower90: { type: number }
+        upper90: { type: number }
+        changePct: { type: number }
+        direction:
+          $ref: "#/components/schemas/Direction"
+        aiExposure: { type: number }
+        aiAugmentation: { type: number }
+        mycolStatus: { type: string }
+        primarySdg:
+          $ref: "#/components/schemas/SdgTag"
+        evidenceStatus: { type: string }
+        sourceIds:
+          type: array
+          items: { type: string }
+
+    AiResilience:
+      type: string
+      enum: [RESILIENT, EXPOSED]
+      description: Relative to all skills in the taxonomy under the same scenario (upper half vs lower half of the resilience score). Describes the roles a skill appears in, not specific tasks.
+
+    SkillTrend:
+      type: object
+      required: [skillId, name, category, changePct, direction, roleCount, aiResilience, resilienceScore, avgExposure, avgAugmentation]
+      properties:
+        aiResilience:
+          $ref: "#/components/schemas/AiResilience"
+        resilienceScore: { type: number, description: "mean(augmentation) - (scenario lambda / moderate lambda) x mean(exposure x (1 - augmentation)) over the roles requiring the skill (Required weight 1, Preferred 0.5)" }
+        avgExposure: { type: number, description: "Weighted mean AI exposure of roles requiring this skill, 0-1" }
+        avgAugmentation: { type: number, description: "Weighted mean AI augmentation potential of roles requiring this skill, 0-1" }
+        skillId: { type: string }
+        name: { type: string }
+        category: { type: string }
+        changePct: { type: number }
+        direction:
+          $ref: "#/components/schemas/Direction"
+        roleCount: { type: integer, description: "Roles that require this skill" }
+
+    Radar:
+      type: object
+      required: [scenario, scenarioLabel, asOfDate, forecastTargetDate, assumptions, roles, skills, sources]
+      properties:
+        scenario:
+          $ref: "#/components/schemas/Scenario"
+        scenarioLabel: { type: string }
+        asOfDate: { type: string }
+        forecastTargetDate: { type: string }
+        assumptions: { type: string }
+        roles:
+          type: array
+          items:
+            $ref: "#/components/schemas/RoleTrend"
+        skills:
+          type: array
+          items:
+            $ref: "#/components/schemas/SkillTrend"
+        sources:
+          type: array
+          items:
+            $ref: "#/components/schemas/SourceRef"
+
+    ScenarioComparison:
+      type: object
+      required: [scenarios, sectors]
+      properties:
+        scenarios:
+          type: array
+          items:
+            $ref: "#/components/schemas/ScenarioInfo"
+        sectors:
+          type: array
+          items:
+            $ref: "#/components/schemas/SectorScenarioRow"
+
+    ScenarioInfo:
+      type: object
+      required: [scenario, label, assumptions, averageChangePct]
+      properties:
+        scenario:
+          $ref: "#/components/schemas/Scenario"
+        label: { type: string }
+        assumptions: { type: string }
+        averageChangePct: { type: number }
+
+    SectorScenarioRow:
+      type: object
+      required: [sector, baselineChangePct, moderateChangePct, fastChangePct]
+      properties:
+        sector: { type: string }
+        baselineChangePct: { type: number }
+        moderateChangePct: { type: number }
+        fastChangePct: { type: number }
+
+    TrendPoint:
+      type: object
+      required: [date, value, evidenceStatus]
+      properties:
+        date: { type: string }
+        value: { type: number }
+        evidenceStatus: { type: string }
+
+    ScenarioForecast:
+      type: object
+      required: [scenario, label, projectedIndex, changePct, lower90, upper90]
+      properties:
+        scenario:
+          $ref: "#/components/schemas/Scenario"
+        label: { type: string }
+        projectedIndex: { type: number }
+        changePct: { type: number }
+        lower90: { type: number }
+        upper90: { type: number }
+
+    OccupationSkill:
+      type: object
+      required: [skillId, name, category, importance, requiredProficiency]
+      properties:
+        skillId: { type: string }
+        name: { type: string }
+        category: { type: string }
+        importance: { type: string, enum: [Required, Preferred] }
+        requiredProficiency: { type: integer }
+
+    OccupationDetail:
+      type: object
+      required: [occupationId, title, mascoCode, sector, careerLevel, description, minEducation, minExperienceYears, mycolStatus, aiExposure, aiAugmentation, skills, sdgs, history, forecasts, forecastTargetDate, sources]
+      properties:
+        occupationId: { type: string }
+        title: { type: string }
+        mascoCode: { type: string }
+        sector: { type: string }
+        careerLevel: { type: string }
+        description: { type: string }
+        minEducation: { type: string }
+        minExperienceYears: { type: number }
+        mycolStatus: { type: string }
+        aiExposure: { type: number }
+        aiAugmentation: { type: number }
+        skills:
+          type: array
+          items:
+            $ref: "#/components/schemas/OccupationSkill"
+        sdgs:
+          type: array
+          items:
+            $ref: "#/components/schemas/SdgTag"
+        history:
+          type: array
+          items:
+            $ref: "#/components/schemas/TrendPoint"
+        forecasts:
+          type: array
+          items:
+            $ref: "#/components/schemas/ScenarioForecast"
+        forecastTargetDate: { type: string }
+        sources:
+          type: array
+          items:
+            $ref: "#/components/schemas/SourceRef"
+
+    ProfileInput:
+      type: object
+      required: [skills, educationLevel, yearsExperience, interestSectors, weeklyLearningHours, scenario]
+      properties:
+        skills:
+          type: array
+          items:
+            $ref: "#/components/schemas/ProfileSkill"
+        educationLevel:
+          type: string
+          enum: [SPM, Diploma/DKM, Bachelor, Master/PhD]
+        yearsExperience: { type: number, minimum: 0, maximum: 50 }
+        interestSectors:
+          type: array
+          items: { type: string }
+        weeklyLearningHours: { type: integer, minimum: 1, maximum: 60 }
+        scenario:
+          $ref: "#/components/schemas/Scenario"
+        limit: { type: integer, minimum: 1, maximum: 30 }
+
+    ScoreBreakdown:
+      type: object
+      required: [skillOverlap, proficiencyAlignment, readiness, interestAndTrend, weights]
+      properties:
+        skillOverlap: { type: number, description: "O in [0,1]" }
+        proficiencyAlignment: { type: number, description: "A in [0,1]" }
+        readiness: { type: number, description: "E in [0,1] — education and experience" }
+        interestAndTrend: { type: number, description: "M in [0,1] — interest, learning feasibility, scenario demand" }
+        weights:
+          $ref: "#/components/schemas/ScoreWeights"
+
+    ScoreWeights:
+      type: object
+      required: [skillOverlap, proficiencyAlignment, readiness, interestAndTrend]
+      properties:
+        skillOverlap: { type: number }
+        proficiencyAlignment: { type: number }
+        readiness: { type: number }
+        interestAndTrend: { type: number }
+
+    MatchedSkill:
+      type: object
+      required: [skillId, name, category, importance, currentProficiency, requiredProficiency, aiResilience, resilienceScore, avgExposure, avgAugmentation]
+      properties:
+        skillId: { type: string }
+        name: { type: string }
+        category: { type: string }
+        importance: { type: string, enum: [Required, Preferred] }
+        currentProficiency: { type: integer }
+        requiredProficiency: { type: integer }
+        aiResilience:
+          $ref: "#/components/schemas/AiResilience"
+        resilienceScore: { type: number }
+        avgExposure: { type: number }
+        avgAugmentation: { type: number }
+
+    GapSkill:
+      type: object
+      required: [skillId, name, category, importance, requiredProficiency, currentProficiency, aiResilience, resilienceScore, avgExposure, avgAugmentation]
+      properties:
+        aiResilience:
+          $ref: "#/components/schemas/AiResilience"
+        resilienceScore: { type: number }
+        avgExposure: { type: number }
+        avgAugmentation: { type: number }
+        skillId: { type: string }
+        name: { type: string }
+        category: { type: string }
+        importance: { type: string, enum: [Required, Preferred] }
+        requiredProficiency: { type: integer }
+        currentProficiency: { type: integer, description: "0 when the user does not have the skill" }
+
+    RoleMatch:
+      type: object
+      required: [rank, occupationId, title, sector, careerLevel, score, breakdown, metSkills, gapSkills, demandChangePct, direction, mycolStatus, sdgs, explanation, sourceIds]
+      properties:
+        rank: { type: integer }
+        occupationId: { type: string }
+        title: { type: string }
+        sector: { type: string }
+        careerLevel: { type: string }
+        score: { type: number, description: "0-100" }
+        breakdown:
+          $ref: "#/components/schemas/ScoreBreakdown"
+        metSkills:
+          type: array
+          items:
+            $ref: "#/components/schemas/MatchedSkill"
+        gapSkills:
+          type: array
+          items:
+            $ref: "#/components/schemas/GapSkill"
+        demandChangePct: { type: number }
+        direction:
+          $ref: "#/components/schemas/Direction"
+        mycolStatus: { type: string }
+        sdgs:
+          type: array
+          items:
+            $ref: "#/components/schemas/SdgTag"
+        explanation: { type: string }
+        sourceIds:
+          type: array
+          items: { type: string }
+
+    MatchResponse:
+      type: object
+      required: [scenario, formula, matches, disclaimer]
+      properties:
+        scenario:
+          $ref: "#/components/schemas/Scenario"
+        formula: { type: string }
+        matches:
+          type: array
+          items:
+            $ref: "#/components/schemas/RoleMatch"
+        disclaimer: { type: string }
+
+    PathwayInput:
+      type: object
+      required: [occupationId, skills, weeklyLearningHours]
+      properties:
+        occupationId: { type: string }
+        skills:
+          type: array
+          items:
+            $ref: "#/components/schemas/ProfileSkill"
+        weeklyLearningHours: { type: integer, minimum: 1, maximum: 60 }
+
+    LearningResource:
+      type: object
+      required: [resourceId, title, provider, url, deliveryMode, estimatedHours, cost, currency, level, sourceId, verificationStatus]
+      properties:
+        resourceId: { type: string }
+        title: { type: string }
+        provider: { type: string }
+        url: { type: string }
+        deliveryMode: { type: string }
+        estimatedHours: { type: number }
+        cost: { type: number }
+        currency: { type: string }
+        level: { type: string }
+        sourceId: { type: string }
+        verificationStatus: { type: string }
+
+    PathwayStep:
+      type: object
+      required: [order, resource, targetSkills, hours, alreadyCovered, sdg, startWeek, endWeek]
+      properties:
+        order: { type: integer }
+        resource:
+          $ref: "#/components/schemas/LearningResource"
+        targetSkills:
+          type: array
+          items:
+            $ref: "#/components/schemas/SkillRef"
+        hours: { type: number }
+        alreadyCovered: { type: boolean, description: "True when the user already holds every skill this step targets" }
+        sdg:
+          $ref: "#/components/schemas/SdgTag"
+        startWeek: { type: integer }
+        endWeek: { type: integer }
+
+    Pathway:
+      type: object
+      required: [occupationId, title, sector, currentScore, totalHours, estimatedWeeks, weeklyLearningHours, steps, uncoveredGaps, sdgContribution, disclaimer]
+      properties:
+        occupationId: { type: string }
+        title: { type: string }
+        sector: { type: string }
+        currentScore: { type: number }
+        totalHours: { type: number }
+        estimatedWeeks: { type: integer }
+        weeklyLearningHours: { type: integer }
+        steps:
+          type: array
+          items:
+            $ref: "#/components/schemas/PathwayStep"
+        uncoveredGaps:
+          type: array
+          description: Gap skills with no matching resource in the catalogue (shown honestly instead of inventing a course)
+          items:
+            $ref: "#/components/schemas/SkillRef"
+        sdgContribution:
+          type: array
+          items:
+            $ref: "#/components/schemas/SdgTag"
+        disclaimer: { type: string }
+
+    SdgSummary:
+      type: object
+      required: [goalNumber, goalTitle, occupationCount, skillCount, targets, exampleRoles]
+      properties:
+        goalNumber: { type: integer }
+        goalTitle: { type: string }
+        occupationCount: { type: integer }
+        skillCount: { type: integer }
+        targets:
+          type: array
+          items: { type: string }
+        exampleRoles:
+          type: array
+          items: { type: string }

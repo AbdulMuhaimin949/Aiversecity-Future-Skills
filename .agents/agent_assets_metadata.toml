@@ -1,0 +1,31 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "itpb_n_F4jqMOX50Et8-_"
+uri = "file://.local/conversation-workspace/files/aiversecity_repo.zip"
+type = "unspecified"
+title = "Aiversecity repo (ready for GitHub)"
+description = "Unpacked pipeline with generated Bronze/Silver/Gold data, README corrected to actual metrics, .gitignore and requirements.txt. 7/7 tests pass."
+logical_id = "9b15527e-36ac-4e33-9fc0-95a391597250"
+content_hash = "sha256:2bb3cdac5eb17673a7117be721f90467eae062add0a21d26c2c8b6cfb018d499"
+size = 862085
+mtime_ms = 1792742710256
+storage_uri = "gcs://replit-rams-assets-pike/rams/assets/conversation:f1ec2ead-7470-41f3-bff0-b122d535dd53/9b15527e-36ac-4e33-9fc0-95a391597250/af49b8a8-e835-469e-81c4-61aa7facc643"
+storage_version_token = "1792742715118578"
+content_type = "application/octet-stream"
+source_uri = "file://aiversecity_repo.zip"
+
+[[outputs]]
+id = "FJgqe5FGDvuioTbibFuyK"
+uri = "file://generated-artifacts/Aiversecity-Future-Skills-filled.md"
+type = "text"
+title = "Aiversecity project profile — filled"
+description = "Completed project profile with the actual app stack, data flow, setup instructions, and clear notes for information not present in the repository."
+logical_id = "fd6de042-debf-4154-8ccc-cbfa854cffd7"
+content_hash = "sha256:6c68c69ed0c234ba1054ee651bb73ef82df5f7512c5bba665e571a2a41e018c1"
+size = 12237
+mtime_ms = 1792865187881
+storage_uri = "gcs://replit-rams-assets-sisko/rams/assets/repl:7dfdd897-58a1-4a98-a3f5-9a5c12d6f734/fd6de042-debf-4154-8ccc-cbfa854cffd7/d880b08b-1db0-495f-bcd5-2d81c1db1931"
+storage_version_token = "1792865224779518"
+content_type = "text/markdown"

@@ -1,0 +1,175 @@
+# AIVERSECITY — FIX AI MENTOR USING REPLIT AI INTEGRATIONS AND SYNTHETIC RAG
+
+## MAIN OBJECTIVE
+
+My Aiversecity AI Mentor chatbot is currently displaying:
+
+"Mentor AI sedang disediakan. Belum ada pengetahuan diluluskan yang diindeks, jadi tiada apa untuk dicari."
+
+I want to fix this problem and make my existing floating AI chatbot fully functional.
+
+I also want to use an AI model available through Replit AI Integrations instead of managing my own Google AI Studio API key.
+
+IMPORTANT:
+- Preserve my existing Aiversecity website.
+- Do not rebuild the chatbot interface.
+- Keep the floating chatbot at the bottom-right.
+- Keep the existing blue robot mascot.
+- Preserve Bahasa Melayu, Mandarin, and English.
+- Use the existing PostgreSQL database.
+- Use synthetic datasets only.
+
+## PHASE 1 — DIAGNOSE THE CURRENT PROBLEM
+
+Inspect the existing chatbot and RAG backend.
+
+Check:
+1. Whether the chat endpoint is working.
+2. Whether an AI provider is configured.
+3. Whether knowledge documents have been imported.
+4. Whether documents have been approved.
+5. Whether approved documents have been chunked.
+6. Whether embeddings have been generated.
+7. Whether vector search is working.
+8. Whether the chatbot readiness check is incorrectly blocking requests.
+
+Inspect the actual database schema and records.
+
+Report the exact root cause instead of assuming the problem.
+
+## PHASE 2 — USE REPLIT AI INTEGRATIONS
+
+Check which chat models are available through Replit AI Integrations for this project.
+
+Prefer an inexpensive model suitable for:
+- Career guidance
+- Bahasa Melayu
+- Mandarin Simplified Chinese
+- English
+- Retrieval-Augmented Generation
+
+Use a genuinely free option only if the provider confirms it is available without usage charges.
+
+If no free model is available, identify the lowest-cost appropriate model and explain the potential charges before enabling it.
+
+Do not activate paid usage without my approval.
+
+Use Replit-managed credentials where supported.
+
+Do not require my personal Gemini API key.
+
+Preserve the existing Express backend.
+
+Configure the AI model through server-side environment settings.
+
+## PHASE 3 — ACTIVATE SYNTHETIC RAG
+
+My hackathon uses synthetic data.
+
+Inspect the existing datasets and the uploaded Aiversecity synthetic dataset package.
+
+If the synthetic package has not been imported, import it safely.
+
+Use the current PostgreSQL tables:
+- knowledge_sources
+- knowledge_documents
+- knowledge_chunks
+- knowledge_chunk_embeddings
+- knowledge_approvals
+
+Adapt to the actual existing schema.
+
+For synthetic demo knowledge:
+
+1. Register the documents.
+2. Mark them clearly as synthetic.
+3. Validate records and relationships.
+4. Allow an authorized admin to approve the documents.
+5. Generate actual embeddings using an available and supported embedding model.
+6. Store embeddings in a working vector index.
+7. Enable retrieval using only approved documents.
+8. Return real document references and citations.
+
+Do not generate fake vectors or fabricated citations.
+
+If embeddings are unavailable because of model limits or cost, report the issue and provide an explicitly labeled PostgreSQL full-text search fallback using approved documents.
+
+The fallback must be real retrieval, not hardcoded chatbot answers.
+
+## PHASE 4 — CONNECT THE CHATBOT
+
+Connect the existing floating Ask AI chatbot to the working backend.
+
+Chatbot features:
+- Send messages.
+- Receive model-generated responses.
+- Display loading indicators.
+- Display errors clearly.
+- Save chat history.
+- Show actual RAG citations.
+- Support new conversations.
+- Support all three languages.
+
+Do not display "AI ready" unless both the model connection and retrieval are verified.
+
+If no documents are approved, show a clear knowledge-unavailable state.
+
+Do not silently bypass the human approval system.
+
+## PHASE 5 — MULTILINGUAL TESTING
+
+Support:
+- Bahasa Melayu (ms)
+- Mandarin (zh-CN)
+- English (en)
+
+Test these questions:
+
+BM:
+"Apakah kemahiran yang diperlukan untuk menjadi Data Analyst?"
+
+Mandarin:
+"成为数据分析师需要哪些技能？"
+
+English:
+"What skills are required to become a Data Analyst?"
+
+Each answer must:
+1. Use the same approved synthetic knowledge base.
+2. Respond in the selected language.
+3. Provide actual source citations.
+4. Clearly identify synthetic information as demo data.
+
+## PHASE 6 — COMPLETE END-TO-END TEST
+
+Test the workflow:
+
+1. Admin imports a synthetic knowledge document.
+2. Admin approves it.
+3. The knowledge indexing process completes.
+4. User opens the floating Ask AI chatbot.
+5. User submits a question.
+6. RAG retrieves the appropriate approved documents.
+7. The AI model generates a grounded response.
+8. Citations are displayed in the chatbox.
+
+Also test that rejected and pending documents cannot be retrieved.
+
+## FINAL REPORT
+
+After implementing the changes, show:
+
+- Root cause of the chatbot failure
+- AI provider and exact model selected
+- Whether model usage is free, credit-based, or paid
+- Knowledge documents count
+- Approved documents count
+- Indexed chunks count
+- Working retrieval method
+- Actual successful chat test
+- Actual successful RAG citation test
+- Remaining errors or limitations
+
+Do not redesign the Aiversecity frontend.
+
+Focus on making the existing chatbot and RAG work correctly.

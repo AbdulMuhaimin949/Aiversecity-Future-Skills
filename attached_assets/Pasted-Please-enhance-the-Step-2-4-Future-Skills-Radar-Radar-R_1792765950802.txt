@@ -1,0 +1,25 @@
+Please enhance the "Step 2 / 4 - Future Skills Radar" (Radar & Role Matches) view to make it more engaging, user-friendly, and differentiated from standard job-matching apps. 
+
+Apply the following updates:
+
+1. Upgrade Scenario Toggle Labels & Hook Copy:
+- Keep the 3 scenario state keys (Baseline, Moderate, Fast) in the code so existing logic doesn't break, but update their display labels and subtitles to be more engaging:
+  - Baseline -> "Steady State" (Subtitle: "Current market trajectory")
+  - Moderate -> "Accelerated Shift" (Subtitle: "Faster AI adoption")
+  - Fast -> "Deep Disruption" (Subtitle: "Rapid automation shock")
+- Add a compelling callout/hook right below the toggle bar: "Is your career path AI-proof? Toggle the scenarios above to stress-test your skills against the next wave of AI disruption."
+
+2. Add an "Explainable Scenario Shift" Callout (Human-Readable XAI):
+- The current technical assumptions box ("Ridge autoregressive forecast...") is too academic for regular users. 
+- Keep the technical methodology inside a collapsible "View Technical Methodology & Model Assumptions" accordion/details drawer at the bottom.
+- Above it, add a clean, user-friendly "What This Scenario Means For You" summary card that dynamically changes text when toggling between Baseline, Moderate, and Fast—explaining in plain English *why* role scores shift (e.g., routine task automation vs. AI-augmented skill demand).
+
+3. Add "Automate vs. Augment" Task Breakdown (in Role/Skill Cards):
+- For the skills/roles shown in the Radar and Matches, categorize or badge skills into:
+  - "AI-Resilient / Augmentation Skills" (skills that gain value as AI adoption speeds up)
+  - "Exposed / Routine Tasks" (areas facing automation pressure in Moderate/Fast modes)
+
+4. Add a Final Action CTA:
+- At the bottom of the Radar section leading into Step 3 (Matches) / Step 4 (Pathway), add a strong action prompt: "Turn disruption into an advantage. View your AI-Resilient Role Matches →"
+
+Ensure all existing data bindings, MyCOL index calculations, and state transitions remain intact.
